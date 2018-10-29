@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4669431193982746}
   - component: {fileID: 70929219583558758}
-  m_Layer: 8
+  m_Layer: 18
   m_Name: EnemyCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114606706906951144}
   - component: {fileID: 61302101667797732}
   - component: {fileID: 70590130614872530}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Golem
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1951788312821962}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.2761505, y: 1.5617048, z: 0}
+  m_LocalPosition: {x: 30.10446, y: -7.0602264, z: -0.09478491}
   m_LocalScale: {x: 0.6863242, y: 0.6863242, z: 0.31464}
   m_Children:
   - {fileID: 4669431193982746}
@@ -183,6 +183,7 @@ MonoBehaviour:
   runSpeedMultiplier: 1.05
   maxSpeed: 0.75
   attackTime: 0
+  isAlive: 1
 --- !u!212 &212985386559127640
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -215,8 +216,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -2063532323
-  m_SortingLayer: 2
+  m_SortingLayerID: -826253381
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300010, guid: ab6c4b1d13aa81a4b888686b2387c5ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
