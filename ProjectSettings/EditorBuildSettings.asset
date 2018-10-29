@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: aca85f6e35eefd14a90482eb0ce41472
+  - enabled: 1
+    path: Assets/Scenes/CharacterSelect.unity
+    guid: 7cb78f713ffc0784c80781b97b29907c
+  - enabled: 1
+    path: Assets/Scenes/TwilightScene.unity
+    guid: 29624b645a78968439152672b57e8ccb
+  m_configObjects: {}
