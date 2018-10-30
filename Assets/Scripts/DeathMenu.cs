@@ -16,6 +16,7 @@ public class DeathMenu : MonoBehaviour
     {
         GameController.control.Load();
         SceneManager.LoadScene(2);
+        Time.timeScale = 1;
     }
 
     public void MainMenuScene()
