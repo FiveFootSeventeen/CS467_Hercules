@@ -25,18 +25,17 @@ public class PlayerControllerScript : MonoBehaviour
 
     void Start()
     {
-        //GameController.control.EnemyController = GameObject.Find("EnemyController");
         if(GameController.control.characterSelect == 1)
         {
             chosenCharacter = character2;
             Destroy(character);
-            GameController.control.playerController = character2;
+            GameController.control.player = character2;
         }
         else
         {
             chosenCharacter = character;
             Destroy(character2);
-            GameController.control.playerController = character;
+            GameController.control.player = character;
         }
         anim = chosenCharacter.GetComponent<Animator>();
         originSpeed = maxSpeed;

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using System;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -8,7 +9,7 @@ using System.IO;
 public class GameController : MonoBehaviour {
 
     public static GameController control;
-    public GameObject EnemyController, playerController;
+    public GameObject EnemyController, player, playerController;
 
     //Player Stats
     [Header("Player Stats")]
@@ -47,6 +48,7 @@ public class GameController : MonoBehaviour {
     public float twilightKillCount;
 
     void Awake () {
+
         if (control == null)
         {
             DontDestroyOnLoad(gameObject);
@@ -57,12 +59,23 @@ public class GameController : MonoBehaviour {
             Destroy(gameObject);
         }
 	}
+    void Start()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene aScene, LoadSceneMode aMode)
+    {
+        EnemyController = GameObject.Find("EnemyController");
+        playerController = GameObject.Find("PlayerController");
+    }
+
 
     void FixedUpdate()
     {
         if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name.StartsWith("Game."))
         { 
-            EnemyController.GetComponent<EnemyController>().MoveEnemies(playerController.transform.position);
+            EnemyController.GetComponent<EnemyController>().MoveEnemies(player.transform.position);
             if (!playerController.GetComponent<PlayerControllerScript>().isAlive)
             {
                 playerController.GetComponent<PlayerControllerScript>().enabled = false;
