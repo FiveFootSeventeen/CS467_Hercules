@@ -74,8 +74,8 @@ public class GameController : MonoBehaviour {
         {
             GUI.Label(new Rect(10, 10, 100, 30), "Health: " + playerHealth);
             GUI.Label(new Rect(10, 30, 100, 30), "Sanity: " + playerSanity);
-            GUI.Label(new Rect(10, 50, 100, 30), "Gems: " + gemsCollected);
-            GUI.Label(new Rect(10, 70, 100, 30), "Keys: " + keysCollected);
+            GUI.Label(new Rect(10, 50, 100, 30), "Gems: " + gemsCollected + "/6");
+            GUI.Label(new Rect(10, 70, 100, 30), "Keys: " + keysCollected + "/1");
         }
     }
 
