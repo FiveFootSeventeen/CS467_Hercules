@@ -108,6 +108,8 @@ public class PlayerControllerScript : MonoBehaviour
             rigidbody2D.velocity = new Vector2(speed, speed);
             anim.SetTrigger("Dying");
             
+
+
             return true;
         }
         return false;

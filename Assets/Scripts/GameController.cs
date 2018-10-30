@@ -15,6 +15,8 @@ public class GameController : MonoBehaviour {
     public float playerHealth;
     public float playerSanity;
     public float characterSelect;
+    public float gemsCollected;
+    public float keysCollected;
 
     //Game Stats
     [Header("Game Stats")]
@@ -59,6 +61,11 @@ public class GameController : MonoBehaviour {
     void FixedUpdate()
     {
        EnemyController.GetComponent<EnemyController>().MoveEnemies(player.transform.position);
+        if (!player.GetComponent<PlayerControllerScript>().isAlive)
+        {
+            player.GetComponent<PlayerControllerScript>().enabled = false;
+        }
+
     }
 
     void OnGUI()
@@ -67,6 +74,8 @@ public class GameController : MonoBehaviour {
         {
             GUI.Label(new Rect(10, 10, 100, 30), "Health: " + playerHealth);
             GUI.Label(new Rect(10, 30, 100, 30), "Sanity: " + playerSanity);
+            GUI.Label(new Rect(10, 50, 100, 30), "Gems: " + gemsCollected);
+            GUI.Label(new Rect(10, 70, 100, 30), "Keys: " + keysCollected);
         }
     }
 
@@ -98,7 +107,9 @@ public class GameController : MonoBehaviour {
             twilightKillCount = twilightKillCount,
             characterSelect = characterSelect,
             musicVol = musicVol,
-            soundFXVol = soundFXVol
+            soundFXVol = soundFXVol,
+            gemsCollected = gemsCollected,
+            keysCollected = keysCollected
     };
 
         bf.Serialize(file, data);
@@ -136,6 +147,8 @@ public class GameController : MonoBehaviour {
             characterSelect = data.characterSelect;
             musicVol = data.musicVol;
             soundFXVol = data.soundFXVol;
+            gemsCollected = data.gemsCollected;
+            keysCollected = data.keysCollected;
         }
     }
 }
@@ -147,6 +160,8 @@ class GameData
     public float playerHealth;
     public float playerSanity;
     public float characterSelect;
+    public float gemsCollected;
+    public float keysCollected;
 
     //Game Stats
     public float voidPortalStatus;
