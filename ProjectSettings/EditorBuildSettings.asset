@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/CharacterSelect.unity
     guid: 7cb78f713ffc0784c80781b97b29907c
   - enabled: 1
-    path: Assets/Scenes/TwilightScene.unity
+    path: Assets/Scenes/Game.TwilightScene.unity
     guid: 29624b645a78968439152672b57e8ccb
   m_configObjects: {}

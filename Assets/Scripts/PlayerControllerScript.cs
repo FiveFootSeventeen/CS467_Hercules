@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerControllerScript : MonoBehaviour
 {
     public GameObject character;
+    public GameObject character2;
     private GameObject weapon;
     public float runSpeedMultiplier = 1.05f;
     public float maxSpeed, attackTime;
@@ -18,18 +19,31 @@ public class PlayerControllerScript : MonoBehaviour
     string action = "slashAttack";
 
     public bool isAlive = true;
-
+    private GameObject chosenCharacter;
 
     Animator anim;
 
     void Start()
     {
-        anim = character.GetComponent<Animator>();
+        //GameController.control.EnemyController = GameObject.Find("EnemyController");
+        if(GameController.control.characterSelect == 1)
+        {
+            chosenCharacter = character2;
+            Destroy(character);
+            GameController.control.playerController = character2;
+        }
+        else
+        {
+            chosenCharacter = character;
+            Destroy(character2);
+            GameController.control.playerController = character;
+        }
+        anim = chosenCharacter.GetComponent<Animator>();
         originSpeed = maxSpeed;
-        rigidbody2D = character.GetComponent<Rigidbody2D>();
-        bodycollider = character.GetComponent<CapsuleCollider2D>();
+        rigidbody2D = chosenCharacter.GetComponent<Rigidbody2D>();
+        bodycollider = chosenCharacter.GetComponent<CapsuleCollider2D>();
 
-        weapon = character.transform.Find("Weapon").gameObject;
+        weapon = chosenCharacter.transform.Find("Weapon").gameObject;
         weapon.SetActive(false);
     }
 

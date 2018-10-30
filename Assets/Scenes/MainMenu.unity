@@ -161,7 +161,12 @@ Prefab:
         type: 2}
       propertyPath: player
       value: 
-      objectReference: {fileID: 403296541}
+      objectReference: {fileID: 0}
+    - target: {fileID: 114209706926353896, guid: adac0174af45a4c4f91f4b93cbca810a,
+        type: 2}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adac0174af45a4c4f91f4b93cbca810a, type: 2}
   m_IsPrefabAsset: 0
@@ -176,34 +181,6 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 82043768380947840, guid: e893535ed7b7abd4d970f1a05e25e987,
     type: 2}
   m_PrefabInternal: {fileID: 1261831574}
---- !u!1 &403296541
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 403296542}
-  m_Layer: 0
-  m_Name: Player
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &403296542
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 403296541}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 421.27628, y: 307.52396, z: -5.375}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &441763610
 Prefab:
   m_ObjectHideFlags: 0

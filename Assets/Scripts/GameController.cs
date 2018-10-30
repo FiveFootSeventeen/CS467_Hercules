@@ -8,7 +8,7 @@ using System.IO;
 public class GameController : MonoBehaviour {
 
     public static GameController control;
-    public GameObject EnemyController, player;
+    public GameObject EnemyController, playerController;
 
     //Player Stats
     [Header("Player Stats")]
@@ -60,12 +60,14 @@ public class GameController : MonoBehaviour {
 
     void FixedUpdate()
     {
-       EnemyController.GetComponent<EnemyController>().MoveEnemies(player.transform.position);
-        if (!player.GetComponent<PlayerControllerScript>().isAlive)
-        {
-            player.GetComponent<PlayerControllerScript>().enabled = false;
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name.StartsWith("Game."))
+        { 
+            EnemyController.GetComponent<EnemyController>().MoveEnemies(playerController.transform.position);
+            if (!playerController.GetComponent<PlayerControllerScript>().isAlive)
+            {
+                playerController.GetComponent<PlayerControllerScript>().enabled = false;
+            }
         }
-
     }
 
     void OnGUI()

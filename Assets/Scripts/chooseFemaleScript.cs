@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class chooseFemaleScript : MonoBehaviour {
 
@@ -11,7 +12,7 @@ public class chooseFemaleScript : MonoBehaviour {
     {
         GameController.control.characterSelect = 1;
         GameController.control.Save();
-        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
         AudioManager.Instance.Play(optionFX);
+        SceneManager.LoadScene(2);
     }
 }
