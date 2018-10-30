@@ -13,7 +13,7 @@ public void NewGame()
 public void LoadGame()
     {
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
         GameController.control.Load();
     }
 
