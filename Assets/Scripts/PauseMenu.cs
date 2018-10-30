@@ -15,6 +15,7 @@ public class PauseMenu : MonoBehaviour
     public void LoadGame()
     {
         GameController.control.Load();
+        SceneManager.LoadScene(2);
     }
 
     public void Options()
