@@ -122,9 +122,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2025212647}
   - component: {fileID: 2025212648}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: UIManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,5 +153,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd28f505ef40774eb64f3297fbfa7d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Prefabs:
-  - {fileID: 1115800312462902, guid: 0a1080fa823cb72408aecd46f0be298d, type: 2}
+  SystemPrefabs:
+  - {fileID: 1923699514395028, guid: 7ddd05d2e4a28354a864ad171adc6154, type: 2}

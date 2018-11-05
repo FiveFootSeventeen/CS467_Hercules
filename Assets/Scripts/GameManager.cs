@@ -23,7 +23,7 @@ public class GameManager : Singleton<GameManager> {
         _loadOps = new List<AsyncOperation>();
 
         InstantiateSystemPrefabs();
-        LoadScene("MainMenu");
+        LoadScene("CharacterSelect");
     }    
 
     void OnLoadComplete(AsyncOperation async)
