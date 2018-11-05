@@ -7,14 +7,13 @@ public class PlayerControllerScript : MonoBehaviour
 {
     public GameObject character;
     public GameObject character2;
-    private GameObject weapon;
     public float runSpeedMultiplier = 1.05f;
     public float maxSpeed, attackTime;
     float originSpeed;
     private bool playerMoving, attacking;
     private float attackTimeCounter;
     new Rigidbody2D rigidbody2D;
-    new CapsuleCollider2D bodycollider;
+    CapsuleCollider2D bodycollider;
     Vector2 move, lastMove;
     string action = "slashAttack";
 
@@ -23,9 +22,14 @@ public class PlayerControllerScript : MonoBehaviour
 
     Animator anim;
 
+
+    /// CALEB ADDED
+    public SimpleHealthBar healthBar;
+    public SimpleHealthBar sanityBar;
+
     void Start()
     {
-        if(GameController.control.characterSelect == 1)
+        if (GameController.control.characterSelect == 1)
         {
             chosenCharacter = character2;
             Destroy(character);
@@ -44,42 +48,39 @@ public class PlayerControllerScript : MonoBehaviour
         rigidbody2D = chosenCharacter.GetComponent<Rigidbody2D>();
         bodycollider = chosenCharacter.GetComponent<CapsuleCollider2D>();
 
-        weapon = chosenCharacter.transform.Find("Weapon").gameObject;
-        weapon.SetActive(false);
     }
 
     void FixedUpdate()
     {
-       if (!isAlive) { return; }
+        if (!isAlive) { return; }
         move = Vector2.zero;
         playerMoving = false;
 
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown("space"))
         {
-            weapon.SetActive(true);
             anim.SetBool("attacking", true); //Set the specified trigger in the animator
             anim.SetTrigger(action);
             attacking = true;
             attackTimeCounter = attackTime;
-        } 
+        }
 
         if (attackTimeCounter > 0)
             attackTimeCounter -= Time.deltaTime;
         else
         {
-            weapon.SetActive(false);
             attacking = false;
             anim.SetBool("attacking", false);
         }
-            
+
 
         if (!attacking)
         {
-                if (Input.GetKey("left shift") || Input.GetKey("right shift"))  //Add the running multiplier
+            if (Input.GetKey("left shift") || Input.GetKey("right shift"))  //Add the running multiplier
             {
                 maxSpeed = 4 * runSpeedMultiplier;
                 anim.speed = 2F;                        //Increase the animation speed for running
-            } else
+            }
+            else
             {
                 anim.speed = 1;
             }
@@ -91,10 +92,9 @@ public class PlayerControllerScript : MonoBehaviour
         if (move.x != 0 || move.y != 0)
         {
             playerMoving = true;
-            anim.SetFloat("lastVert", lastMove.x);      //lastVert variable in the animator controller to move.x
-            anim.SetFloat("lastHorz", lastMove.y);      //lastHorz variable in the animator controller to move.y
+            SetLastParams(lastMove);
         }
-            
+
         anim.SetFloat("verticalSpeed", move.x);     //verticalSpeed variable in the animator controller to move.x
         anim.SetFloat("horizontalSpeed", move.y);   //horizontalSpeed variable in the animator controller to move.y
         anim.SetBool("playerMoving", playerMoving); //Set the playerMoving parameter in the animator
@@ -111,25 +111,41 @@ public class PlayerControllerScript : MonoBehaviour
             isAlive = false;
             playerMoving = false;
             int speed = 0;
-            
-            
+
+
             //TODO: Fix terrible Spaghetti code
-            anim.SetFloat("lastVert", speed);      
-            anim.SetFloat("lastHorz", speed);      
+            anim.SetFloat("lastVert", speed);
+            anim.SetFloat("lastHorz", speed);
 
             anim.SetFloat("verticalSpeed", speed);
             anim.SetFloat("horizontalSpeed", speed);
             anim.SetBool("playerMoving", playerMoving);
             rigidbody2D.velocity = new Vector2(speed, speed);
             anim.SetTrigger("Dying");
-            
+
 
 
             return true;
         }
         return false;
     }
+
+    private void SetLastParams(Vector2 lastMove)
+    {
+        Vector2 lastParams = new Vector2(lastMove.x, lastMove.y);
+
+        lastMove.x = Mathf.Abs(lastMove.x);     //Set x and y to their absolute values
+        lastMove.y = Mathf.Abs(lastMove.y);
+
+        lastParams.x = lastParams.x >= 0 ? 1 : -1;  //The x and y values of lastParams must be either 1 or -1 to make the animation transitions work correctly
+        lastParams.y = lastParams.y >= 0 ? 1 : -1;
+
+        if (lastMove.x >= lastMove.y)       //For animation transistion to work correctly either x or y must be 0
+            lastParams.y = 0;               //Look at the values of lastMove and keep the greater value as 1 or -1, change the lesser value to 0
+        else
+            lastParams.x = 0;
+
+        anim.SetFloat("lastVert", lastParams.x);      //lastVert variable in the animator controller to move.x
+        anim.SetFloat("lastHorz", lastParams.y);      //lastHorz variable in the animator controller to move.y
+    }
 }
-
-
-

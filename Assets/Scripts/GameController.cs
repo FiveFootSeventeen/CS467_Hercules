@@ -87,8 +87,6 @@ public class GameController : MonoBehaviour {
     {
         if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name.StartsWith("Game."))
         {
-            GUI.Label(new Rect(10, 10, 100, 30), "Health: " + playerHealth);
-            GUI.Label(new Rect(10, 30, 100, 30), "Sanity: " + playerSanity);
             GUI.Label(new Rect(10, 50, 100, 30), "Gems: " + gemsCollected + "/6");
             GUI.Label(new Rect(10, 70, 100, 30), "Keys: " + keysCollected + "/1");
         }
