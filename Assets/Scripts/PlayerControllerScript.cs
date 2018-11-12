@@ -112,6 +112,7 @@ public class PlayerControllerScript : MonoBehaviour
             playerMoving = false;
             int speed = 0;
 
+            
 
             //TODO: Fix terrible Spaghetti code
             anim.SetFloat("lastVert", speed);
@@ -121,8 +122,11 @@ public class PlayerControllerScript : MonoBehaviour
             anim.SetFloat("horizontalSpeed", speed);
             anim.SetBool("playerMoving", playerMoving);
             rigidbody2D.velocity = new Vector2(speed, speed);
-            anim.SetTrigger("Dying");
 
+            
+            //anim.SetTrigger("Trap"); //not working
+            anim.SetTrigger("Dying");
+            
 
 
             return true;
