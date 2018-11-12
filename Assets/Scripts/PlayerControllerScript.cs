@@ -56,7 +56,7 @@ public class PlayerControllerScript : MonoBehaviour
         move = Vector2.zero;
         playerMoving = false;
 
-        if (Input.GetKeyDown("space"))
+        if(Input.GetKeyDown("space"))
         {
             anim.SetBool("attacking", true); //Set the specified trigger in the animator
             anim.SetTrigger(action);
@@ -146,8 +146,9 @@ public class PlayerControllerScript : MonoBehaviour
             lastParams.y = 0;               //Look at the values of lastMove and keep the greater value as 1 or -1, change the lesser value to 0
         else
             lastParams.x = 0;
-
+        
         anim.SetFloat("lastVert", lastParams.x);      //lastVert variable in the animator controller to move.x
         anim.SetFloat("lastHorz", lastParams.y);      //lastHorz variable in the animator controller to move.y
     }
 }
+

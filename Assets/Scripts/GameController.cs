@@ -73,14 +73,15 @@ public class GameController : MonoBehaviour {
 
     void FixedUpdate()
     {
-        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name.StartsWith("Game."))
-        { 
+        //if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name.StartsWith("Game."))
+        //{ 
             EnemyController.GetComponent<EnemyController>().MoveEnemies(player.transform.position);
+
             if (!playerController.GetComponent<PlayerControllerScript>().isAlive)
             {
                 playerController.GetComponent<PlayerControllerScript>().enabled = false;
             }
-        }
+       // }
     }
 
     void OnGUI()
