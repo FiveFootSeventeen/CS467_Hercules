@@ -8,11 +8,11 @@ public class EnemyController : MonoBehaviour {
     public float attackCooldown = 3f; //The time between enemy attacks
     public float attackDistance = 1.25f; //The furthest the enemy can be before they will attack
     public float aggroDistance = 3.0f;   //The distance before the enemy will aggro to the player
-    public Rigidbody2D enemy;
+    public GameObject[] enemies;
 
     private Vector3 playerRelation, forwardVector;
     private float originSpeed;
-    EnemyData enemyInfo;      //Struct used for storing data about the enemy in the scene
+    EnemyData[] enemyList;      //Struct used for storing data about all the enemies in the scene
 
     struct EnemyData
     {
@@ -25,7 +25,7 @@ public class EnemyController : MonoBehaviour {
     //Set up variables with initial values
     private void Awake()    
     {
-        enemyList = new EnemyData;
+        enemyList = new EnemyData[enemies.Length];
 
         for (int i = 0; i < enemyList.Length; i++)
         {
