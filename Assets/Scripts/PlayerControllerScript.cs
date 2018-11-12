@@ -122,9 +122,7 @@ public class PlayerControllerScript : MonoBehaviour
             anim.SetFloat("horizontalSpeed", speed);
             anim.SetBool("playerMoving", playerMoving);
             rigidbody2D.velocity = new Vector2(speed, speed);
-
-            
-            //anim.SetTrigger("Trap"); //not working
+          
             anim.SetTrigger("Dying");
             
 
