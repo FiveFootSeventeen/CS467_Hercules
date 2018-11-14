@@ -42,9 +42,6 @@ public class CharacterStats_SO : ScriptableObject
     public int baseDamage = 0;
     public int currentDamage = 0;
 
-    public float baseArmor = 0;
-    public float currentArmor = 0f;
-
     public int maxInventory = 0;
     public int currentInventory = 0;
 
