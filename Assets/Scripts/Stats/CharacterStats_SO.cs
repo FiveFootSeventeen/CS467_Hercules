@@ -151,7 +151,7 @@ public class CharacterStats_SO : ScriptableObject
             {
                 previousWeaponSame = true;
             }
-            charInventory.inventoryDisplaySlots[2].sprite = null;
+            charInventory.inventoryDisplay[2].sprite = null;
             DestroyObject(weaponSlot.transform.GetChild(0).gameObject);
             weapon = null;
             currentDamage = baseDamage;

@@ -13,9 +13,8 @@ public class LootItem_SO : ScriptableObject
     public int itemAmount = 0;
     public int spawnChanceWeight = 0;
 
-    public Material itemMaterial = null;
     public Sprite itemIcon = null;
-    public Rigidbody itemSpawnObject = null;
+    public Rigidbody2D itemSpawnObject = null;
     public Weapon weaponSlotObject = null;
 
     public bool isEquipped = false;

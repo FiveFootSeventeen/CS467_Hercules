@@ -6,15 +6,15 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    #region Variable Declarations
+    #region Variables
     public static Inventory instance;
 
     public CharacterStats charStats;
     GameObject foundStats;
 
-    public Image[] hotBarDisplayHolders = new Image[4];
+    public Image[] barDisplay = new Image[4];
     public GameObject InventoryDisplayHolder;
-    public Image[] inventoryDisplaySlots = new Image[30];
+    public Image[] inventoryDisplay = new Image[30];
 
     int inventoryItemCap = 20;
     int idCount = 1;
@@ -31,7 +31,7 @@ public class Inventory : MonoBehaviour
         itemEntry = new InventoryEntry(0, null, null);
         itemsInInventory.Clear();
 
-        inventoryDisplaySlots = InventoryDisplayHolder.GetComponentsInChildren<Image>();
+        inventoryDisplay = InventoryDisplayHolder.GetComponentsInChildren<Image>();
 
         foundStats = GameObject.FindGameObjectWithTag("Player");
         charStats = foundStats.GetComponent<CharacterStats>();
@@ -111,7 +111,8 @@ public class Inventory : MonoBehaviour
                             ie.Value.stackSize += 1;
                             AddItemToBar(ie.Value);
                             itsInInv = true;
-                            DestroyObject(itemEntry.invEntry.gameObject);
+                            Destroy(itemEntry.invEntry.gameObject);
+                            
                             break;
                         }
                         //If item does not exist already in inventory then continue here
@@ -148,7 +149,7 @@ public class Inventory : MonoBehaviour
     {
         itemsInInventory.Add(idCount, new InventoryEntry(itemEntry.stackSize, Instantiate(itemEntry.invEntry), itemEntry.barSprite));
 
-        DestroyObject(itemEntry.invEntry.gameObject);
+        Destroy(itemEntry.invEntry.gameObject);
 
         FillInventoryDisplay();
         AddItemToBar(itemsInInventory[idCount]);
@@ -188,7 +189,7 @@ public class Inventory : MonoBehaviour
         bool increaseCount = false;
 
 
-        foreach (Image images in hotBarDisplayHolders)
+        foreach (Image images in barDisplay)
         {
             hotBarCounter += 1;
 
@@ -212,7 +213,7 @@ public class Inventory : MonoBehaviour
 
         if (increaseCount)
         {
-            hotBarDisplayHolders[item.barSlot - 1].GetComponentInChildren<Text>().text = item.stackSize.ToString();
+            barDisplay[item.barSlot - 1].GetComponentInChildren<Text>().text = item.stackSize.ToString();
         }
 
         increaseCount = false;
@@ -237,14 +238,14 @@ public class Inventory : MonoBehaviour
         foreach (KeyValuePair<int, InventoryEntry> ie in itemsInInventory)
         {
             slotCounter += 1;
-            inventoryDisplaySlots[slotCounter].sprite = ie.Value.barSprite;
+            barDisplay[slotCounter].sprite = ie.Value.barSprite;
             ie.Value.inventorySlot = slotCounter - 9;
         }
 
         while (slotCounter < 29)
         {
             slotCounter++;
-            inventoryDisplaySlots[slotCounter].sprite = null;
+            barDisplay[slotCounter].sprite = null;
         }
     }
 
@@ -279,8 +280,8 @@ public class Inventory : MonoBehaviour
                     {
                         if (ie.Value.barSlot != 0)
                         {
-                            hotBarDisplayHolders[ie.Value.barSlot - 1].sprite = null;
-                            hotBarDisplayHolders[ie.Value.barSlot - 1].GetComponentInChildren<Text>().text = "0";
+                            barDisplay[ie.Value.barSlot - 1].sprite = null;
+                            barDisplay[ie.Value.barSlot - 1].GetComponentInChildren<Text>().text = "0";
                         }
 
                         ie.Value.invEntry.UseItem();
@@ -299,7 +300,7 @@ public class Inventory : MonoBehaviour
                 {
                     ie.Value.invEntry.UseItem();
                     ie.Value.stackSize -= 1;
-                    hotBarDisplayHolders[ie.Value.barSlot - 1].GetComponentInChildren<Text>().text = ie.Value.stackSize.ToString();
+                    barDisplay[ie.Value.barSlot - 1].GetComponentInChildren<Text>().text = ie.Value.stackSize.ToString();
                     break;
                 }
             }
