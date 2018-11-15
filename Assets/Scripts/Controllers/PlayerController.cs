@@ -12,13 +12,14 @@ public class PlayerController : MonoBehaviour
     float originSpeed;
     private bool playerMoving, attacking;
     private float attackTimeCounter;
-    Rigidbody2D rigidbody;
+    Rigidbody2D body;
     CapsuleCollider2D bodycollider;
     Vector2 move, lastMove;
     
     private GameObject attackTarget;
     public bool isAlive = true;
-    Transform playerTransform; 
+    Transform playerTransform;
+    CharacterStats stats;
 
     Animator animator;
     
@@ -27,15 +28,15 @@ public class PlayerController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         bodycollider = GetComponent<CapsuleCollider2D>();
-        rigidbody = GetComponent<Rigidbody2D>();
-        
-        
-        //stats = null; //TODO
+        body = GetComponent<Rigidbody2D>();
+        stats = GetComponent<CharacterStats>();
+
+       
     }
 
     /// CALEB ADDED
-    //public SimpleHealthBar healthBar;
-    //public SimpleHealthBar sanityBar;
+   public SimpleHealthBar healthBar;
+   public SimpleHealthBar sanityBar;
 
     void Start()
     {
@@ -50,38 +51,32 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    public void WeaponHit() 
+    public void Attack() 
     {
-
+        var weapon = stats.GetCurrentWeapon();
+        if (weapon != null)
+        {
+            StopAllCoroutines();
+        }
+        animator.SetBool("attacking", true);
+        //animator.SetTrigger()
 
     }
-/*    public bool Spikes()
+
+
+   public void Spikes()
     {
         if (bodycollider.IsTouchingLayers(LayerMask.GetMask("Spikes")))
         {
             isAlive = false;
             playerMoving = false;
-            int speed = 0;
-
-
-
-            //TODO: Fix terrible Spaghetti code
-            animator.SetFloat("lastVert", speed);
-            animator.SetFloat("lastHorz", speed);
-
-            animator.SetFloat("verticalSpeed", speed);
-            animator.SetFloat("horizontalSpeed", speed);
+            int speed = 0;           
             animator.SetBool("playerMoving", playerMoving);
-            rigidbody2D.velocity = new Vector2(speed, speed);
-
-            animator.SetTrigger("Dying");
-
-
-
-            return true;
+            body.velocity = new Vector2(speed, speed);
+            animator.SetTrigger("Dying");            
         }
-        return false;
+        
     }
-*/ 
+
 }
 

@@ -31,8 +31,7 @@ public class PlayerAttack : MonoBehaviour {
             timeBtwAttack -= Time.deltaTime;
         }        
 	}
-    //replace OnDrawGizmosSelected with the below command to have the wireframe drawn no matter what is selected
-    //void OnDrawGizmos()
+
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

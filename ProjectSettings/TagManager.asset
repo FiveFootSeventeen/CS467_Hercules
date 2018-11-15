@@ -6,6 +6,7 @@ TagManager:
   tags:
   - UIManager
   - MainMenu
+  - Weapon
   layers:
   - Default
   - TransparentFX

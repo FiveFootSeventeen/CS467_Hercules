@@ -185,20 +185,20 @@ public class Inventory : MonoBehaviour
 
     private void AddItemToBar(InventoryEntry item)
     {
-        int hotBarCounter = 0;
+        int barCounter = 0;
         bool increaseCount = false;
 
 
         foreach (Image images in barDisplay)
         {
-            hotBarCounter += 1;
+            barCounter += 1;
 
             if (item.barSlot == 0)
             {
                 if (images.sprite == null)
                 {
                    
-                    item.barSlot = hotBarCounter;
+                    item.barSlot = barCounter;
 
                     images.sprite = item.barSprite;
                     increaseCount = true;
