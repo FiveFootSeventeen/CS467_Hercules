@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+
 [CreateAssetMenu(fileName = "stats", menuName = "Character/Stats", order = 1)]
+
 public class CharacterStats_SO : ScriptableObject
 {
     public Events.EventIntegerEvent OnLevelUp;
-    public Events.EventIntegerEvent onPlayerDMG;
-    public Events.EventIntegerEvent onPlayerGainHP;
+    public Events.EventIntegerEvent OnPlayerDMG;
+    public Events.EventIntegerEvent OnPlayerGainHP;
+    public Events.EventIntegerEvent OnPlayerGainSanity;
     public UnityEvent OnPlayerDeath;
     public UnityEvent OnPlayerInit;
 
-    [System.Serializable]
+
     public class CharLevel
     {
         public int maxHealth;
@@ -64,7 +67,7 @@ public class CharacterStats_SO : ScriptableObject
         }
 
         if (isPlayer)
-            onPlayerGainHP.Invoke(hpAmt);
+            OnPlayerGainHP.Invoke(hpAmt);
 
     }
 
@@ -123,7 +126,7 @@ public class CharacterStats_SO : ScriptableObject
         currentHealth -= amount;
 
         if (isPlayer)
-            onPlayerDMG.Invoke(amount);
+            OnPlayerDMG.Invoke(amount);
 
         if (currentHealth <= 0)
         {

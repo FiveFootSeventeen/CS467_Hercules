@@ -89,7 +89,7 @@ public class PlayerControllerScript : MonoBehaviour
             lastMove.y = move.y = Mathf.Lerp(0, Input.GetAxis("Vertical") * maxSpeed, 0.8f);   //Get the vertical axis, interpolate between 0 and the input by 0.8
         }
 
-        if (move.x != 0 || move.y != 0)
+        if (move.x != 0f || move.y != 0)
         {
             playerMoving = true;
             SetLastParams(lastMove);
