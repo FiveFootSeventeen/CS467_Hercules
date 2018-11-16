@@ -48,5 +48,23 @@ MonoBehaviour:
   maxInventory: 20
   currentInventory: 0
   charExperience: 0
-  charLevel: 1
-  charLevels: []
+  charLevel: 0
+  charLevels:
+  - maxHealth: 120
+    maxSanity: 100
+    maxGems: 100
+    baseDamage: 11
+    maxInventory: 20
+    requiredXP: 100
+  - maxHealth: 150
+    maxSanity: 100
+    maxGems: 100
+    baseDamage: 12
+    maxInventory: 20
+    requiredXP: 250
+  - maxHealth: 180
+    maxSanity: 100
+    maxGems: 100
+    baseDamage: 13
+    maxInventory: 20
+    requiredXP: 1000
