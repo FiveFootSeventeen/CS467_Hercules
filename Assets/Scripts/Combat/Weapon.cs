@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Weapon.asset", menuName = "Attack/Weapon")]
 public class Weapon : AttackSystem
 {
-    public Rigidbody weaponPreb;
+    public Rigidbody2D weaponPreb;
 
     public void ExecuteAttack(GameObject attacker, GameObject defender)
     {

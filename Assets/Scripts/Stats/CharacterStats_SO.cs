@@ -15,7 +15,7 @@ public class CharacterStats_SO : ScriptableObject
     public UnityEvent OnPlayerDeath;
     public UnityEvent OnPlayerInit;
 
-
+    [System.Serializable]
     public class CharLevel
     {
         public int maxHealth;
@@ -109,7 +109,7 @@ public class CharacterStats_SO : ScriptableObject
 
     public void EquipWeapon(LootItem weaponPickUp, Inventory charInventory, GameObject weaponSlot)
     {
-        Rigidbody newWeapon;
+        Rigidbody2D newWeapon;
 
         weapon = weaponPickUp;
         charInventory.inventoryDisplay[2].sprite = weaponPickUp.itemDefinition.itemIcon;

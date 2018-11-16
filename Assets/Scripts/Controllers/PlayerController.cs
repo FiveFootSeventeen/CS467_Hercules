@@ -42,13 +42,13 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        
+        /* Need to complete listeners first
         stats.characterDefinition.OnLevelUp.AddListener(GameManager.Instance.OnLevelUp);
         stats.characterDefinition.OnPlayerDMG.AddListener(GameManager.Instance.OnPlayerDMG);
         stats.characterDefinition.OnPlayerGainHP.AddListener(GameManager.Instance.OnPlayerGainHP);
         stats.characterDefinition.OnPlayerDeath.AddListener(GameManager.Instance.OnPlayerDeath);
         stats.characterDefinition.OnPlayerInit.AddListener(GameManager.Instance.OnPlayerInit);
-
+        */
         stats.characterDefinition.OnPlayerInit.Invoke();
 
     }

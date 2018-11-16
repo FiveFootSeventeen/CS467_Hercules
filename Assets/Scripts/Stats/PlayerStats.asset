@@ -16,12 +16,17 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Events+EventIntegerEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  onPlayerDMG:
+  OnPlayerDMG:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: Events+EventIntegerEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  onPlayerGainHP:
+  OnPlayerGainHP:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Events+EventIntegerEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnPlayerGainSanity:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: Events+EventIntegerEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -50,21 +55,15 @@ MonoBehaviour:
   charExperience: 0
   charLevel: 0
   charLevels:
-  - maxHealth: 120
+  - maxHealth: 100
     maxSanity: 100
-    maxGems: 100
-    baseDamage: 11
+    maxGems: 0
+    baseDamage: 10
     maxInventory: 20
     requiredXP: 100
-  - maxHealth: 150
+  - maxHealth: 100
     maxSanity: 100
-    maxGems: 100
+    maxGems: 0
     baseDamage: 12
     maxInventory: 20
-    requiredXP: 250
-  - maxHealth: 180
-    maxSanity: 100
-    maxGems: 100
-    baseDamage: 13
-    maxInventory: 20
-    requiredXP: 1000
+    requiredXP: 200
