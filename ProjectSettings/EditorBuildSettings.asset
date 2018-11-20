@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Boot.unity
-    guid: 93acd626d6fde93419fb23755f82f9e2
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: aca85f6e35eefd14a90482eb0ce41472
@@ -15,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/CharacterSelect.unity
     guid: 7cb78f713ffc0784c80781b97b29907c
   - enabled: 1
-    path: Assets/Scenes/Game.TwilightScene.unity
-    guid: 29624b645a78968439152672b57e8ccb
+    path: Assets/Scenes/Brent_Scene.unity
+    guid: 7ddb31556d54b4703bf69e0433c69bd7
   m_configObjects: {}
