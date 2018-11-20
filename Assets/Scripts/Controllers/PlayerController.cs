@@ -6,32 +6,35 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public Rigidbody2D playerRB;
 
-    public float moveSpeed = 1.05f;
+    //Prevent duplicate players
+    public static PlayerController instance;
+
+    public float moveSpeed = 2f;
     public float runMultiplier = 2f;
-    public float maxSpeed = 3f;
+    //public float maxSpeed = 3f;
     public float attackTime = 2f;
-
+    public string levelTransitionName; //exit or entrance we just used
     protected bool playerMoving, attacking;
     protected float attackTimeCounter;
-    Rigidbody2D body;
+    
     CapsuleCollider2D bodycollider;
-    Vector2 move, lastMove;
-
+   
+    
     protected GameObject attackTarget;
     public bool isAlive = true;
     CharacterStats stats;
 
-    Animator anim;
+    public Animator playerAnim;
 
     
     //CharacterStats stats;
     void Awake()
     {
-        anim = GetComponent<Animator>();
-
+        playerAnim = GetComponent<Animator>();
         bodycollider = GetComponent<CapsuleCollider2D>();
-        body = GetComponent<Rigidbody2D>();
+        playerRB = GetComponent<Rigidbody2D>();
         stats = GetComponent<CharacterStats>();
        
     }
@@ -42,6 +45,16 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        if (instance == null) 
+        {
+            //When game starts, instance value set to this player
+            instance = this;
+        } else
+        {
+            Destroy(gameObject);
+        }
+
+        DontDestroyOnLoad(gameObject);
         /* Need to complete listeners first
         stats.characterDefinition.OnLevelUp.AddListener(GameManager.Instance.OnLevelUp);
         stats.characterDefinition.OnPlayerDMG.AddListener(GameManager.Instance.OnPlayerDMG);
@@ -56,8 +69,8 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         if (!isAlive) { return; }
-        move = Vector2.zero;
-        playerMoving = false;
+
+        /*
 
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
@@ -68,7 +81,7 @@ public class PlayerController : MonoBehaviour
         {
             Attack("thrustAttack", 1.0f);
         }
-
+        */
 
         Move();
 
@@ -82,8 +95,8 @@ public class PlayerController : MonoBehaviour
         {
             StopAllCoroutines();
         }
-        anim.SetBool("attacking", true);
-        anim.SetTrigger(attackType);
+        playerAnim.SetBool("attacking", true);
+        playerAnim.SetTrigger(attackType);
         attacking = true;
         attackTimeCounter = attackTime;
 
@@ -93,60 +106,23 @@ public class PlayerController : MonoBehaviour
         }
 
         attacking = false;
-        anim.SetBool("attacking", false);
+        playerAnim.SetBool("attacking", false);
     }
 
 
     public void Move()
     {
 
+        playerRB.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * moveSpeed;
 
-        if (Input.GetKey("left shift") || Input.GetKey("right shift"))  //Add the running multiplier
+        playerAnim.SetFloat("moveX", playerRB.velocity.x);
+        playerAnim.SetFloat("moveY", playerRB.velocity.y);
+
+        if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
         {
-            Debug.Log("Running now.\n");
-            maxSpeed = 2 * runMultiplier;
-            anim.speed = 2F;                        //Increase the animation speed for running
+            playerAnim.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
+            playerAnim.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
         }
-        else {
-            anim.speed = 1f;
-        }
-
-        lastMove.x = move.x = Mathf.Lerp(0, Input.GetAxis("Horizontal") * maxSpeed, 0.8f); //Get the horizontal axis, interpolate between 0 and the input by 0.8
-        lastMove.y = move.y = Mathf.Lerp(0, Input.GetAxis("Vertical") * maxSpeed, 0.8f);   //Get the vertical axis, interpolate between 0 and the input by 0.8
-
-
-        if (move.x != 0f || move.y != 0)
-        {
-
-            playerMoving = true;
-            SetLastParams(lastMove);
-        }
-
-        anim.SetFloat("verticalSpeed", move.x);     //verticalSpeed variable in the anim controller to move.x
-        anim.SetFloat("horizontalSpeed", move.y);   //horizontalSpeed variable in the anim controller to move.y
-        anim.SetBool("playerMoving", playerMoving); //Set the playerMoving parameter in the anim
-        
-        body.velocity = new Vector2(move.x, move.y);    //Move the player
-        maxSpeed = moveSpeed;     //Reset the player's speed
-    }
-
-    protected void SetLastParams(Vector2 lastMove)
-    {
-        Vector2 lastParams = new Vector2(lastMove.x, lastMove.y);
-
-        lastMove.x = Mathf.Abs(lastMove.x);     //Set x and y to their absolute values
-        lastMove.y = Mathf.Abs(lastMove.y);
-
-        lastParams.x = lastParams.x >= 0 ? 1 : -1;  //The x and y values of lastParams must be either 1 or -1 to make the animation transitions work correctly
-        lastParams.y = lastParams.y >= 0 ? 1 : -1;
-
-        if (lastMove.x >= lastMove.y)       //For animation transistion to work correctly either x or y must be 0
-            lastParams.y = 0;               //Look at the values of lastMove and keep the greater value as 1 or -1, change the lesser value to 0
-        else
-            lastParams.x = 0;
-
-        anim.SetFloat("lastVert", lastParams.x);      //lastVert variable in the anim controller to move.x
-        anim.SetFloat("lastHorz", lastParams.y);      //lastHorz variable in the anim controller to move.y
     }
 
     public void Spikes()
@@ -155,10 +131,10 @@ public class PlayerController : MonoBehaviour
         {
             isAlive = false;
             playerMoving = false;
-            int speed = 0;           
-            anim.SetBool("playerMoving", playerMoving);
-            body.velocity = new Vector2(speed, speed);
-            anim.SetTrigger("Dying");            
+            int speed = 0;
+            playerAnim.SetBool("playerMoving", playerMoving);
+            playerRB.velocity = new Vector2(speed, speed);
+            playerAnim.SetTrigger("Dying");            
         }
         
     }
