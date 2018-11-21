@@ -6,6 +6,7 @@ using UnityEngine;
 public class Weapon : AttackSystem
 {
     public Rigidbody2D weaponPreb;
+    
 
     public void ExecuteAttack(GameObject attacker, GameObject defender)
     {

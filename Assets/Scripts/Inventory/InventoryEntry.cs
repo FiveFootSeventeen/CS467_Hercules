@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class InventoryEntry
+public class InventoryEntry : MonoBehaviour
 {
     public LootItem invEntry;
     public int stackSize;
