@@ -51,9 +51,11 @@ public class PlayerController : MonoBehaviour
             instance = this;
         } else
         {
-            Destroy(gameObject);
+            if(instance != this)
+            {
+                Destroy(gameObject);
+            }           
         }
-
         DontDestroyOnLoad(gameObject);
         /* Need to complete listeners first
         stats.characterDefinition.OnLevelUp.AddListener(GameManager.Instance.OnLevelUp);

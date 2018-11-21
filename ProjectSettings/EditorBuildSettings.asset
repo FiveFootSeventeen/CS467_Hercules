@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Brent_Scene.unity
     guid: 7ddb31556d54b4703bf69e0433c69bd7
+  - enabled: 1
+    path: Assets/Scenes/Game.PlasmaScene.unity
+    guid: 157cfd8deb62281438d302a1ba9b185e
   m_configObjects: {}
