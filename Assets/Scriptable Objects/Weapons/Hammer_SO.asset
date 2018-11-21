@@ -19,7 +19,7 @@ MonoBehaviour:
   itemSpawnObject: {fileID: 0}
   weaponSlotObject: {fileID: 11400000, guid: b2bc0366bebf8794b9359a8c39910fc5, type: 2}
   isEquipped: 1
-  isInteractable: 0
+  isInteractable: 1
   isStorable: 1
   isUnique: 0
   isStackable: 0

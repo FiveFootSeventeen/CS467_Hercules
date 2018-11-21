@@ -9,8 +9,8 @@ public class UIFade : MonoBehaviour {
     public static UIFade instance;
     public Image fadeScreen;
     public float fadeSpeed = 1f;
-    private bool fade;
-    private bool unfade;
+    public bool fade;
+    public bool unfade;
 
 	// Use this for initialization
 	void Start () {

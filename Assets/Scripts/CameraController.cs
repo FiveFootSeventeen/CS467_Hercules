@@ -24,7 +24,7 @@ public class CameraController : MonoBehaviour {
         halfWidth = halfHeight * Camera.main.aspect; 
 
         bottomLeftLimit = map.localBounds.min + new Vector3(halfWidth, halfHeight, 0f);
-        topRightLimit = map.localBounds.max + new Vector3(-halfWidth, -halfHeight, 0f);
+        topRightLimit = map.localBounds.max - new Vector3(halfWidth, halfHeight, 0f);
 
 
 	}
