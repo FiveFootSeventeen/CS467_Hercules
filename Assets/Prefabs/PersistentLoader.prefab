@@ -51,5 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1b275bf73351f54cbd366bd26f5b6bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UICanvas: {fileID: 0}
+  UICanvas: {fileID: 1290530815393658, guid: 99fdd3f18ed79554e9579e380f3c0de8, type: 2}
   player: {fileID: 1600529830321454, guid: 1ea4370280e92d947aff0725c1088ca6, type: 2}
+  AudioManager: {fileID: 0}

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine.AI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -22,8 +23,27 @@ public class PlayerController : MonoBehaviour
     public bool playerMoving = true;
     
     CapsuleCollider2D bodycollider;
-   
-    
+
+    /// CALEB ADDED
+    public SimpleHealthBar healthBar;
+    public SimpleHealthBar sanityBar;
+
+    [Header("Effects")]
+    public AudioClip walkFX;
+    public AudioClip spikes;
+
+    double timeBtwnSteps = 0.317;
+    double ellapsedStepTime;
+
+    [Header("Music")]
+    public AudioClip twilightMusic;
+    public AudioClip mainMusic;
+    public AudioClip voidMusic;
+    public AudioClip plasmaMusic;
+
+    private AudioSource[] sources;
+
+
     protected GameObject attackTarget;
     public bool isAlive = true;
     CharacterStats stats;
@@ -41,9 +61,6 @@ public class PlayerController : MonoBehaviour
        
     }
 
-    /// CALEB ADDED
-   public SimpleHealthBar healthBar;
-   public SimpleHealthBar sanityBar;
 
     void Start()
     {
@@ -67,6 +84,14 @@ public class PlayerController : MonoBehaviour
         stats.characterDefinition.OnPlayerInit.AddListener(GameManager.Instance.OnPlayerInit);
         */
         stats.characterDefinition.OnPlayerInit.Invoke();
+
+        sources = AudioManager.Instance.GetComponents<AudioSource>();
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Brent_Sandbox"))
+        {
+            sources[1].loop = true;
+            AudioManager.Instance.PlayMusic(twilightMusic);
+        }
+
 
     }
 

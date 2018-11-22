@@ -6,6 +6,7 @@ public class PersistentLoader : MonoBehaviour {
 
     public GameObject UICanvas;
     public GameObject player;
+    
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +19,7 @@ public class PersistentLoader : MonoBehaviour {
         {
             PlayerController.instance = Instantiate(player).GetComponent<PlayerController>();
         }
+       
 	}
 	
 	// Update is called once per frame

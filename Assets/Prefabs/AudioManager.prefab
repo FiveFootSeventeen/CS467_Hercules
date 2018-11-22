@@ -243,7 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1346d63a80baee4b86c0ef0db9fdcef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EffectsSource: {fileID: 0}
-  MusicSource: {fileID: 0}
+  EffectsSource: {fileID: 82937441366873376}
+  MusicSource: {fileID: 82937441366873376}
   LowPitchRange: 0.95
   HighPitchRange: 1.05

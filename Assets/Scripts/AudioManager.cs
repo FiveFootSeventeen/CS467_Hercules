@@ -13,7 +13,7 @@ public class AudioManager : MonoBehaviour
     public float HighPitchRange = 1.05f;
 
     // Singleton static instance.
-    public static AudioManager Instance = null;
+    public static AudioManager Instance;
 
 
     private float musicVol = 1f;
