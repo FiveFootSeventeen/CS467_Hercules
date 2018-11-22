@@ -38,12 +38,13 @@ public class DialogManager : MonoBehaviour {
 
                     if (currentLine >= dialogLines.Length)
                     {
-                        CheckSpeaker();
+                       
                         dialogBox.SetActive(false);
+                        PlayerController.instance.playerMoving = true;
                     }
                     else
                     {
-                        //CheckSpeaker();
+                        CheckSpeaker();
                         dialogText.text = dialogLines[currentLine];
                     }
                 } else
@@ -72,7 +73,7 @@ public class DialogManager : MonoBehaviour {
     {
         if (dialogLines[currentLine].StartsWith("n-"))
         {
-            speakerText.text = dialogLines[currentLine];
+            speakerText.text = dialogLines[currentLine].Replace("n-","");
             currentLine++;
         }
     }

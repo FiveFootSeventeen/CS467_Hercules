@@ -173,6 +173,7 @@ MonoBehaviour:
   runMultiplier: 2
   attackTime: 2
   levelTransitionName: 
+  playerMoving: 1
   isAlive: 1
   playerAnim: {fileID: 95679756367889104}
   healthBar: {fileID: 0}
@@ -242,12 +243,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  itemEntry:
-    invEntry: {fileID: 0}
-    stackSize: 0
-    inventorySlot: 0
-    barSlot: 0
-    barSprite: {fileID: 0}
+  itemEntry: {fileID: 0}
 --- !u!212 &212591683609701112
 SpriteRenderer:
   m_ObjectHideFlags: 1
