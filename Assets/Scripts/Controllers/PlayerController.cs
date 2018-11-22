@@ -16,8 +16,10 @@ public class PlayerController : MonoBehaviour
     //public float maxSpeed = 3f;
     public float attackTime = 2f;
     public string levelTransitionName; //exit or entrance we just used
-    protected bool playerMoving, attacking;
+    protected bool attacking;
     protected float attackTimeCounter;
+
+    public bool playerMoving = true;
     
     CapsuleCollider2D bodycollider;
    
@@ -70,7 +72,11 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!isAlive) { return; }
+        if (!isAlive)
+        {
+            Death();
+            return;           
+        }
 
         /*
 
@@ -84,10 +90,10 @@ public class PlayerController : MonoBehaviour
             Attack("thrustAttack", 1.0f);
         }
         */
-
         Move();
+      
 
-        Spikes();
+       
     }
 
     public void Attack(string attackType, float attackTime) 
@@ -114,31 +120,37 @@ public class PlayerController : MonoBehaviour
 
     public void Move()
     {
-
-        playerRB.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * moveSpeed;
+        if (playerMoving)
+        {
+            playerRB.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * moveSpeed;
+        }
+        else
+        {
+            playerRB.velocity = Vector2.zero;
+        }
+       
 
         playerAnim.SetFloat("moveX", playerRB.velocity.x);
         playerAnim.SetFloat("moveY", playerRB.velocity.y);
 
         if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
         {
-            playerAnim.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
-            playerAnim.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
+            if (playerMoving)
+            {
+                playerAnim.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
+                playerAnim.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
+            }
+            
         }
     }
 
-    public void Spikes()
+    public void Death()
     {
-        if (bodycollider.IsTouchingLayers(LayerMask.GetMask("Spikes")))
-        {
-            isAlive = false;
-            playerMoving = false;
-            int speed = 0;
-            playerAnim.SetBool("playerMoving", playerMoving);
-            playerRB.velocity = new Vector2(speed, speed);
-            playerAnim.SetTrigger("Dying");            
-        }
-        
+
+            playerAnim.SetBool("playerMoving", false);
+            playerRB.velocity = Vector2.zero;
+            playerAnim.SetTrigger("Dying");
+
     }
 
 }
