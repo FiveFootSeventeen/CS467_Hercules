@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerControllerScript : MonoBehaviour
@@ -27,6 +28,23 @@ public class PlayerControllerScript : MonoBehaviour
     public SimpleHealthBar healthBar;
     public SimpleHealthBar sanityBar;
 
+    [Header("Effects")]
+    public AudioClip walkFX;
+    public AudioClip spikes;
+
+    double timeBtwnSteps = 0.317;
+    double ellapsedStepTime;
+
+    [Header("Music")]
+    public AudioClip twilightMusic;
+    public AudioClip mainMusic;
+    public AudioClip voidMusic;
+    public AudioClip plasmaMusic;
+
+    private AudioSource[] sources;
+
+    
+
     void Start()
     {
         if (GameController.control.characterSelect == 1)
@@ -47,6 +65,13 @@ public class PlayerControllerScript : MonoBehaviour
         originSpeed = maxSpeed;
         rigidbody2D = chosenCharacter.GetComponent<Rigidbody2D>();
         bodycollider = chosenCharacter.GetComponent<CapsuleCollider2D>();
+
+        sources = AudioManager.Instance.GetComponents<AudioSource>();        
+        if (SceneManager.GetActiveScene () == SceneManager.GetSceneByName ("Game.TwilightScene copy"))
+        {
+            sources[1].loop = true;
+            AudioManager.Instance.PlayMusic(twilightMusic);
+        }
 
     }
 
@@ -92,6 +117,14 @@ public class PlayerControllerScript : MonoBehaviour
         if (move.x != 0f || move.y != 0)
         {
             playerMoving = true;
+            ellapsedStepTime += Time.deltaTime;
+            if (ellapsedStepTime >= timeBtwnSteps)
+            {
+                AudioManager.Instance.Play(walkFX);
+                ellapsedStepTime -= timeBtwnSteps;
+            }
+
+
             SetLastParams(lastMove);
         }
 
@@ -122,10 +155,13 @@ public class PlayerControllerScript : MonoBehaviour
             anim.SetFloat("horizontalSpeed", speed);
             anim.SetBool("playerMoving", playerMoving);
             rigidbody2D.velocity = new Vector2(speed, speed);
-          
-            anim.SetTrigger("Dying");
-            
 
+            AudioManager.Instance.Play(spikes);
+
+            anim.SetTrigger("Dying");
+
+            sources[1].loop = false;
+            AudioManager.Instance.MusicSource.Stop();         
 
             return true;
         }
