@@ -38,12 +38,14 @@ public void SpawnWave()
         OnWaveSpawn.Invoke();
     }
     activeEnemies = Waves[currentWave].EnemyNumber;
+        print("active enemies: " + activeEnemies);
 
     for (int i = 0; i <= Waves[currentWave].EnemyNumber - 1; i++)
     {
+            print("spawning");
         Spawn spawnPoint = selectRandomSpawn();
         GameObject enemy = Instantiate(selectRandomEnemy(), spawnPoint.transform.position, Quaternion.identity);
-        enemy.GetComponent<NPCController>().waypointList = findClosestWayPoint(enemy.transform);
+        enemy.GetComponent<NPCController>().currentWaypoint = findClosestWayPoint(enemy.transform);
 
         CharacterStats stats = enemy.GetComponent<CharacterStats>();
         EnemyWave cur = Waves[currentWave];
@@ -81,7 +83,7 @@ public void SpawnWave()
         return spawnPoints[randSpawn];
     }
 
-    private Transform[] findClosestWayPoint(Transform enemyTransform)
+    private Waypoint findClosestWayPoint(Transform enemyTransform)
     {
         Vector3 enemyPos = enemyTransform.position;
 
@@ -89,15 +91,6 @@ public void SpawnWave()
             FindObjectsOfType<Waypoint>().OrderBy(
                 w => (w.transform.position - enemyPos).sqrMagnitude).First();
 
-        Transform parent = closestPoint.transform.parent;
-
-        Transform[] all = parent.GetComponentsInChildren<Transform>();
-
-        var transforms = 
-            from t in all
-            where t != parent
-            select t;
-
-        return transforms.ToArray();
+        return closestPoint;
     }
 }
