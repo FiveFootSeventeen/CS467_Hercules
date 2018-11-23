@@ -7,6 +7,7 @@ public class PersistentLoader : MonoBehaviour {
 
     public GameObject UICanvas;
     public GameObject Audio;
+    public GameObject gameManager;
     
     private GameObject canvas;
    
@@ -19,8 +20,10 @@ public class PersistentLoader : MonoBehaviour {
         {
            UIFade.instance = canvas.GetComponent<UIFade>();
         }
-        
-        
+        if (GameManager.instance == null)
+        {
+            Instantiate(gameManager);
+        }
         
         if (AudioManager.Instance == null)
         {
