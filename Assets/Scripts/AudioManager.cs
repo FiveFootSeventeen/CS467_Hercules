@@ -16,10 +16,6 @@ public class AudioManager : MonoBehaviour
     public AudioMixerGroup musicMixer;
     public AudioMixerGroup sfxMixer;
 
-    
-    
-
-
     // Singleton static instance.
     public static AudioManager Instance;
 

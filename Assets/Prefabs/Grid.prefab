@@ -11,23 +11,6 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1562888332968330}
   m_IsPrefabAsset: 1
---- !u!1 &1367742472499734
-GameObject:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4423346042244152}
-  - component: {fileID: 61767049976798244}
-  - component: {fileID: 114520999024885148}
-  m_Layer: 5
-  m_Name: SpikeDialog
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1562888332968330
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,7 +73,6 @@ GameObject:
   - component: {fileID: 8195094281972214638}
   - component: {fileID: 3664157343048733220}
   - component: {fileID: 2113883507020379662}
-  - component: {fileID: 114837848931999818}
   m_Layer: 11
   m_Name: Spikes
   m_TagString: Untagged
@@ -111,19 +93,6 @@ Transform:
   m_Father: {fileID: 4751794404115548}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4423346042244152
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1367742472499734}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.12, y: -0.7, z: 0}
-  m_LocalScale: {x: 2.55, y: 11.263956, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4672126618809744}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4672126618809744
 Transform:
   m_ObjectHideFlags: 1
@@ -133,8 +102,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4423346042244152}
+  m_Children: []
   m_Father: {fileID: 4751794404115548}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -167,57 +135,6 @@ Transform:
   m_Father: {fileID: 4751794404115548}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61767049976798244
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1367742472499734}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!114 &114520999024885148
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1367742472499734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f3d6f9d3ac110c43ad062b39f5df536, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lines:
-  - n-Player
-  - These spikes look dangerous..
-  - I should be careful!
---- !u!114 &114837848931999818
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1990059977958992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 729307cd5a4a4ad448c0367fe1d59313, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!19719996 &2113883505909195590
 TilemapCollider2D:
   m_ObjectHideFlags: 1
