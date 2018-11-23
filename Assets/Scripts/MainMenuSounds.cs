@@ -16,7 +16,7 @@ public class MainMenuSounds : MonoBehaviour {
 
     // Use this for initialization
     public void optionsSound () {
-        AudioManager.Instance.Play(optionsFX);
+        AudioManager.Instance.PlaySFX(optionsFX);
 	}
     public IEnumerator musicSliderVol()
     {
@@ -26,6 +26,6 @@ public class MainMenuSounds : MonoBehaviour {
     }
     public void FXSliderVol()
     {
-        AudioManager.Instance.Play(sliderFX);
+        AudioManager.Instance.PlaySFX(sliderFX);
     }
 }

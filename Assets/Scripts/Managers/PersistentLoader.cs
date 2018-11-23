@@ -6,6 +6,7 @@ public class PersistentLoader : MonoBehaviour {
 
     public GameObject UICanvas;
     public GameObject player;
+    public GameObject Audio;
     
 
 	// Use this for initialization
@@ -18,6 +19,11 @@ public class PersistentLoader : MonoBehaviour {
         if (PlayerController.instance == null)
         {
             PlayerController.instance = Instantiate(player).GetComponent<PlayerController>();
+        }
+
+        if (AudioManager.Instance == null)
+        {
+            AudioManager.Instance = Instantiate(Audio).GetComponent<AudioManager>();
         }
        
 	}

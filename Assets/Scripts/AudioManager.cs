@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -8,12 +11,23 @@ public class AudioManager : MonoBehaviour
     public AudioSource EffectsSource;
     public AudioSource MusicSource;
 
+
+    public AudioSource[] sfx;
+    public AudioSource[] music;
+
+
+
+    // Singleton static instance.
+    public static AudioManager Instance;
+
     // Random pitch adjustment range.
     public float LowPitchRange = .95f;
     public float HighPitchRange = 1.05f;
 
-    // Singleton static instance.
-    public static AudioManager Instance;
+   
+
+
+    [Header("Music")]
 
 
     private float musicVol = 1f;
@@ -29,16 +43,30 @@ public class AudioManager : MonoBehaviour
 
         else if (Instance != this)
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(this.gameObject);
+    }
+
+    private void Start()
+    {
+        
+        
     }
 
     // Play a single clip through the sound effects source.
-    public void Play(AudioClip clip)
+    public void PlaySFX(AudioClip clip)
     {
         EffectsSource.clip = clip;
         EffectsSource.Play();
+    }
+
+    public void PlaySFX(int soundToPlay)
+    {
+        if (soundToPlay < sfx.Length)
+        {
+            sfx[soundToPlay].Play();
+        }
     }
 
     // Play a single clip through the music source.
@@ -48,36 +76,33 @@ public class AudioManager : MonoBehaviour
         MusicSource.Play();
     }
 
-    /* Play a random clip from an array, and randomize the pitch slightly.
-    public void RandomSoundEffect(params AudioClip[] clips)
+    public void PlayMusic(int musicToPlay)
     {
-        int randomIndex = Random.Range(0, clips.Length);
-        float randomPitch = Random.Range(LowPitchRange, HighPitchRange);
-
-        EffectsSource.pitch = randomPitch;
-        EffectsSource.clip = clips[randomIndex];
-        EffectsSource.Play();
+        if (!music[musicToPlay].isPlaying)
+        {
+            StopMusic();
+            if (musicToPlay < music.Length)
+            {
+                music[musicToPlay].Play();
+            }
+        }
+            
     }
-    */
+    
+    public void StopMusic()
+    {
+        for (int i = 0; i < music.Length; i++)
+        {
+            music[i].Stop();
+        }
+    }
+
     private void Update()
     {
-        MusicSource.volume = musicVol;
-        EffectsSource.volume = SFXVol;
+
     }
 
-    public void SetVolume(float vol)
-    {
-        musicVol = vol;
-        GameController.control.musicVol = musicVol;
-        GameController.control.Save();
-    }
 
-    public void SetSFXVolume(float vol)
-    {
-        SFXVol = vol;
-        GameController.control.soundFXVol = SFXVol;
-        GameController.control.Save();
-    }
 
 }
 

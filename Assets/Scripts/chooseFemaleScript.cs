@@ -12,7 +12,7 @@ public class chooseFemaleScript : MonoBehaviour {
     {
         GameController.control.characterSelect = 1;
         GameController.control.Save();
-        AudioManager.Instance.Play(optionFX);
+        AudioManager.Instance.PlaySFX(optionFX);
         SceneManager.LoadScene(2);
     }
 }

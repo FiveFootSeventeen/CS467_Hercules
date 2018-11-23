@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 
-[CreateAssetMenu(fileName = "stats", menuName = "Character/Stats", order = 1)]
+[CreateAssetMenu(fileName = "stats", menuName = "Character/Character", order = 1)]
 
 public class CharacterStats_SO : ScriptableObject
 {
@@ -33,13 +33,15 @@ public class CharacterStats_SO : ScriptableObject
     public LootItem misc1 { get; private set; }
     public LootItem misc2 { get; private set; }
 
-    public int maxHealth = 0;
+    public int charLevel = 1;
+
+    public int maxHealth = 100;
     public int currentHealth = 0;
 
     public int maxGems = 0;
     public int currentGems = 0;
 
-    public int maxSanity = 0;
+    public int maxSanity = 100;
     public int currentSanity = 0;
 
     public int baseDamage = 0;
@@ -49,7 +51,7 @@ public class CharacterStats_SO : ScriptableObject
     public int currentInventory = 0;
 
     public int charExperience = 0;
-    public int charLevel = 0;
+   
 
     public CharLevel[] charLevels;
     #endregion

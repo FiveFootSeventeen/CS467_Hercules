@@ -12,7 +12,7 @@ public class chooseMaleCharacter : MonoBehaviour {
     {
         GameController.control.characterSelect = 0;
         GameController.control.Save();
-        AudioManager.Instance.Play(optionFX);
+        AudioManager.Instance.PlaySFX(optionFX);
         SceneManager.LoadScene(2);
     }
 	

@@ -20,7 +20,8 @@ public class PlayerController : MonoBehaviour
     protected bool attacking;
     protected float attackTimeCounter;
 
-    public bool playerMoving = true;
+    public bool canMove = true;
+    public bool playerMoving = false;
     
     CapsuleCollider2D bodycollider;
 
@@ -28,21 +29,19 @@ public class PlayerController : MonoBehaviour
     public SimpleHealthBar healthBar;
     public SimpleHealthBar sanityBar;
 
-    [Header("Effects")]
-    public AudioClip walkFX;
-    public AudioClip spikes;
 
-    double timeBtwnSteps = 0.317;
-    double ellapsedStepTime;
 
-    [Header("Music")]
-    public AudioClip twilightMusic;
-    public AudioClip mainMusic;
-    public AudioClip voidMusic;
-    public AudioClip plasmaMusic;
+     double timeBtwnSteps = 0.317;
+     double ellapsedStepTime;
+    /*
+   [Header("Music")]
+   public AudioClip twilightMusic;
+   public AudioClip mainMusic;
+   public AudioClip voidMusic;
+   public AudioClip plasmaMusic;
 
-    private AudioSource[] sources;
-
+   private AudioSource[] sources;
+    */
 
     protected GameObject attackTarget;
     public bool isAlive = true;
@@ -60,7 +59,7 @@ public class PlayerController : MonoBehaviour
         stats = GetComponent<CharacterStats>();
        
     }
-
+   
 
     void Start()
     {
@@ -85,12 +84,10 @@ public class PlayerController : MonoBehaviour
         */
         stats.characterDefinition.OnPlayerInit.Invoke();
 
-        sources = AudioManager.Instance.GetComponents<AudioSource>();
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Brent_Sandbox"))
-        {
-            sources[1].loop = true;
-            AudioManager.Instance.PlayMusic(twilightMusic);
-        }
+       
+
+        
+        
 
 
     }
@@ -116,9 +113,9 @@ public class PlayerController : MonoBehaviour
         }
         */
         Move();
-      
+        
 
-       
+
     }
 
     public void Attack(string attackType, float attackTime) 
@@ -145,9 +142,11 @@ public class PlayerController : MonoBehaviour
 
     public void Move()
     {
-        if (playerMoving)
+        playerMoving = false;
+        if (canMove)
         {
             playerRB.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * moveSpeed;
+            
         }
         else
         {
@@ -160,7 +159,16 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
         {
-            if (playerMoving)
+            playerMoving = true;
+            ellapsedStepTime += Time.deltaTime;
+            if (ellapsedStepTime >= timeBtwnSteps)
+            {
+                PlayWalkSound();
+                ellapsedStepTime -= timeBtwnSteps;
+            }
+
+
+            if (canMove)
             {
                 playerAnim.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
                 playerAnim.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
@@ -171,11 +179,17 @@ public class PlayerController : MonoBehaviour
 
     public void Death()
     {
+        canMove = false;
+        playerAnim.SetBool("playerMoving", false);
+        playerRB.velocity = Vector2.zero;
+        playerAnim.SetTrigger("Dying");    
+    
+    }
 
-            playerAnim.SetBool("playerMoving", false);
-            playerRB.velocity = Vector2.zero;
-            playerAnim.SetTrigger("Dying");
 
+    public void PlayWalkSound()
+    {
+        AudioManager.Instance.PlaySFX(0);
     }
 
 }

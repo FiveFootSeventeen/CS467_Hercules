@@ -40,7 +40,7 @@ public class DialogManager : MonoBehaviour {
                     {
                        
                         dialogBox.SetActive(false);
-                        PlayerController.instance.playerMoving = true;
+                        PlayerController.instance.canMove = true;
                     }
                     else
                     {

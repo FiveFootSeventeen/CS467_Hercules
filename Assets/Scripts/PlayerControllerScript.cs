@@ -120,7 +120,7 @@ public class PlayerControllerScript : MonoBehaviour
             ellapsedStepTime += Time.deltaTime;
             if (ellapsedStepTime >= timeBtwnSteps)
             {
-                AudioManager.Instance.Play(walkFX);
+                AudioManager.Instance.PlaySFX(walkFX);
                 ellapsedStepTime -= timeBtwnSteps;
             }
 
@@ -156,7 +156,7 @@ public class PlayerControllerScript : MonoBehaviour
             anim.SetBool("playerMoving", playerMoving);
             rigidbody2D.velocity = new Vector2(speed, speed);
 
-            AudioManager.Instance.Play(spikes);
+            AudioManager.Instance.PlaySFX(spikes);
 
             anim.SetTrigger("Dying");
 

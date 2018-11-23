@@ -16,6 +16,9 @@ public class CameraController : MonoBehaviour {
     private float halfHeight;
     private float halfWidth;
 
+    public int musicToPlay;
+    private bool musicStarted;
+
 	void Start () {
         target = FindObjectOfType<PlayerController>().transform; //searches objects for scene and finds object with PlayerController script attached
 
@@ -37,6 +40,12 @@ public class CameraController : MonoBehaviour {
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, bottomLeftLimit.x, topRightLimit.x), 
                                          Mathf.Clamp(transform.position.y, bottomLeftLimit.y, topRightLimit.y), 
                                          transform.position.z);
+
+        if (!musicStarted)
+        {
+            musicStarted = true;
+            AudioManager.Instance.PlayMusic(musicToPlay);
+        }
 
 	}
 }
