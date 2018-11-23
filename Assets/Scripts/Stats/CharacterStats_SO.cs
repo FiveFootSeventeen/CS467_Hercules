@@ -15,6 +15,9 @@ public class CharacterStats_SO : ScriptableObject
     public UnityEvent OnPlayerDeath;
     public UnityEvent OnPlayerInit;
 
+    public AnimationController animController;
+    public Sprite sprite;
+
     [System.Serializable]
     public class CharLevel
     {
@@ -41,13 +44,13 @@ public class CharacterStats_SO : ScriptableObject
     public int maxGems = 0;
     public int currentGems = 0;
 
-    public int maxSanity = 100;
+    public int maxSanity = 30;
     public int currentSanity = 0;
 
-    public int baseDamage = 0;
-    public int currentDamage = 0;
+    public int baseDamage = 10;
+    public int currentDamage = 10;
 
-    public int maxInventory = 0;
+    public int maxInventory = 10;
     public int currentInventory = 0;
 
     public int charExperience = 0;

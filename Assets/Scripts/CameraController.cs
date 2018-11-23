@@ -5,9 +5,10 @@ using UnityEngine.Tilemaps;
 
 public class CameraController : MonoBehaviour {
 
-    public Transform target;
+    public Transform playerAnchor;
+    public RectTransform menuAnchor;
 
-    public Tilemap map;
+    //public Tilemap map;
 
     private Vector3 bottomLeftLimit;
     private Vector3 topRightLimit;
@@ -17,29 +18,34 @@ public class CameraController : MonoBehaviour {
     private float halfWidth;
 
     public int musicToPlay;
-    private bool musicStarted;
+    public bool musicStarted;
 
 	void Start () {
-        target = FindObjectOfType<PlayerController>().transform; //searches objects for scene and finds object with PlayerController script attached
+        playerAnchor = FindObjectOfType<PlayerController>().transform; //searches objects for scene and finds object with PlayerController script attached
+        if (playerAnchor == null)
+        {
+            playerAnchor = menuAnchor as Transform;
+        }
 
         //Keep camera inside bounds of map
         halfHeight = Camera.main.orthographicSize;
         halfWidth = halfHeight * Camera.main.aspect; 
 
-        bottomLeftLimit = map.localBounds.min + new Vector3(halfWidth, halfHeight, 0f);
-        topRightLimit = map.localBounds.max - new Vector3(halfWidth, halfHeight, 0f);
+       // bottomLeftLimit = map.localBounds.min + new Vector3(halfWidth, halfHeight, 0f);
+        //topRightLimit = map.localBounds.max - new Vector3(halfWidth, halfHeight, 0f);
 
 
 	}
 	
 	// LateUpdate is called once per frame, but it guaranteed to run after all items have been processed in update.
 	void LateUpdate() {
-        transform.position = new Vector3(target.position.x, target.position.y, transform.position.z);
+
+        transform.position = new Vector3(playerAnchor.position.x, playerAnchor.position.y, transform.position.z);
 
         //keep camera inside bounds
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, bottomLeftLimit.x, topRightLimit.x), 
-                                         Mathf.Clamp(transform.position.y, bottomLeftLimit.y, topRightLimit.y), 
-                                         transform.position.z);
+       // transform.position = new Vector3(Mathf.Clamp(transform.position.x, bottomLeftLimit.x, topRightLimit.x), 
+         //                                Mathf.Clamp(transform.position.y, bottomLeftLimit.y, topRightLimit.y), 
+          //                               transform.position.z);
 
         if (!musicStarted)
         {

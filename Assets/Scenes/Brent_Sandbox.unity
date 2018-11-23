@@ -573,6 +573,11 @@ Prefab:
       propertyPath: musicToPlay
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 20890703905319754, guid: 92c1c5a0e5c5c874a856209eb1cc76be,
+        type: 2}
+      propertyPath: orthographic size
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92c1c5a0e5c5c874a856209eb1cc76be, type: 2}
   m_IsPrefabAsset: 0

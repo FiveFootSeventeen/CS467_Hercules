@@ -173,15 +173,10 @@ MonoBehaviour:
   runMultiplier: 2
   attackTime: 2
   levelTransitionName: 
+  canMove: 1
   playerMoving: 1
   healthBar: {fileID: 0}
   sanityBar: {fileID: 0}
-  walkFX: {fileID: 8300000, guid: d6d97bd4977b57c4aa0c41053bc24b99, type: 3}
-  spikes: {fileID: 8300000, guid: 26ba89243b01c72488844eb9ceab6de7, type: 3}
-  twilightMusic: {fileID: 8300000, guid: e28a81f572de7d74599883c7d1f0b859, type: 3}
-  mainMusic: {fileID: 0}
-  voidMusic: {fileID: 0}
-  plasmaMusic: {fileID: 0}
   isAlive: 1
   playerAnim: {fileID: 95679756367889104}
 --- !u!114 &114466844136171550
@@ -195,8 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1cf1628cb05042dd9e0620576db056d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterDefinition_Template: {fileID: 11400000, guid: ef50c2243553cb74f9a93599832d5c4a,
-    type: 2}
+  characterDefinition_Template: {fileID: 0}
   characterDefinition: {fileID: 0}
   charInv: {fileID: 114535836565113240}
   characterWeaponSlot: {fileID: 1784506953389306}
