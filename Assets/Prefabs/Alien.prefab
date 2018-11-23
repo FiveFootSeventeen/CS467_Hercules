@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 50960714722122184}
   - component: {fileID: 95387584464552214}
   - component: {fileID: 70434275005874984}
+  - component: {fileID: 114090215538155884}
+  - component: {fileID: 114576684686133700}
   m_Layer: 10
   m_Name: Alien
   m_TagString: Untagged
@@ -54,9 +56,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 100
+  m_Mass: 500
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 50
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -76,7 +78,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 0.35, y: 0.35}
   m_Direction: 0
 --- !u!95 &95387584464552214
 Animator:
@@ -96,6 +98,48 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114090215538155884
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1484740632465448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cf1628cb05042dd9e0620576db056d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterDefinition_Template: {fileID: 11400000, guid: ccb31699cfebaf7468f91d4f23acfd1c,
+    type: 2}
+  characterDefinition: {fileID: 11400000, guid: ccb31699cfebaf7468f91d4f23acfd1c,
+    type: 2}
+  charInv: {fileID: 0}
+  characterWeaponSlot: {fileID: 0}
+--- !u!114 &114576684686133700
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1484740632465448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf08b5a6c5c784bd6b9fe009dd3c49ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patrolTime: 5
+  aggroRange: 3
+  spellAudio: {fileID: 0}
+  OnEnemyDeath:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Events+EventEnemyDeath, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  inView: 0
+  attack: {fileID: 11400000, guid: a84ef377f78ab7e4583b7824d393867e, type: 2}
+  walkSpeed: 2
+  currentWaypoint: {fileID: 0}
+  runSpeedMultiplier: 1.05
+  attackDistance: 1.25
 --- !u!212 &212434972119999998
 SpriteRenderer:
   m_ObjectHideFlags: 1
