@@ -8,6 +8,7 @@ public class PersistentLoader : MonoBehaviour {
     public GameObject UICanvas;
     public GameObject Audio;
     private GameObject player;
+    private GameObject canvas;
 
     public GameObject[] playerOptions;
     public Vector3 spawnPos = new Vector3(.004f, .004f, -0.04801377f);
@@ -17,13 +18,15 @@ public class PersistentLoader : MonoBehaviour {
     void Start () {
 		if (UIFade.instance == null)
         {
-           UIFade.instance = Instantiate(UICanvas).GetComponent<UIFade>();
+           UIFade.instance = canvas.GetComponent<UIFade>();
         }
         
         if (PlayerController.instance == null)
         {
-            player = Instantiate(playerOptions[0]);
+            
             PlayerController.instance = player.GetComponent<PlayerController>();
+           
+            
         }
         
         if (AudioManager.Instance == null)
@@ -35,6 +38,7 @@ public class PersistentLoader : MonoBehaviour {
 
     public void OnCharacterSelect(int characterChoice)
     {
+        
         if (player != null)
         {
             Destroy(player);
