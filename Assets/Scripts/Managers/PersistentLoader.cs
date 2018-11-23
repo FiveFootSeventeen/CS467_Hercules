@@ -7,11 +7,10 @@ public class PersistentLoader : MonoBehaviour {
 
     public GameObject UICanvas;
     public GameObject Audio;
-    private GameObject player;
+    
     private GameObject canvas;
-
-    public GameObject[] playerOptions;
-    public Vector3 spawnPos = new Vector3(.004f, .004f, -0.04801377f);
+   
+    
 
 
     // Use this for initialization
@@ -21,13 +20,7 @@ public class PersistentLoader : MonoBehaviour {
            UIFade.instance = canvas.GetComponent<UIFade>();
         }
         
-        if (PlayerController.instance == null)
-        {
-            
-            PlayerController.instance = player.GetComponent<PlayerController>();
-           
-            
-        }
+        
         
         if (AudioManager.Instance == null)
         {
@@ -36,18 +29,14 @@ public class PersistentLoader : MonoBehaviour {
        
 	}
 
-    public void OnCharacterSelect(int characterChoice)
+    void FixedUpdate()
     {
-        
-        if (player != null)
+        if (PlayerController.instance == null && SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Game.MainScene"))
         {
-            Destroy(player);
-            player = null;
-           
+
+            PlayerController.instance = CharacterSelector.instance.InstantiateCharacter();
+
         }
-
-        PlayerController.instance = Instantiate(playerOptions[characterChoice]).GetComponent<PlayerController>();
-        SceneManager.LoadScene("Game.MainScene");
-
     }
+   
 }

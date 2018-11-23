@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+
 using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
-    // Audio players components.
-    public AudioSource EffectsSource;
-    public AudioSource MusicSource;
-
-
+   
     public AudioSource[] sfx;
     public AudioSource[] music;
 
+    public AudioMixer masterMixer;
+    public AudioMixerGroup musicMixer;
+    public AudioMixerGroup sfxMixer;
+
+    
+    
 
 
     // Singleton static instance.
@@ -24,14 +27,7 @@ public class AudioManager : MonoBehaviour
     public float LowPitchRange = .95f;
     public float HighPitchRange = 1.05f;
 
-   
 
-
-    [Header("Music")]
-
-
-    private float musicVol = 1f;
-    private float SFXVol = 1f;
 
     // Initialize the singleton instance.
     private void Awake()
@@ -50,31 +46,30 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        
-        
+        for (int i = 0; i < sfx.Length; i++)
+        {
+            sfx[i].outputAudioMixerGroup = sfxMixer;
+        }
+
+        for (int i = 0; i < music.Length; i++)
+        {
+            sfx[i].outputAudioMixerGroup = musicMixer;
+        }
+
     }
 
-    // Play a single clip through the sound effects source.
-    public void PlaySFX(AudioClip clip)
-    {
-        EffectsSource.clip = clip;
-        EffectsSource.Play();
-    }
+
 
     public void PlaySFX(int soundToPlay)
     {
         if (soundToPlay < sfx.Length)
         {
+            
             sfx[soundToPlay].Play();
         }
     }
 
-    // Play a single clip through the music source.
-    public void PlayMusic(AudioClip clip)
-    {
-        MusicSource.clip = clip;
-        MusicSource.Play();
-    }
+
 
     public void PlayMusic(int musicToPlay)
     {
@@ -95,11 +90,6 @@ public class AudioManager : MonoBehaviour
         {
             music[i].Stop();
         }
-    }
-
-    private void Update()
-    {
-
     }
 
 

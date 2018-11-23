@@ -18,7 +18,7 @@ public class PauseGame : MonoBehaviour {
                 Cursor.visible = true;
                 transform.GetChild(0).gameObject.SetActive(true);
 
-                AudioManager.Instance.MusicSource.Pause();
+                
 
             }
             else
@@ -28,7 +28,7 @@ public class PauseGame : MonoBehaviour {
                 gamePaused = false;
                 Time.timeScale = 1;
 
-                AudioManager.Instance.MusicSource.UnPause();
+               
             }
         }
     }

@@ -70,7 +70,7 @@ public class PlayerControllerScript : MonoBehaviour
         if (SceneManager.GetActiveScene () == SceneManager.GetSceneByName ("Game.TwilightScene copy"))
         {
             sources[1].loop = true;
-            AudioManager.Instance.PlayMusic(twilightMusic);
+           
         }
 
     }
@@ -120,7 +120,7 @@ public class PlayerControllerScript : MonoBehaviour
             ellapsedStepTime += Time.deltaTime;
             if (ellapsedStepTime >= timeBtwnSteps)
             {
-                AudioManager.Instance.PlaySFX(walkFX);
+               
                 ellapsedStepTime -= timeBtwnSteps;
             }
 
@@ -156,12 +156,12 @@ public class PlayerControllerScript : MonoBehaviour
             anim.SetBool("playerMoving", playerMoving);
             rigidbody2D.velocity = new Vector2(speed, speed);
 
-            AudioManager.Instance.PlaySFX(spikes);
+            
 
             anim.SetTrigger("Dying");
 
             sources[1].loop = false;
-            AudioManager.Instance.MusicSource.Stop();         
+             
 
             return true;
         }
