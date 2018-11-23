@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
         stats.characterDefinition.OnPlayerDeath.AddListener(GameManager.Instance.OnPlayerDeath);
         stats.characterDefinition.OnPlayerInit.AddListener(GameManager.Instance.OnPlayerInit);
         */
-        stats.characterDefinition.OnPlayerInit.Invoke();
+        //stats.characterDefinition.OnPlayerInit.Invoke();
 
        
 
