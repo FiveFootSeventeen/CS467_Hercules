@@ -194,3 +194,55 @@ public class PlayerController : MonoBehaviour
 
 }
 
+/*
+ * if (!isAlive) { return; }
+        move = Vector2.zero;
+        playerMoving = false;
+
+        if(Input.GetKeyDown("space"))
+        {
+            anim.SetBool("attacking", true); //Set the specified trigger in the animator
+            anim.SetTrigger(action);
+            attacking = true;
+            attackTimeCounter = attackTime;
+        }
+
+        if (attackTimeCounter > 0)
+            attackTimeCounter -= Time.deltaTime;
+        else
+        {
+            attacking = false;
+            anim.SetBool("attacking", false);
+        }
+
+
+        if (!attacking)
+        {
+            if (Input.GetKey("left shift") || Input.GetKey("right shift"))  //Add the running multiplier
+            {
+                maxSpeed = 4 * runSpeedMultiplier;
+                anim.speed = 2F;                        //Increase the animation speed for running
+            }
+            else
+            {
+                anim.speed = 1;
+            }
+
+            lastMove.x = move.x = Mathf.Lerp(0, Input.GetAxis("Horizontal") * maxSpeed, 0.8f); //Get the horizontal axis, interpolate between 0 and the input by 0.8
+            lastMove.y = move.y = Mathf.Lerp(0, Input.GetAxis("Vertical") * maxSpeed, 0.8f);   //Get the vertical axis, interpolate between 0 and the input by 0.8
+        }
+
+        if (move.x != 0f || move.y != 0)
+        {
+            playerMoving = true;
+            ellapsedStepTime += Time.deltaTime;
+            if (ellapsedStepTime >= timeBtwnSteps)
+            {
+               
+                ellapsedStepTime -= timeBtwnSteps;
+            }
+
+
+            SetLastParams(lastMove);
+        }
+*/
