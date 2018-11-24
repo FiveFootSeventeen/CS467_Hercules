@@ -11,7 +11,7 @@ public class CharacterStats : MonoBehaviour
     public GameObject characterWeaponSlot;
 
     public static CharacterStats instance;
-
+  
     #region Constructors
     public CharacterStats()
     {
@@ -54,7 +54,7 @@ public class CharacterStats : MonoBehaviour
         characterDefinition.ApplyHP(hpAmt);
     }
 
-    public void ApplyMana(int sanityAmt)
+    public void ApplySanity(int sanityAmt)
     {
         characterDefinition.ApplySanity(sanityAmt);
     }

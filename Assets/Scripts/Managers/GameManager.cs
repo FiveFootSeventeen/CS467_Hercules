@@ -10,6 +10,9 @@ public class GameManager : Manager<GameManager>
 
     public static GameManager instance;
 
+    public CharacterStats player;
+    
+
     public class GameStats
     {
         public int gemsCollected = 0;
@@ -45,7 +48,7 @@ public class GameManager : Manager<GameManager>
 
     public void Save()
     {
-
+       
     }
 
     public void Load()
