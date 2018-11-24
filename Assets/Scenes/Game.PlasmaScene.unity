@@ -1177,8 +1177,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29a33808356e14a40a3378d236b81103, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: Brent_Scene
-  levelTransitionName: 
+  levelToLoad: Brent_Sandbox
+  levelTransitionName: Plasma-1
   theEntrance: {fileID: 1004061906}
   waitToLoad: 1
 --- !u!95 &604680831
@@ -1937,7 +1937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3dc03888326c9743b749363c54fe095, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitionName: Plasma-1
+  transitionName: Twilight-1
 --- !u!4 &1004061907
 Transform:
   m_ObjectHideFlags: 0
