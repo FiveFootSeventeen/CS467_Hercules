@@ -5,7 +5,7 @@ using UnityEngine;
 public class TestAdjustScript : MonoBehaviour
 {
 
-    // Use this for initialization
+    /* Use this for initialization
     void OnGUI()
     {
         if (GUI.Button(new Rect(10, 100, 100, 30), "Health up"))
@@ -33,4 +33,5 @@ public class TestAdjustScript : MonoBehaviour
             GameController.control.Load();
         }
     }
+    */
 }

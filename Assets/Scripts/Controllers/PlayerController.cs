@@ -7,14 +7,15 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public Rigidbody2D playerRB;
+    
 
     //Prevent duplicate players
     public static PlayerController instance;
 
-    public float moveSpeed = 2f;
+    float moveSpeed;
+    float originSpeed = 1.5f;
     public float runMultiplier = 2f;
-    //public float maxSpeed = 3f;
+    
     public float attackTime = 2f;
     public string levelTransitionName; //exit or entrance we just used
     protected bool attacking;
@@ -22,38 +23,24 @@ public class PlayerController : MonoBehaviour
 
     public bool canMove = true;
     public bool playerMoving = false;
-    
+
+    public Rigidbody2D playerRB;
     CapsuleCollider2D bodycollider;
+    Animator anim;
 
-    /// CALEB ADDED
-    public SimpleHealthBar healthBar;
-    public SimpleHealthBar sanityBar;
-
-
-
+   
      double timeBtwnSteps = 0.317;
      double ellapsedStepTime;
-    /*
-   [Header("Music")]
-   public AudioClip twilightMusic;
-   public AudioClip mainMusic;
-   public AudioClip voidMusic;
-   public AudioClip plasmaMusic;
-
-   private AudioSource[] sources;
-    */
+   
 
     protected GameObject attackTarget;
     public bool isAlive = true;
     CharacterStats stats;
 
-    public Animator playerAnim;
-
-    
-    //CharacterStats stats;
+   
     void Awake()
     {
-        playerAnim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
         bodycollider = GetComponent<CapsuleCollider2D>();
         playerRB = GetComponent<Rigidbody2D>();
         stats = GetComponent<CharacterStats>();
@@ -125,8 +112,8 @@ public class PlayerController : MonoBehaviour
         {
             StopAllCoroutines();
         }
-        playerAnim.SetBool("attacking", true);
-        playerAnim.SetTrigger(attackType);
+        anim.SetBool("attacking", true);
+        anim.SetTrigger(attackType);
         attacking = true;
         attackTimeCounter = attackTime;
 
@@ -136,15 +123,25 @@ public class PlayerController : MonoBehaviour
         }
 
         attacking = false;
-        playerAnim.SetBool("attacking", false);
+        anim.SetBool("attacking", false);
     }
 
 
     public void Move()
     {
+        
         playerMoving = false;
         if (canMove)
         {
+            if (Input.GetKey("left shift") || Input.GetKey("right shift"))  //Add the running multiplier
+            {
+                moveSpeed = originSpeed * runMultiplier;
+                anim.speed = 1.5F;                        //Increase the animation speed for running
+            }
+            else
+            {
+                anim.speed = 1;
+            }
             playerRB.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * moveSpeed;
             
         }
@@ -152,10 +149,10 @@ public class PlayerController : MonoBehaviour
         {
             playerRB.velocity = Vector2.zero;
         }
-       
 
-        playerAnim.SetFloat("moveX", playerRB.velocity.x);
-        playerAnim.SetFloat("moveY", playerRB.velocity.y);
+
+        anim.SetFloat("moveX", playerRB.velocity.x);
+        anim.SetFloat("moveY", playerRB.velocity.y);
 
         if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
         {
@@ -170,19 +167,20 @@ public class PlayerController : MonoBehaviour
 
             if (canMove)
             {
-                playerAnim.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
-                playerAnim.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
+                anim.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
+                anim.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
             }
             
         }
+        moveSpeed = originSpeed;
     }
 
     public void Death()
     {
         canMove = false;
-        playerAnim.SetBool("playerMoving", false);
+        anim.SetBool("playerMoving", false);
         playerRB.velocity = Vector2.zero;
-        playerAnim.SetTrigger("Dying");    
+        anim.SetTrigger("Dying");    
     
     }
 

@@ -9,54 +9,19 @@ using System.IO;
 public class GameController : MonoBehaviour {
 
     public static GameController control;
-    public GameObject EnemyController, player, playerController;
-
-    public class GameStats
-    {
-        public int gemsCollected = 0;
-        public int keysCollected = 0;
-        public int weaponsCollected = 0;
-        public int enemiesKilled = 0;
-        public int bossesKilled = 0;
-        public bool voidPortalActive = true;
-        public bool twilightPortalActive = true;
-        public bool plasmaPortalActive = true;
-    }
-    //Player Stats
-    [Header("Player Stats")]
-    public float playerHealth;
-    public float playerSanity;
-    public float gemsCollected;
-    public float characterSelect;
-    public float keysCollected;
+    private CharacterStats playerStats;
 
     //Game Stats
     [Header("Game Stats")]
-    public float voidPortalStatus;
-    public float plasmaPortalStatus;
-    public float twilightPortalStatus;
-    public float gameTime;
-    public float musicVol;
-    public float soundFXVol;
+    public int gemsCollected;
+    public int weaponsCollected;
+    public int voidPortalStatus;
+    public int plasmaPortalStatus;
+    public int twilightPortalStatus;
+    public int enemiesKilled;
+    public int bossesKilled;
+    public bool gameWon;
 
-    //Enemy Stats
-    [Header("Enemy Stats")]
-    public float goblinHealth;
-    public float bossHealth;
-    public float voidMonsterHealth;
-    public float plasmaMonsterHealth;
-    public float twilightMonsterHealth;
-    public float goblinCount;
-    public float voidCount;
-    public float plasmaCount;
-    public float twilightCount;
-    
-    //Statistics
-    [Header("Statistics")]
-    public float goblinKillCount;
-    public float voidKillCount;
-    public float plasmaKillCount;
-    public float twilightKillCount;
 
     void Awake () {
 
@@ -72,37 +37,17 @@ public class GameController : MonoBehaviour {
 	}
     void Start()
     {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-
+        playerStats = CharacterStats.instance;
     }
 
-    private void OnSceneLoaded(Scene aScene, LoadSceneMode aMode)
+    public void QuitApp()
     {
-        EnemyController = GameObject.Find("EnemyController");
-        playerController = GameObject.Find("PlayerController");
+        Application.Quit();
     }
 
-
-    void FixedUpdate()
+    public void QuitMainMenu()
     {
-        //if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name.StartsWith("Game."))
-        //{ 
-            EnemyController.GetComponent<EnemyController>().MoveEnemies(player.transform.position);
-
-            if (!playerController.GetComponent<PlayerControllerScript>().isAlive)
-            {
-                playerController.GetComponent<PlayerControllerScript>().enabled = false;
-            }
-       // }
-    }
-
-    void OnGUI()
-    {
-        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name.StartsWith("Game."))
-        {
-            GUI.Label(new Rect(10, 50, 100, 30), "Gems: " + gemsCollected + "/6");
-            GUI.Label(new Rect(10, 70, 100, 30), "Keys: " + keysCollected + "/1");
-        }
+        SceneManager.LoadScene(0);
     }
 
     public void Save()
@@ -112,30 +57,16 @@ public class GameController : MonoBehaviour {
 
         GameData data = new GameData
         {
-            playerHealth = playerHealth,
-            playerSanity = playerSanity,
+            playerHealth = playerStats.GetCurrentHealth(),
+            playerSanity = playerStats.GetCurrentSanity(),
+            playerLvl = playerStats.GetLevel(),
+            playerXP = playerStats.GetXP(),
             voidPortalStatus = voidPortalStatus,
             plasmaPortalStatus = plasmaPortalStatus,
             twilightPortalStatus = twilightPortalStatus,
-            gameTime = gameTime,
-            goblinHealth = goblinHealth,
-            bossHealth = bossHealth,
-            voidMonsterHealth = voidMonsterHealth,
-            plasmaMonsterHealth = plasmaMonsterHealth,
-            twilightMonsterHealth = twilightMonsterHealth,
-            goblinCount = goblinCount,
-            voidCount = voidCount,
-            plasmaCount = plasmaCount,
-            twilightCount = twilightCount,
-            goblinKillCount = goblinKillCount,
-            voidKillCount = voidKillCount,
-            plasmaKillCount = plasmaKillCount,
-            twilightKillCount = twilightKillCount,
-            characterSelect = characterSelect,
-            musicVol = musicVol,
-            soundFXVol = soundFXVol,
             gemsCollected = gemsCollected,
-            keysCollected = keysCollected
+            gameWon = gameWon
+        
     };
 
         bf.Serialize(file, data);
@@ -151,30 +82,14 @@ public class GameController : MonoBehaviour {
             GameData data = (GameData)bf.Deserialize(file);
             file.Close();
 
-            playerHealth = data.playerHealth;
-            playerSanity = data.playerSanity;
+            playerStats.characterDefinition.currentHealth = data.playerHealth;
+            playerStats.characterDefinition.currentSanity = data.playerSanity;
             voidPortalStatus = data.voidPortalStatus;
             plasmaPortalStatus = data.plasmaPortalStatus;
             twilightPortalStatus = data.twilightPortalStatus;
-            gameTime = data.gameTime;
-            goblinHealth = data.goblinHealth;
-            bossHealth = data.bossHealth;
-            voidMonsterHealth = data.voidMonsterHealth;
-            plasmaMonsterHealth = data.plasmaMonsterHealth;
-            twilightMonsterHealth = data.twilightMonsterHealth;
-            goblinCount = data.goblinCount;
-            voidCount = data.voidCount;
-            plasmaCount = data.plasmaCount;
-            twilightCount = data.twilightCount;
-            goblinKillCount = data.goblinKillCount;
-            voidKillCount = data.voidKillCount;
-            plasmaKillCount = data.plasmaKillCount;
-            twilightKillCount = data.twilightKillCount;
-            characterSelect = data.characterSelect;
-            musicVol = data.musicVol;
-            soundFXVol = data.soundFXVol;
+            gameWon = data.gameWon;
             gemsCollected = data.gemsCollected;
-            keysCollected = data.keysCollected;
+           
         }
     }
 }
@@ -182,35 +97,17 @@ public class GameController : MonoBehaviour {
 [Serializable]
 class GameData
 {
-    //Player Stats
-    public float playerHealth;
-    public float playerSanity;
-    public float characterSelect;
-    public float gemsCollected;
-    public float keysCollected;
-
-    //Game Stats
-    public float voidPortalStatus;
-    public float plasmaPortalStatus;
-    public float twilightPortalStatus;
-    public float gameTime;
-    public float musicVol;
-    public float soundFXVol;
-
-    //Enemy Stats
-    public float goblinHealth;
-    public float bossHealth;
-    public float voidMonsterHealth;
-    public float plasmaMonsterHealth;
-    public float twilightMonsterHealth;
-    public float goblinCount;
-    public float voidCount;
-    public float plasmaCount;
-    public float twilightCount;
-
-    //Statistics
-    public float goblinKillCount;
-    public float voidKillCount;
-    public float plasmaKillCount;
-    public float twilightKillCount;
+    public int playerHealth;
+    public int playerSanity;
+    public int playerXP;
+    public int playerXPRequired;
+    public int playerLvl;   
+    public int gemsCollected;
+    public int weaponsCollected;
+    public int enemiesKilled;
+    public int bossesKilled;
+    public int voidPortalStatus;
+    public int twilightPortalStatus;
+    public int plasmaPortalStatus;
+    public bool gameWon;
 }

@@ -47,20 +47,7 @@ public class PlayerControllerScript : MonoBehaviour
 
     void Start()
     {
-        if (GameController.control.characterSelect == 1)
-        {
-            chosenCharacter = character2;
-            Destroy(character);
-            GameController.control.player = character2;
-            Destroy(GameObject.Find("CM vcam Male"));
-        }
-        else
-        {
-            chosenCharacter = character;
-            Destroy(character2);
-            GameController.control.player = character;
-            Destroy(GameObject.Find("CM vcam Female"));
-        }
+        
         anim = chosenCharacter.GetComponent<Animator>();
         originSpeed = maxSpeed;
         rigidbody2D = chosenCharacter.GetComponent<Rigidbody2D>();
