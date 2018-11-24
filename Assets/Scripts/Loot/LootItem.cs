@@ -39,7 +39,7 @@ public class LootItem : MonoBehaviour
                 Debug.Log(charStats.GetCurrentHealth());
                 break;
             case ItemTypeDefinitions.SANITY:
-                charStats.ApplyMana(itemDefinition.itemAmount);
+                charStats.ApplySanity(itemDefinition.itemAmount);
                 break;
             case ItemTypeDefinitions.GEM:
                 charStats.GiveWealth(itemDefinition.itemAmount);

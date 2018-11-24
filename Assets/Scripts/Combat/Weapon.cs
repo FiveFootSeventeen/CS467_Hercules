@@ -17,9 +17,7 @@ public class Weapon : AttackSystem
         if (Vector3.Distance(attacker.transform.position, defender.transform.position) > Range)
             return;
 
-        // Check if defender is in front of the player
-        if (!attacker.transform.IsFacingTarget(defender.transform))
-            return;
+       
 
         // at this point the attack will connect
         var attackerStats = attacker.GetComponent<CharacterStats>();

@@ -4,19 +4,21 @@ using UnityEngine.Events;
 
 public class EnemyManager : MonoBehaviour
 {
-public GameObject[] Enemies;
-public EnemyWave[] Waves;
-public Events.EventIntegerEvent OnEnemyKilled;
-public Events.EventIntegerEvent OnWaveComplete;
+    public GameObject[] Enemies;
+    public EnemyWave[] Waves;
+    public Events.EventIntegerEvent OnEnemyKilled;
+    public Events.EventIntegerEvent OnWaveComplete;
 
 
-public UnityEvent OnWaveSpawn;
-public UnityEvent OnWavesDone;
+    public UnityEvent OnWaveSpawn;
+    public UnityEvent OnWavesDone;
 
-private int currentWave = 0;
-private int activeEnemies;
+    private int currentWave = 0;
+    private int activeEnemies;
 
-private Spawn[] spawnPoints;
+    public int deathSFX;
+
+    private Spawn[] spawnPoints;
 
 void Start()
 {
@@ -58,11 +60,12 @@ public void SpawnWave()
     public void OnEnemyDeath()
     {
         //Play death sound
-
+        AudioManager.Instance.PlaySFX(deathSFX);
         EnemyWave cur = Waves[currentWave];
 
         activeEnemies -= 1;
         OnEnemyKilled.Invoke(cur.KillPoints);
+        
         if (activeEnemies == 0)
         {
             OnWaveComplete.Invoke(cur.WavePoints);
