@@ -885,6 +885,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114492393858275912, guid: b626e5f79881e13429d4a55d20448f16,
+        type: 2}
+      propertyPath: gameControl
+      value: 
+      objectReference: {fileID: 1625294031317616, guid: 47053862c84f4ee4c9a8062cf42aa29e,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b626e5f79881e13429d4a55d20448f16, type: 2}
   m_IsPrefabAsset: 0
@@ -942,7 +948,8 @@ Prefab:
       propertyPath: sfxSource
       value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114549279424312944, guid: a680c0315a2eb8b4bb408f6924518563, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: a680c0315a2eb8b4bb408f6924518563, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &690106943
@@ -1637,105 +1644,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 893921360}
   m_CullTransparentMesh: 0
---- !u!1 &894055520
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 894055523}
-  - component: {fileID: 894055522}
-  - component: {fileID: 894055521}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &894055521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 894055520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c88fb7414b394920a426096c834cc29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Enemies: []
-  Waves: []
-  OnEnemyKilled:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: Events+EventIntegerEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  OnWaveComplete:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Events+EventIntegerEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  OnWaveSpawn:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnWavesDone:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &894055522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 894055520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf08b5a6c5c784bd6b9fe009dd3c49ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  patrolTime: 5
-  aggroRange: 3
-  spellAudio: {fileID: 0}
-  OnEnemyDeath:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Events+EventEnemyDeath, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  inView: 0
-  attack: {fileID: 0}
-  walkSpeed: 2
-  currentWaypoint: {fileID: 0}
-  runSpeedMultiplier: 1.05
-  attackDistance: 1.25
---- !u!4 &894055523
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 894055520}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 911.00916, y: 602.6553, z: -14.408703}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1269544560 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4347616228950838, guid: be1594e464064124a8d66faec06a43e0,

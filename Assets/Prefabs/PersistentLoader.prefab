@@ -53,7 +53,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UICanvas: {fileID: 1290530815393658, guid: 99fdd3f18ed79554e9579e380f3c0de8, type: 2}
   Audio: {fileID: 1833658254718440, guid: 367762b88f37e7a48ba104dba319ca4d, type: 2}
-  playerOptions:
-  - {fileID: 1040078679288456, guid: 3360058424e10924d8eb17a2196a5718, type: 2}
-  - {fileID: 1417443129420902, guid: be1594e464064124a8d66faec06a43e0, type: 2}
-  spawnPos: {x: 0.004, y: 5, z: -0.04801377}
+  gameControl: {fileID: 1625294031317616, guid: 47053862c84f4ee4c9a8062cf42aa29e,
+    type: 2}
