@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a66dad34abdab4802bad4b206c7732b7, type: 3}
-  m_Name: MalePlayer
+  m_Name: femalePlayer
   m_EditorClassIdentifier: 
   OnLevelUp:
     m_PersistentCalls:
@@ -42,18 +42,29 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   animController: {fileID: 0}
-  sprite: {fileID: 21300088, guid: 886c30cc13a9d5d40aca5b40c135fd66, type: 3}
+  sprite: {fileID: 21300342, guid: d5e5f487823758b4fa72fe592cb9eceb, type: 3}
   isPlayer: 1
   charLevel: 1
-  maxHealth: 100
-  currentHealth: 0
+  charName: Minnie
+  maxHealth: 98
+  currentHealth: 40
   maxGems: 0
   currentGems: 0
   maxSanity: 30
-  currentSanity: 0
+  currentSanity: 18
   baseDamage: 10
   currentDamage: 10
   maxInventory: 10
   currentInventory: 0
-  charExperience: 0
-  charLevels: []
+  charExperience: 87
+  charLevels:
+  - maxHealth: 101
+    maxSanity: 31
+    maxGems: 12
+    baseDamage: 12
+    requiredXP: 1000
+  - maxHealth: 102
+    maxSanity: 31
+    maxGems: 12
+    baseDamage: 13
+    requiredXP: 150

@@ -240,7 +240,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1cf1628cb05042dd9e0620576db056d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterDefinition_Template: {fileID: 0}
+  characterDefinition_Template: {fileID: 11400000, guid: b954d5ae43c041c44b4a5191bfe54b00,
+    type: 2}
   characterDefinition: {fileID: 0}
   charInv: {fileID: 114633245670418960}
   characterWeaponSlot: {fileID: 1669004670817370}

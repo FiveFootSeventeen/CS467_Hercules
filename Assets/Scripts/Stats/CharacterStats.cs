@@ -10,6 +10,8 @@ public class CharacterStats : MonoBehaviour
     public Inventory charInv;
     public GameObject characterWeaponSlot;
 
+    public static CharacterStats instance;
+
     #region Constructors
     public CharacterStats()
     {
@@ -26,6 +28,19 @@ public class CharacterStats : MonoBehaviour
 
     void Start()
     {
+        if (instance == null)
+        {
+            
+            instance = this;
+        }
+        else
+        {
+            if (instance != this)
+            {
+                Destroy(gameObject);
+            }
+        }
+        DontDestroyOnLoad(gameObject);
         if (characterDefinition.isPlayer)
         {
             characterDefinition.SetCharacterLevel(0);
@@ -80,11 +95,38 @@ public class CharacterStats : MonoBehaviour
     #endregion
 
     #region Reporters
-    public int GetHealth()
+    public int GetCurrentHealth()
     {
         return characterDefinition.currentHealth;
     }
 
+    public int GetCurrentSanity()
+    {
+        return characterDefinition.currentSanity;
+    }
+    public int GetMaxHealth()
+    {
+        return characterDefinition.maxHealth;
+    }
+
+    public int GetMaxSanity()
+    {
+        return characterDefinition.maxSanity;
+    }
+
+    public int GetXP()
+    {
+        return characterDefinition.charExperience;
+    }
+
+    public int GetLevel()
+    {
+        return characterDefinition.charLevel;
+    }
+    public int GetRequiredXP()
+    {
+        return characterDefinition.charLevels[GetLevel()].requiredXP;
+    }
     public Weapon GetCurrentWeapon()
     {
         if (characterDefinition.weapon != null)

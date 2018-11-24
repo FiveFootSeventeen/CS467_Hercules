@@ -24,8 +24,7 @@ public class CharacterStats_SO : ScriptableObject
         public int maxHealth;
         public int maxSanity;
         public int maxGems;
-        public int baseDamage;
-        public int maxInventory;
+        public int baseDamage;        
         public int requiredXP;
     }
 
@@ -37,6 +36,7 @@ public class CharacterStats_SO : ScriptableObject
     public LootItem misc2 { get; private set; }
 
     public int charLevel = 1;
+    public string charName;
 
     public int maxHealth = 100;
     public int currentHealth = 0;
@@ -50,7 +50,7 @@ public class CharacterStats_SO : ScriptableObject
     public int baseDamage = 10;
     public int currentDamage = 10;
 
-    public int maxInventory = 10;
+    public int maxInventory = 8;
     public int currentInventory = 0;
 
     public int charExperience = 0;
@@ -58,6 +58,11 @@ public class CharacterStats_SO : ScriptableObject
 
     public CharLevel[] charLevels;
     #endregion
+
+    public int GetRequiredXP()
+    {
+        return charLevels[charLevel].requiredXP;
+    }
 
     #region Stat Increasers
     public void ApplyHP(int hpAmt)
@@ -197,11 +202,13 @@ public class CharacterStats_SO : ScriptableObject
             currentDamage = charLevels[newLevel].baseDamage + weapon.itemDefinition.itemAmount;
 
        
-        maxInventory = charLevels[newLevel].maxInventory;
+        
 
         if (charLevel > 1)
             OnLevelUp.Invoke(charLevel);
     }
+
+
     #endregion
 
 }

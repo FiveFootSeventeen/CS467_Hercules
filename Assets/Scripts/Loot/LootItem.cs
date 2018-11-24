@@ -36,7 +36,7 @@ public class LootItem : MonoBehaviour
         {
             case ItemTypeDefinitions.HP:
                 charStats.ApplyHealth(itemDefinition.itemAmount);
-                Debug.Log(charStats.GetHealth());
+                Debug.Log(charStats.GetCurrentHealth());
                 break;
             case ItemTypeDefinitions.SANITY:
                 charStats.ApplyMana(itemDefinition.itemAmount);

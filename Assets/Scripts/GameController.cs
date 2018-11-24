@@ -11,12 +11,23 @@ public class GameController : MonoBehaviour {
     public static GameController control;
     public GameObject EnemyController, player, playerController;
 
+    public class GameStats
+    {
+        public int gemsCollected = 0;
+        public int keysCollected = 0;
+        public int weaponsCollected = 0;
+        public int enemiesKilled = 0;
+        public int bossesKilled = 0;
+        public bool voidPortalActive = true;
+        public bool twilightPortalActive = true;
+        public bool plasmaPortalActive = true;
+    }
     //Player Stats
     [Header("Player Stats")]
     public float playerHealth;
     public float playerSanity;
-    public float characterSelect;
     public float gemsCollected;
+    public float characterSelect;
     public float keysCollected;
 
     //Game Stats
