@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4636234064583964}
   - component: {fileID: 212546238824417360}
-  - component: {fileID: 114188866066387984}
+  - component: {fileID: 114244425064621226}
   - component: {fileID: 61541952395040514}
   - component: {fileID: 95292856516165842}
   m_Layer: 12
@@ -86,7 +86,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114188866066387984
+--- !u!114 &114244425064621226
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,9 +94,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1728463518494516}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47964172bc126ab44bf22815c69a3836, type: 3}
+  m_Script: {fileID: 11500000, guid: df49ca6ade97e874aa61bf3fe2d102a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isItem: 1
+  isWeapon: 0
+  isArmor: 0
+  itemName: Purple Gem
+  description: Epic Gem
+  value: 25
+  itemSprite: {fileID: 0}
+  amountToChange: 25
+  affectHP: 0
+  affectSanity: 0
+  affectDMG: 0
+  affectGems: 1
+  weapStrength: 0
+  weapRange: 0
+  armorValue: 0
 --- !u!212 &212546238824417360
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -100,6 +100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab516ffeeb935d4a8950835e377f47f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  map: {fileID: 0}
+  playerAnchor: {fileID: 0}
   musicToPlay: 1
+  musicStarted: 0

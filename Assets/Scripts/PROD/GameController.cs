@@ -11,6 +11,11 @@ public class GameController : MonoBehaviour {
     public static GameController control;
     private CharacterStats playerStats;
 
+    [Header("Inventory")]
+    public string[] itemsInventory;
+    public int[] numberOfItems;
+    public Item[] refItems;
+
     //Game Stats
     [Header("Game Stats")]
     public int gemsCollected;
@@ -38,6 +43,17 @@ public class GameController : MonoBehaviour {
     void Start()
     {
         playerStats = CharacterStats.instance;
+    }
+
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.J))
+        {
+            AddItem("Health Potion");
+            AddItem("FakeItem");
+
+            RemoveItem("Sanity Potion");
+        }
     }
 
     public void QuitApp()
@@ -90,6 +106,117 @@ public class GameController : MonoBehaviour {
             gameWon = data.gameWon;
             gemsCollected = data.gemsCollected;
            
+        }
+    }
+
+    public Item GetItemInfo(string item)
+    {
+        for (int i = 0; i < refItems.Length; i++)
+        {
+            if (refItems[i].itemName == item)
+            {
+                return refItems[i];
+            }
+        }
+
+        return null;
+    }
+
+    public void SortItems() //Make sure there are no gaps in Inventory
+    {
+        bool itemPresent = true;
+
+        while (itemPresent)
+        {
+            itemPresent = false;
+            for (int i = 0; i < itemsInventory.Length - 1; i++)
+            {
+                if (itemsInventory[i] == "")
+                {
+                    itemsInventory[i] = itemsInventory[i + 1];
+                    itemsInventory[i + 1] = "";
+
+                    numberOfItems[i] = numberOfItems[i + 1];
+                    numberOfItems[i + 1] = 0;
+
+                    if (itemsInventory[i] != "")
+                    {
+                        itemPresent = true;
+                    }
+                }
+            }
+        }
+    }
+
+    //Add item to inventory
+    public void AddItem(string item)
+    {
+        int itemPos = 0;
+        bool foundSlot = false;
+
+        for (int i = 0; i < itemsInventory.Length; i++)
+        {
+            if (itemsInventory[i] == "" || itemsInventory[i] == item)
+            {
+                itemPos = i;
+                foundSlot = true;
+                break;
+                
+            }
+        }
+        if (foundSlot)
+        {
+            bool isItem = false;
+            for (int i = 0; i < refItems.Length; i++)
+            {
+                if (refItems[i].itemName == item)
+                {
+                    isItem = true;
+                    break;
+                }
+            }
+
+            if (isItem)
+            {
+                itemsInventory[itemPos] = item;
+                numberOfItems[itemPos]++;
+            }
+            else
+            {
+                Debug.LogError(item + " does not exist");
+            }
+        }
+        GameMenu.instance.SetItemButtons();
+
+    }
+
+    public void RemoveItem(string item)
+    {
+        bool foundItem = false;
+        int itemPos = 0;
+
+        for(int i = 0; i < itemsInventory.Length; i++)
+        {
+            if (itemsInventory[i] == item)
+            {
+                foundItem = true;
+                itemPos = i;
+                break;
+            }
+        }
+        if (foundItem)
+        {
+            numberOfItems[itemPos]--;
+            if (numberOfItems[itemPos] <= 0)
+            {
+                itemsInventory[itemPos] = "";
+            }
+
+            GameMenu.instance.SetItemButtons();
+
+        } else
+        {
+            Debug.LogError("Unable to locate " + item);
         }
     }
 }
