@@ -113,7 +113,7 @@ public class CharacterStats_SO : ScriptableObject
 
     public void EquipWeapon(LootItem weaponPickUp, Inventory charInventory, GameObject weaponSlot)
     {
-        Rigidbody2D newWeapon;
+        GameObject newWeapon;
 
         weapon = weaponPickUp;
         charInventory.inventoryDisplay[2].sprite = weaponPickUp.itemDefinition.itemIcon;

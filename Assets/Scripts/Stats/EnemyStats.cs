@@ -7,9 +7,9 @@ public class EnemyStats : MonoBehaviour
 {
     public CharacterStats_SO characterDefinition_Template;
     public CharacterStats_SO characterDefinition;
-    
+
     public GameObject characterWeaponSlot;
-     
+
     #region Initializations
     private void Awake()
     {
@@ -19,7 +19,7 @@ public class EnemyStats : MonoBehaviour
 
     void Start()
     {
-        
+
     }
     #endregion
 
@@ -28,7 +28,7 @@ public class EnemyStats : MonoBehaviour
     {
         characterDefinition.ApplyHP(hpAmt);
     }
-    
+
     #endregion
 
     #region Stat Reducers
@@ -42,7 +42,7 @@ public class EnemyStats : MonoBehaviour
         characterDefinition.ReduceSanity(amount);
     }
     #endregion
-    
+
 
     #region Reporters
     public int GetCurrentHealth()
@@ -58,8 +58,8 @@ public class EnemyStats : MonoBehaviour
     {
         return characterDefinition.maxHealth;
     }
-    
-  
+
+
     public Weapon GetCurrentWeapon()
     {
         if (characterDefinition.weapon != null)
@@ -86,7 +86,7 @@ public class EnemyStats : MonoBehaviour
     {
         characterDefinition.maxHealth = hp;
         characterDefinition.currentHealth = hp;
-    }        
+    }
 
     public void SetInitialDamage(int damage)
     {

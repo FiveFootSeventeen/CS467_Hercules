@@ -11,10 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8861f1f73741447e9d1e43208b509f2, type: 3}
   m_Name: Weapon
   m_EditorClassIdentifier: 
-  Cooldown: 0
-  Range: 0
-  minDamage: 0
-  maxDamage: 0
+  Cooldown: 2
+  minDamage: 5
+  maxDamage: 10
   critMult: 0
   critChance: 0
-  weaponPreb: {fileID: 0}
+  weaponPreb: {fileID: 1288467971571032, guid: 01c548fa7cd9e7540920948670fb790d, type: 2}

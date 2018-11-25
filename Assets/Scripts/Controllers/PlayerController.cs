@@ -21,9 +21,10 @@ public class PlayerController : MonoBehaviour
     string action = "slashAttack";
 
     public bool isAlive = true;
-   
 
+    public WeaponSlot weapon;
     CharacterStats stats;
+    CharacterStats_SO currentStats;
     Animator anim;
     new Rigidbody2D rigidbody2D;
     CapsuleCollider2D bodycollider;
@@ -56,22 +57,31 @@ public class PlayerController : MonoBehaviour
         bodycollider = GetComponent<CapsuleCollider2D>();
         rigidbody2D = GetComponent<Rigidbody2D>();
         stats = GetComponent<CharacterStats>();
+        currentStats = stats.characterDefinition;
 
 
     }
 
     void FixedUpdate()
     {
-        if (!isAlive) { return; }
+        if (currentStats.currentHealth <= 0 && isAlive)        //Once the Player is dead destroy the game object
+        {
+            StartCoroutine(playerDead());
+        }
         move = Vector2.zero;
         playerMoving = false;
-
+        var currentWeapon = stats.GetCurrentWeapon();
+        if (currentWeapon != null)
+        {
+            StopAllCoroutines();
+        }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             
             anim.SetBool("attacking", true); //Set the specified trigger in the animator
             anim.SetTrigger("slashAttack");
             attacking = true;
+            weapon.isAttacking = true;
             attackTimeCounter = attackTime;
         }
 
@@ -80,6 +90,7 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("attacking", true); //Set the specified trigger in the animator
             anim.SetTrigger("thrustAttack");
             attacking = true;
+            weapon.isAttacking = true;
             attackTimeCounter = attackTime;
         }
 
@@ -88,6 +99,7 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("attacking", true); //Set the specified trigger in the animator
             anim.SetTrigger("castSpell");
             attacking = true;
+            weapon.isAttacking = true;
             attackTimeCounter = attackTime;
         }
 
@@ -96,6 +108,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             attacking = false;
+            weapon.isAttacking = false;
             anim.SetBool("attacking", false);
         }
 
@@ -137,13 +150,16 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    public void Death()
+    IEnumerator playerDead()
     {
-      
-        anim.SetBool("playerMoving", false);
-        rigidbody2D.velocity = Vector2.zero;
+        isAlive = false;
+        playerMoving = false;
+        int speed = 0;
+        anim.SetBool("playerMoving", playerMoving);
+        rigidbody2D.velocity = new Vector2(speed, speed);
         anim.SetTrigger("Dying");
-
+        yield return new WaitForSeconds(3);
+        Destroy(gameObject);
     }
 
     private void SetLastParams(Vector2 lastMove)

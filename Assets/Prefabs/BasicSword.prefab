@@ -19,12 +19,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4552467838679550}
+  - component: {fileID: 114443301271225094}
   - component: {fileID: 212275542537337542}
   - component: {fileID: 60719538439305364}
   - component: {fileID: 114719395359471508}
   m_Layer: 9
   m_Name: BasicSword
-  m_TagString: Player
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1288467971571032}
   m_LocalRotation: {x: 0.0047059003, y: 0.011500909, z: -0.37867227, w: 0.92544746}
-  m_LocalPosition: {x: -3.7674246, y: 0.7854005, z: -0.9749418}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -51,7 +52,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.05, y: -0.05}
@@ -71,6 +72,17 @@ PolygonCollider2D:
       - {x: -0.13, y: 0.1}
       - {x: -0.08, y: 0.12}
       - {x: -0.16, y: 0.2}
+--- !u!114 &114443301271225094
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1288467971571032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43071ea7419dc2e408fd22f981307270, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114719395359471508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,8 +141,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1873578313
-  m_SortingLayer: 3
+  m_SortingLayerID: 1414028699
+  m_SortingLayer: 6
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c1b3da9fcdb17884dbb890803f62f098, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

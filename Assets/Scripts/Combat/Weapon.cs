@@ -5,32 +5,16 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Weapon.asset", menuName = "Attack/Weapon")]
 public class Weapon : AttackSystem
 {
-    public Rigidbody2D weaponPreb;
-    
+    public GameObject weaponPreb;
 
-    public void ExecuteAttack(GameObject attacker, GameObject defender)
+    public Attack ExecuteAttack(GameObject attacker)
     {
-        if (defender == null)
-            return;
+        if (attacker == null)
+            return null;
 
-        // Check if defender is in range of the attacker
-        if (Vector3.Distance(attacker.transform.position, defender.transform.position) > Range)
-            return;
+        var attackerStats = attacker.GetComponent<CharacterStats>().characterDefinition;
 
-       
-
-        // at this point the attack will connect
-        var attackerStats = attacker.GetComponent<CharacterStats>();
-        var defenderStats = defender.GetComponent<CharacterStats>();
-
-        var attack = CreateAttack(attackerStats, defenderStats);
-
-        /*
-        var attackables = defender.GetComponentsInChildren(typeof(IAttackable));
-        foreach (IAttackable a in attackables)
-        {
-            a.OnAttack(attacker, attack);
-        }
-        */
+        var attack = CreateAttack(attackerStats);
+        return attack;
     }
 }
