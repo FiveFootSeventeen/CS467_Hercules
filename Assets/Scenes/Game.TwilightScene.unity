@@ -360,7 +360,8 @@ Prefab:
       propertyPath: sfxSource
       value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114549279424312944, guid: a680c0315a2eb8b4bb408f6924518563, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: a680c0315a2eb8b4bb408f6924518563, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &690106943
