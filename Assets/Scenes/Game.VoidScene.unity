@@ -113,6 +113,16 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &27311366 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca,
+    type: 2}
+  m_PrefabInternal: {fileID: 366853601}
+--- !u!1 &29182619 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1406593158609144, guid: 82a185d28bdb42447b488be8acb7dac6,
+    type: 2}
+  m_PrefabInternal: {fileID: 31815997}
 --- !u!1001 &31815997
 Prefab:
   m_ObjectHideFlags: 0
@@ -159,6 +169,66 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82a185d28bdb42447b488be8acb7dac6, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1001 &49836940
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 890858569}
+    m_Modifications:
+    - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 19.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -3.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -9.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.013140975
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9999137
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 212546238824417360, guid: e3c866990350eb449b9dd82385a42aca,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728463518494516, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_Name
+      value: Blue Gem (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728463518494516, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_TagString
+      value: PuzzleItem
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!4 &49836941 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca,
+    type: 2}
+  m_PrefabInternal: {fileID: 49836940}
 --- !u!4 &69558539 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4636234064583964, guid: 7babcf6597fb8b14cb72954fe57c3c88,
@@ -206,11 +276,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4636234064583964, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1728463518494516, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
       propertyPath: m_Name
       value: Orange Gem (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728463518494516, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
+      propertyPath: m_TagString
+      value: PuzzleItem
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
@@ -340,10 +414,69 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4636234064583964, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728463518494516, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
+      propertyPath: m_TagString
+      value: PuzzleItem
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1001 &366853601
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 890858569}
+    m_Modifications:
+    - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -5.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -9.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.013140975
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9999137
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 212546238824417360, guid: e3c866990350eb449b9dd82385a42aca,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728463518494516, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_Name
+      value: Blue Gem (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728463518494516, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_TagString
+      value: PuzzleItem
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &377505722
 Prefab:
@@ -382,11 +515,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4636234064583964, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1728463518494516, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
       propertyPath: m_Name
       value: Orange Gem (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728463518494516, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
+      propertyPath: m_TagString
+      value: PuzzleItem
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
@@ -537,15 +674,79 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4636234064583964, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1728463518494516, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
       propertyPath: m_Name
       value: Orange Gem (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1728463518494516, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
+      propertyPath: m_TagString
+      value: PuzzleItem
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1001 &504939343
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 890858569}
+    m_Modifications:
+    - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 27.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -9.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.013140975
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9999137
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 212546238824417360, guid: e3c866990350eb449b9dd82385a42aca,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728463518494516, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_Name
+      value: Blue Gem (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728463518494516, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_TagString
+      value: PuzzleItem
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!4 &504939344 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca,
+    type: 2}
+  m_PrefabInternal: {fileID: 504939343}
 --- !u!4 &618790017 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4636234064583964, guid: 7babcf6597fb8b14cb72954fe57c3c88,
@@ -1328,6 +1529,66 @@ TilemapCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+--- !u!1001 &648883600
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 890858569}
+    m_Modifications:
+    - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -5.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -9.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.013140975
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9999137
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 212546238824417360, guid: e3c866990350eb449b9dd82385a42aca,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728463518494516, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_Name
+      value: Blue Gem (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728463518494516, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_TagString
+      value: PuzzleItem
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!4 &648883601 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca,
+    type: 2}
+  m_PrefabInternal: {fileID: 648883600}
 --- !u!1001 &724366703
 Prefab:
   m_ObjectHideFlags: 0
@@ -1365,7 +1626,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 212546238824417360, guid: e3c866990350eb449b9dd82385a42aca,
         type: 2}
@@ -1375,6 +1636,10 @@ Prefab:
     - target: {fileID: 1728463518494516, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
       propertyPath: m_Name
       value: Blue Gem (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728463518494516, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_TagString
+      value: PuzzleItem
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
@@ -1415,23 +1680,26 @@ Transform:
   m_LocalPosition: {x: 2.9747915, y: 0.9207593, z: -0.4546496}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1261597342}
+  - {fileID: 1433315123}
+  - {fileID: 1091077131}
+  - {fileID: 1916590529}
+  - {fileID: 724366704}
+  - {fileID: 27311366}
+  - {fileID: 648883601}
+  - {fileID: 49836941}
+  - {fileID: 504939344}
   - {fileID: 69558539}
   - {fileID: 779927364}
   - {fileID: 292750968}
-  - {fileID: 1882133468}
   - {fileID: 618790017}
-  - {fileID: 93182716}
-  - {fileID: 1261597342}
-  - {fileID: 1441944592}
-  - {fileID: 1433315123}
-  - {fileID: 1091077131}
-  - {fileID: 1421625974}
+  - {fileID: 1882133468}
   - {fileID: 1056431462}
-  - {fileID: 1916590529}
-  - {fileID: 2110590350}
-  - {fileID: 946489728}
-  - {fileID: 724366704}
   - {fileID: 177253842}
+  - {fileID: 1908105742}
+  - {fileID: 93182716}
+  - {fileID: 1441944592}
+  - {fileID: 1421625974}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1446,57 +1714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41a08c3b56fe53b47ad3b6bb273750cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &946489727
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 890858569}
-    m_Modifications:
-    - target: {fileID: 4636234064583964, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636234064583964, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.86
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636234064583964, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -9.43
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636234064583964, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0.013140975
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636234064583964, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636234064583964, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636234064583964, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.9999137
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636234064583964, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
-      propertyPath: m_RootOrder
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 1728463518494516, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
-      propertyPath: m_Name
-      value: Purple Gem (4)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
-  m_IsPrefabAsset: 0
---- !u!4 &946489728 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4636234064583964, guid: b2913892d27ee4e478609cfcc625bc89,
-    type: 2}
-  m_PrefabInternal: {fileID: 946489727}
+  portal: {fileID: 29182619}
 --- !u!1001 &955843854
 Prefab:
   m_ObjectHideFlags: 0
@@ -1590,11 +1808,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4636234064583964, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1728463518494516, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
       propertyPath: m_Name
       value: Orange Gem (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728463518494516, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
+      propertyPath: m_TagString
+      value: PuzzleItem
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
@@ -1641,7 +1863,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 212546238824417360, guid: e3c866990350eb449b9dd82385a42aca,
         type: 2}
@@ -1651,6 +1873,10 @@ Prefab:
     - target: {fileID: 1728463518494516, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
       propertyPath: m_Name
       value: Blue Gem (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728463518494516, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_TagString
+      value: PuzzleItem
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
@@ -55156,6 +55382,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1711287659585846, guid: ffdbbf4770ef33f48885d14411ee6b03, type: 2}
+      propertyPath: m_Name
+      value: GameController
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffdbbf4770ef33f48885d14411ee6b03, type: 2}
   m_IsPrefabAsset: 0
@@ -55995,11 +56225,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4636234064583964, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 1728463518494516, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
       propertyPath: m_Name
       value: Purple Gem (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728463518494516, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
+      propertyPath: m_TagString
+      value: PuzzleItem
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
@@ -56046,7 +56280,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 212546238824417360, guid: e3c866990350eb449b9dd82385a42aca,
         type: 2}
@@ -56056,6 +56290,10 @@ Prefab:
     - target: {fileID: 1728463518494516, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
       propertyPath: m_Name
       value: Blue Gem (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728463518494516, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_TagString
+      value: PuzzleItem
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
@@ -56149,11 +56387,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4636234064583964, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 1728463518494516, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
       propertyPath: m_Name
       value: Purple Gem (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728463518494516, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
+      propertyPath: m_TagString
+      value: PuzzleItem
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
@@ -57654,11 +57896,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4636234064583964, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1728463518494516, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
       propertyPath: m_Name
       value: Orange Gem (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728463518494516, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
+      propertyPath: m_TagString
+      value: PuzzleItem
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
@@ -57700,12 +57946,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 212546238824417360, guid: e3c866990350eb449b9dd82385a42aca,
         type: 2}
       propertyPath: m_Color.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728463518494516, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_TagString
+      value: PuzzleItem
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
@@ -60201,11 +60451,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4636234064583964, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1728463518494516, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
       propertyPath: m_Name
       value: Orange Gem (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728463518494516, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
+      propertyPath: m_TagString
+      value: PuzzleItem
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
@@ -60224,15 +60478,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4636234064583964, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.9447916
+      value: -3.68
       objectReference: {fileID: 0}
     - target: {fileID: 4636234064583964, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.7407594
+      value: -5.66
       objectReference: {fileID: 0}
     - target: {fileID: 4636234064583964, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -9.52535
+      value: 0.019
       objectReference: {fileID: 0}
     - target: {fileID: 4636234064583964, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
       propertyPath: m_LocalRotation.x
@@ -60252,11 +60506,70 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4636234064583964, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728463518494516, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
+      propertyPath: m_TagString
+      value: PuzzleItem
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1001 &1908105741
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 890858569}
+    m_Modifications:
+    - target: {fileID: 4636234064583964, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 12.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.0131409755
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -4.6566134e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9999137
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636234064583964, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728463518494516, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
+      propertyPath: m_Name
+      value: Orange Gem (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728463518494516, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
+      propertyPath: m_TagString
+      value: PuzzleItem
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!4 &1908105742 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4636234064583964, guid: 7babcf6597fb8b14cb72954fe57c3c88,
+    type: 2}
+  m_PrefabInternal: {fileID: 1908105741}
 --- !u!1001 &1916590528
 Prefab:
   m_ObjectHideFlags: 0
@@ -60294,7 +60607,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4636234064583964, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 212546238824417360, guid: e3c866990350eb449b9dd82385a42aca,
         type: 2}
@@ -60304,6 +60617,10 @@ Prefab:
     - target: {fileID: 1728463518494516, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
       propertyPath: m_Name
       value: Blue Gem (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728463518494516, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+      propertyPath: m_TagString
+      value: PuzzleItem
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
@@ -60359,54 +60676,3 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82a185d28bdb42447b488be8acb7dac6, type: 2}
   m_IsPrefabAsset: 0
---- !u!1001 &2110590349
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 890858569}
-    m_Modifications:
-    - target: {fileID: 4636234064583964, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 26.49
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636234064583964, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 8.43
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636234064583964, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -9.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636234064583964, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0.013140975
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636234064583964, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636234064583964, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636234064583964, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.9999137
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636234064583964, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
-      propertyPath: m_RootOrder
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 1728463518494516, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
-      propertyPath: m_Name
-      value: Purple Gem (3)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
-  m_IsPrefabAsset: 0
---- !u!4 &2110590350 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4636234064583964, guid: b2913892d27ee4e478609cfcc625bc89,
-    type: 2}
-  m_PrefabInternal: {fileID: 2110590349}

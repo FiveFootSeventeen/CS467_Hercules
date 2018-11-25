@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class VoidPuzzleScript : MonoBehaviour {
 
+    public GameObject portal;
+
 	// Use this for initialization
 	void Start () {
-		
+        portal.SetActive(false);
+        
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    private void FixedUpdate()
+    {
+        if (GameObject.FindGameObjectsWithTag("PuzzleItem").Length == 0)
+        {
+            portal.SetActive(true);
+        }
+    }
+
 }

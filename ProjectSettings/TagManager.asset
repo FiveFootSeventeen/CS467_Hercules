@@ -7,6 +7,8 @@ TagManager:
   - UIManager
   - MainMenu
   - Weapon
+  - Enemy
+  - PuzzleItem
   layers:
   - Default
   - TransparentFX
