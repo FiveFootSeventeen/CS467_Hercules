@@ -42,29 +42,119 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   animController: {fileID: 0}
-  sprite: {fileID: 21300342, guid: d5e5f487823758b4fa72fe592cb9eceb, type: 3}
+  sprite: {fileID: 21300338, guid: d5e5f487823758b4fa72fe592cb9eceb, type: 3}
   isPlayer: 1
   charLevel: 1
-  charName: Minnie
-  maxHealth: 98
-  currentHealth: 40
-  maxGems: 0
+  charName: 
+  maxHealth: 80
+  currentHealth: 80
+  maxGems: 100
   currentGems: 0
-  maxSanity: 30
-  currentSanity: 18
+  maxSanity: 50
+  currentSanity: 50
   baseDamage: 10
   currentDamage: 10
-  maxInventory: 10
+  maxInventory: 8
   currentInventory: 0
-  charExperience: 87
+  charExperience: 0
   charLevels:
-  - maxHealth: 101
-    maxSanity: 31
-    maxGems: 12
-    baseDamage: 12
-    requiredXP: 1000
-  - maxHealth: 102
-    maxSanity: 31
-    maxGems: 12
-    baseDamage: 13
-    requiredXP: 150
+  - maxHealth: 0
+    maxSanity: 0
+    maxGems: 0
+    baseDamage: 0
+    requiredXP: 0
+  - maxHealth: 0
+    maxSanity: 0
+    maxGems: 0
+    baseDamage: 0
+    requiredXP: 0
+  - maxHealth: 0
+    maxSanity: 0
+    maxGems: 0
+    baseDamage: 0
+    requiredXP: 0
+  - maxHealth: 0
+    maxSanity: 0
+    maxGems: 0
+    baseDamage: 0
+    requiredXP: 0
+  - maxHealth: 0
+    maxSanity: 0
+    maxGems: 0
+    baseDamage: 0
+    requiredXP: 0
+  - maxHealth: 0
+    maxSanity: 0
+    maxGems: 0
+    baseDamage: 0
+    requiredXP: 0
+  - maxHealth: 0
+    maxSanity: 0
+    maxGems: 0
+    baseDamage: 0
+    requiredXP: 0
+  - maxHealth: 0
+    maxSanity: 0
+    maxGems: 0
+    baseDamage: 0
+    requiredXP: 0
+  - maxHealth: 0
+    maxSanity: 0
+    maxGems: 0
+    baseDamage: 0
+    requiredXP: 0
+  - maxHealth: 0
+    maxSanity: 0
+    maxGems: 0
+    baseDamage: 0
+    requiredXP: 0
+  - maxHealth: 0
+    maxSanity: 0
+    maxGems: 0
+    baseDamage: 0
+    requiredXP: 0
+  - maxHealth: 0
+    maxSanity: 0
+    maxGems: 0
+    baseDamage: 0
+    requiredXP: 0
+  - maxHealth: 0
+    maxSanity: 0
+    maxGems: 0
+    baseDamage: 0
+    requiredXP: 0
+  - maxHealth: 0
+    maxSanity: 0
+    maxGems: 0
+    baseDamage: 0
+    requiredXP: 0
+  - maxHealth: 0
+    maxSanity: 0
+    maxGems: 0
+    baseDamage: 0
+    requiredXP: 0
+  - maxHealth: 0
+    maxSanity: 0
+    maxGems: 0
+    baseDamage: 0
+    requiredXP: 0
+  - maxHealth: 0
+    maxSanity: 0
+    maxGems: 0
+    baseDamage: 0
+    requiredXP: 0
+  - maxHealth: 0
+    maxSanity: 0
+    maxGems: 0
+    baseDamage: 0
+    requiredXP: 0
+  - maxHealth: 0
+    maxSanity: 0
+    maxGems: 0
+    baseDamage: 0
+    requiredXP: 0
+  - maxHealth: 0
+    maxSanity: 0
+    maxGems: 0
+    baseDamage: 0
+    requiredXP: 0
