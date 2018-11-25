@@ -34,4 +34,40 @@ public class Item : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void Use()
+    {
+        CharacterStats character = CharacterStats.instance;
+        if (isItem)
+        {
+            if (affectHP)
+            {
+                character.ApplyHealth(amountToChange);
+                if (character.GetMaxHealth() < character.GetCurrentHealth())
+                {
+                    character.characterDefinition.currentHealth = character.characterDefinition.maxHealth;
+                }
+            }
+            if (affectDMG)
+            {
+                character.ApplySanity(amountToChange);
+                if (character.GetMaxSanity() < character.GetCurrentSanity())
+                {
+                    character.characterDefinition.currentSanity = character.characterDefinition.maxSanity;
+                }
+            }
+            if (affectDMG)
+            {
+                character.characterDefinition.currentDamage += amountToChange;                
+            }
+
+            if (affectGems)
+            {
+                character.characterDefinition.currentGems += amountToChange;
+                GameController.control.gemsCollected += amountToChange;
+                Debug.Log("Gems: " + GameController.control.gemsCollected);
+            }
+        }
+
+    }
 }

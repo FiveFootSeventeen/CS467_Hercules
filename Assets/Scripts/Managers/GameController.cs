@@ -9,7 +9,7 @@ using System.IO;
 public class GameController : MonoBehaviour {
 
     public static GameController control;
-    private CharacterStats playerStats;
+    CharacterStats playerStats;
 
     [Header("Inventory")]
     public string[] itemsInventory;

@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     string action = "slashAttack";
 
     public bool isAlive = true;
+    public bool canMove = true; //used for opening menu
 
     public WeaponSlot weapon;
     CharacterStats stats;

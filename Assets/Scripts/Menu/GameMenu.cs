@@ -36,7 +36,9 @@ public class GameMenu : MonoBehaviour {
                 menu.SetActive(false);
                 Time.timeScale = 1;
                 Cursor.visible = false;
-               
+                PlayerController.instance.canMove = true;
+
+
             }
             else
             {
@@ -44,7 +46,9 @@ public class GameMenu : MonoBehaviour {
                 menu.SetActive(true);
                 Cursor.visible = true;
                 Time.timeScale = 0;
-                
+                PlayerController.instance.canMove = false;
+
+
 
             }
         }
@@ -101,6 +105,15 @@ public class GameMenu : MonoBehaviour {
 
         itemName.text = activeItem.itemName;
         itemDesc.text = activeItem.description;
+    }
+    public void UseItem()
+    {
+        activeItem.Use();
+        if (activeItem.isItem)
+        {
+            DiscardItem();
+        }
+        
     }
 
     public void DiscardItem()

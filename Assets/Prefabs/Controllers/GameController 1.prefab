@@ -52,6 +52,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f6b99bdaa4b2b458560a93be599110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemsInventory:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  numberOfItems: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  refItems:
+  - {fileID: 114719395359471508, guid: 01c548fa7cd9e7540920948670fb790d, type: 2}
+  - {fileID: 114963046007411222, guid: 955f6d86f526d654e98912ca839fe0e1, type: 2}
+  - {fileID: 114133315512382512, guid: 657c13aa1413666478c4ced6ccd22a11, type: 2}
+  - {fileID: 114784170642567616, guid: f2adba529d447ec4da326f063df1114c, type: 2}
+  - {fileID: 114966786052092234, guid: e3c866990350eb449b9dd82385a42aca, type: 2}
+  - {fileID: 114061116879948356, guid: 1fb7192ba890c974d8db67bdf06a2e15, type: 2}
+  - {fileID: 114993265960374074, guid: 7babcf6597fb8b14cb72954fe57c3c88, type: 2}
+  - {fileID: 114244425064621226, guid: b2913892d27ee4e478609cfcc625bc89, type: 2}
+  - {fileID: 114449499367059496, guid: 1df197c421a50a54c942d8b7b64a8602, type: 2}
   gemsCollected: 0
   weaponsCollected: 0
   voidPortalStatus: 0
