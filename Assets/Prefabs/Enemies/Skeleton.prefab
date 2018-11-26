@@ -138,7 +138,7 @@ MonoBehaviour:
   patrolTime: 5
   aggroRange: 3
   inView: 0
-  attack: {fileID: 0}
+  attack: {fileID: 11400000, guid: b8b6d99419ecb574aa2dfef5a74cc6da, type: 2}
   walkSpeed: 2
   currentWaypoint: {fileID: 0}
   runSpeedMultiplier: 1.05
@@ -155,7 +155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c11efce32e44240ba35fa2b78947e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterDefinition_Template: {fileID: 0}
+  characterDefinition_Template: {fileID: 11400000, guid: 1e65c6a99c2583d49a7d5c8b2d381c61,
+    type: 2}
   characterDefinition: {fileID: 0}
   characterWeaponSlot: {fileID: 0}
 --- !u!212 &212469552557685472

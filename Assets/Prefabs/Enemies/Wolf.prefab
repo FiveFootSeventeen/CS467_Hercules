@@ -135,7 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c11efce32e44240ba35fa2b78947e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterDefinition_Template: {fileID: 0}
+  characterDefinition_Template: {fileID: 11400000, guid: 377ab3092090db440b31a6160eecb822,
+    type: 2}
   characterDefinition: {fileID: 0}
   characterWeaponSlot: {fileID: 0}
 --- !u!114 &114832664513109932
@@ -152,7 +153,7 @@ MonoBehaviour:
   patrolTime: 5
   aggroRange: 3
   inView: 0
-  attack: {fileID: 0}
+  attack: {fileID: 11400000, guid: ba2a7fb3f1831c24a9e06a3e0f5d081a, type: 2}
   walkSpeed: 2
   currentWaypoint: {fileID: 0}
   runSpeedMultiplier: 1.05
