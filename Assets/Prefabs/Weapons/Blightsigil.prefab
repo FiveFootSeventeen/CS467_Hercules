@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4553866795383894}
   - component: {fileID: 212874456848677752}
   - component: {fileID: 60923555965923922}
+  - component: {fileID: 114682319345753800}
   m_Layer: 0
   m_Name: Blightsigil
   m_TagString: Untagged
@@ -50,13 +51,13 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.05, y: -0.05}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.083476275, y: 0.15098967}
+    pivot: {x: 0.9121992, y: 0.1486845}
     oldSize: {x: 0.3, y: 0.3}
     newSize: {x: 0.3, y: 0.3}
     adaptiveTilingThreshold: 0.5
@@ -73,6 +74,17 @@ PolygonCollider2D:
       - {x: -0.025237259, y: 0.051304936}
       - {x: 0.1386564, y: 0.21667232}
       - {x: 0.17555447, y: 0.21438643}
+--- !u!114 &114682319345753800
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1304586147711222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 536ea59e1234aeb4fb6fd8bc577af082, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212874456848677752
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -105,9 +117,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -908595311
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1873578313
+  m_SortingLayer: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: b87892f32994cfc4e899daf8f55a93ba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

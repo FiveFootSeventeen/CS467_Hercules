@@ -2,28 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponSlot : MonoBehaviour
-{
+public class WeaponSlot : MonoBehaviour {
 
     public Weapon currentWeapon;
     public bool isAttacking = false;
     public GameObject player;
-   
 
     private List<string> unattackable = new List<string>();
     private Attack attackCreated;
 
 
-    void Start()
-    {
-        Instantiate(currentWeapon.weaponPreb, GameObject.Find("Weapon").transform.position, Quaternion.identity, gameObject.transform);   //Instantiate the weapon prefab  
-       
-       
+    void Start () {
+        currentWeapon.weaponPreb.transform.position = new Vector3(0, 0, 0);
+        currentWeapon.weaponPreb.transform.rotation = Quaternion.identity;
+        Instantiate(currentWeapon.weaponPreb, gameObject.transform, false);
+        gameObject.SetActive(false);
     }
 
     void Update()
     {
-        if (!isAttacking && unattackable.Count > 0)  //After the attack is over clear out the list
+        if(!isAttacking && unattackable.Count > 0)  //After the attack is over clear out the list
         {
             unattackable.Clear();
         }
@@ -41,11 +39,10 @@ public class WeaponSlot : MonoBehaviour
 
             attackCreated = currentWeapon.ExecuteAttack(player);        //Create a new attack for this collision with the current player
 
-            print("did " + attackCreated.Damage + " damage to " + colObject.name);
+            print(gameObject.name + " did " + attackCreated.Damage + " damage to " + colObject.name);
 
             stats = colObject.GetComponent<EnemyStats>().characterDefinition;
             stats.TakeDamage(attackCreated.Damage);
-            print(colObject.name + " HP is " + stats.currentHealth);
         }
     }
 
@@ -53,7 +50,7 @@ public class WeaponSlot : MonoBehaviour
     //Return false if it is
     bool Attackable(string enemyName)
     {
-        foreach (string name in unattackable)
+        foreach(string name in unattackable)
         {
             if (enemyName == name)
                 return false;
@@ -72,3 +69,4 @@ public class WeaponSlot : MonoBehaviour
         unattackable.Add(enemyName);
     }
 }
+

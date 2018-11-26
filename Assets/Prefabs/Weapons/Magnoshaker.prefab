@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4090244041145800}
   - component: {fileID: 212718326651776604}
   - component: {fileID: 60608474325818570}
+  - component: {fileID: 114123203035494838}
   m_Layer: 0
   m_Name: Magnoshaker
   m_TagString: Untagged
@@ -50,7 +51,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.05, y: -0.05}
@@ -70,6 +71,17 @@ PolygonCollider2D:
       - {x: -0.13, y: 0.1}
       - {x: -0.08, y: 0.12}
       - {x: -0.16, y: 0.2}
+--- !u!114 &114123203035494838
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000178436395444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 536ea59e1234aeb4fb6fd8bc577af082, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212718326651776604
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -102,9 +114,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -908595311
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1873578313
+  m_SortingLayer: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 9ec1c098862b7d04fb61dee015b5eff9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

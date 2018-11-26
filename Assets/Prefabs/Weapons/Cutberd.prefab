@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4270596422641692}
   - component: {fileID: 212172489013014766}
   - component: {fileID: 60999075762962514}
+  - component: {fileID: 114450660967886080}
   m_Layer: 0
   m_Name: Cutberd
   m_TagString: Untagged
@@ -50,13 +51,13 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.05, y: -0.05}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.06860046, y: 0.07088903}
+    pivot: {x: 0.93074894, y: 0.06858387}
     oldSize: {x: 0.3, y: 0.3}
     newSize: {x: 0.3, y: 0.3}
     adaptiveTilingThreshold: 0.5
@@ -71,6 +72,17 @@ PolygonCollider2D:
       - {x: 0.14803858, y: 0.18092756}
       - {x: 0.20858319, y: 0.1949683}
       - {x: 0.21364678, y: 0.25144163}
+--- !u!114 &114450660967886080
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1330691823840704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 536ea59e1234aeb4fb6fd8bc577af082, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212172489013014766
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -103,9 +115,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -908595311
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1873578313
+  m_SortingLayer: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 83ae55654c840334693b7842a6fbf5e1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -23,8 +23,9 @@ GameObject:
   - component: {fileID: 50960714722122184}
   - component: {fileID: 95387584464552214}
   - component: {fileID: 70434275005874984}
-  - component: {fileID: 114090215538155884}
-  - component: {fileID: 114576684686133700}
+  - component: {fileID: 70103306197257244}
+  - component: {fileID: 114286521099009944}
+  - component: {fileID: 114864521071695104}
   m_Layer: 10
   m_Name: Alien
   m_TagString: Untagged
@@ -39,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1484740632465448}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.26, y: 0.42, z: 0.015563235}
+  m_LocalPosition: {x: -4.1, y: -0.83, z: 0.015563235}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -65,6 +66,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!70 &70103306197257244
+CapsuleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1484740632465448}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.37, y: 0.36}
+  m_Direction: 0
 --- !u!70 &70434275005874984
 CapsuleCollider2D:
   m_ObjectHideFlags: 1
@@ -98,7 +114,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114090215538155884
+--- !u!114 &114286521099009944
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,24 +122,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1484740632465448}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1cf1628cb05042dd9e0620576db056d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterDefinition_Template: {fileID: 11400000, guid: ccb31699cfebaf7468f91d4f23acfd1c,
-    type: 2}
-  characterDefinition: {fileID: 11400000, guid: ccb31699cfebaf7468f91d4f23acfd1c,
-    type: 2}
-  charInv: {fileID: 0}
-  characterWeaponSlot: {fileID: 0}
---- !u!114 &114576684686133700
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1484740632465448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf08b5a6c5c784bd6b9fe009dd3c49ca, type: 3}
+  m_Script: {fileID: 11500000, guid: df05b33003d5a894f9dbb8a5013cb400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   patrolTime: 5
@@ -140,6 +139,21 @@ MonoBehaviour:
   currentWaypoint: {fileID: 0}
   runSpeedMultiplier: 1.05
   attackDistance: 1.25
+--- !u!114 &114864521071695104
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1484740632465448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c628dc68deadd204e890812059f5ae51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterDefinition_Template: {fileID: 11400000, guid: ccb31699cfebaf7468f91d4f23acfd1c,
+    type: 2}
+  characterDefinition: {fileID: 0}
+  characterWeaponSlot: {fileID: 0}
 --- !u!212 &212434972119999998
 SpriteRenderer:
   m_ObjectHideFlags: 1
