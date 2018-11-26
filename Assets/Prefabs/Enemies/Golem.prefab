@@ -177,23 +177,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1951788312821962}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df05b33003d5a894f9dbb8a5013cb400, type: 3}
+  m_Script: {fileID: 11500000, guid: 86c11efce32e44240ba35fa2b78947e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patrolTime: 5
-  aggroRange: 3
-  spellAudio: {fileID: 0}
-  OnEnemyDeath:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Events+EventEnemyDeath, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  inView: 0
-  attack: {fileID: 11400000, guid: d0838b5600a8d7f43b291ff40cf797d8, type: 2}
-  walkSpeed: 2
-  currentWaypoint: {fileID: 0}
-  runSpeedMultiplier: 1.05
-  attackDistance: 1.25
+  characterDefinition_Template: {fileID: 0}
+  characterDefinition: {fileID: 0}
+  characterWeaponSlot: {fileID: 0}
 --- !u!114 &114683588685400910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -202,13 +191,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1951788312821962}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c628dc68deadd204e890812059f5ae51, type: 3}
+  m_Script: {fileID: 11500000, guid: cf08b5a6c5c784bd6b9fe009dd3c49ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterDefinition_Template: {fileID: 11400000, guid: 4a1ca5a59a6148448b298694a2039cd8,
-    type: 2}
-  characterDefinition: {fileID: 0}
-  characterWeaponSlot: {fileID: 0}
+  patrolTime: 5
+  aggroRange: 3
+  inView: 0
+  attack: {fileID: 0}
+  walkSpeed: 2
+  currentWaypoint: {fileID: 0}
+  runSpeedMultiplier: 1.05
+  attackDistance: 1.25
+  charAlive: 0
 --- !u!212 &212985386559127640
 SpriteRenderer:
   m_ObjectHideFlags: 1
