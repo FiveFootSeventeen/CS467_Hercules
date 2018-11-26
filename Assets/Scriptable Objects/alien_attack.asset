@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Name: alien_attack
   m_EditorClassIdentifier: 
   Cooldown: 3
-  Range: 0
-  minDamage: 0
-  maxDamage: 0
-  critMult: 0
-  critChance: 0
+  minDamage: 1.5
+  maxDamage: 5
+  critMult: 1.2
+  critChance: 0.3

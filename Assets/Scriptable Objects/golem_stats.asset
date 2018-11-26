@@ -14,10 +14,10 @@ MonoBehaviour:
   animController: {fileID: 0}
   sprite: {fileID: 0}
   isPlayer: 0
-  charLevel: 0
-  charName: 
-  maxHealth: 10
-  currentHealth: 10
+  charLevel: 1
+  charName: Golem
+  maxHealth: 100
+  currentHealth: 100
   maxGems: 0
   currentGems: 0
   maxSanity: 0

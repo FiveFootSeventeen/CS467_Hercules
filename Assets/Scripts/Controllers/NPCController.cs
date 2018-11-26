@@ -9,10 +9,6 @@ public class NPCController : MonoBehaviour {
     public float patrolTime = 5; // time in seconds to wait before seeking a new patrol destination
     public float aggroRange = 3; 
 
-   
-     
-    
-
 //Control movement 
     Transform playerTransform;
     private Animator animator;
@@ -90,7 +86,6 @@ public class NPCController : MonoBehaviour {
             
             charAlive = false;
             StartCoroutine(blinkyDeath(0.25f));
-            
         }
     }
 

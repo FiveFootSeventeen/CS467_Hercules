@@ -11,9 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d4e38fe96e54189b1a470727e9bee1, type: 3}
   m_Name: jackal_attack
   m_EditorClassIdentifier: 
-  Cooldown: 3
-  Range: 0
-  minDamage: 0
-  maxDamage: 0
-  critMult: 0
-  critChance: 0
+  Cooldown: 2
+  minDamage: 7
+  maxDamage: 13
+  critMult: 1.2
+  critChance: 0.3

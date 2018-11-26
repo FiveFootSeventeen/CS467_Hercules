@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d4e38fe96e54189b1a470727e9bee1, type: 3}
   m_Name: wolf_attack
   m_EditorClassIdentifier: 
-  Cooldown: 3
+  Cooldown: 1
   minDamage: 2
-  maxDamage: 10
-  critMult: 0
-  critChance: 0
+  maxDamage: 7
+  critMult: 1.3
+  critChance: 0.2

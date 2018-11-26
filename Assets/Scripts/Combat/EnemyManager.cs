@@ -38,11 +38,9 @@ public void SpawnWave()
         OnWaveSpawn.Invoke();
     }
     activeEnemies = Waves[currentWave].EnemyNumber;
-        print("active enemies: " + activeEnemies);
 
     for (int i = 0; i <= Waves[currentWave].EnemyNumber - 1; i++)
     {
-            print("spawning");
         Spawn spawnPoint = selectRandomSpawn();
         GameObject enemy = Instantiate(selectRandomEnemy(), spawnPoint.transform.position, Quaternion.identity);
         enemy.GetComponent<NPCController>().currentWaypoint = findClosestWayPoint(enemy.transform);
