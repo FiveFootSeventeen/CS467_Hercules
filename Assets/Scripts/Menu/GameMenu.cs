@@ -34,8 +34,8 @@ public class GameMenu : MonoBehaviour {
             if (menu.activeInHierarchy)
             {
                 menu.SetActive(false);
-                Time.timeScale = 1;
-                Cursor.visible = false;
+                //Time.timeScale = 1;
+                //Cursor.visible = false;
                 PlayerController.instance.canMove = true;
 
 
@@ -44,8 +44,8 @@ public class GameMenu : MonoBehaviour {
             {
                 UpdateMainStats();
                 menu.SetActive(true);
-                Cursor.visible = true;
-                Time.timeScale = 0;
+                //Cursor.visible = true;
+                //Time.timeScale = 0;
                 PlayerController.instance.canMove = false;
 
 

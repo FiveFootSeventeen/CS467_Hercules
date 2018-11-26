@@ -12,7 +12,7 @@ public class EnemyManager : MonoBehaviour
     public UnityEvent OnWavesDone;
 
     private int currentWave = 0;
-    private int activeEnemies;
+    public int activeEnemies;
 
     public int deathSFX;
 

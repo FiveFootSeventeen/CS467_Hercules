@@ -136,10 +136,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1202251383613514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4491e012552e53e4b834f721f4efd50a, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e582171477cbd246a434009d358dc85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWeapon: {fileID: 11400000, guid: 93ef5036ee2fbf344a85d1038c41c3ab, type: 2}
+  currentWeapon: {fileID: 11400000, guid: da8bb31ef25734a48803baacbe77e0c8, type: 2}
   isAttacking: 0
   player: {fileID: 1009752261174840}
 --- !u!114 &114354293233539458
@@ -176,6 +176,7 @@ MonoBehaviour:
   attackTime: 0.8
   originSpeed: 1.1
   isAlive: 1
+  canMove: 1
   weapon: {fileID: 114007875888638952}
   walkFX: 0
 --- !u!212 &212610833884687488

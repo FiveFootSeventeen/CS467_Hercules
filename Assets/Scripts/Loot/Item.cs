@@ -48,7 +48,7 @@ public class Item : MonoBehaviour {
                     character.characterDefinition.currentHealth = character.characterDefinition.maxHealth;
                 }
             }
-            if (affectDMG)
+            if (affectSanity)
             {
                 character.ApplySanity(amountToChange);
                 if (character.GetMaxSanity() < character.GetCurrentSanity())
