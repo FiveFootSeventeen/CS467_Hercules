@@ -19,7 +19,11 @@ public class LevelExit : MonoBehaviour {
             if (waitToLoad <= 0)
             {
                 loadAfterFade = false;
-                SceneManager.LoadScene(levelToLoad);  
+                SceneManager.LoadScene(levelToLoad);
+                if (levelToLoad == "Game.MainScene")
+                {
+                    CountdownTimer.instance.StopTimer();
+                }
             }
         }
     }

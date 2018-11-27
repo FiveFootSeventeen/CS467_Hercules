@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class CountdownTimer : MonoBehaviour {
 
+    public static CountdownTimer instance;
+
     public float timeLeft = 300.0f;
     private int sanity;
     private double sanityExact;
@@ -17,32 +19,43 @@ public class CountdownTimer : MonoBehaviour {
 
     public TextMeshProUGUI TextPro;
 
-    //public void StartTimer(float from)
-    void Start()
+    void Awake()
     {
-        if ((SceneManager.GetActiveScene().name == "Game.TwilightScene") || (SceneManager.GetActiveScene().name == "Game.PlasmaScene") || (SceneManager.GetActiveScene().name == "Game.VoidScene"))
+        if (instance == null)
         {
-            //GameObject.Find("CountdownText").SetActive(true);
+            instance = this;
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
+
+    public void StartTimer()
+    {
             transform.GetChild(0).gameObject.SetActive(true);
             stop = false;
             Update();
             StartCoroutine(updateCoroutine());
-        }
+    }
+
+    public void StopTimer()
+    {
+        stop = true;
+        transform.GetChild(0).gameObject.SetActive(false);
     }
 
     void Update()
     {
         if (stop)
-        {
-            
+        {            
             return;
         }
 
         timeLeft -= Time.deltaTime;
         sanityExact -= .35 * Time.deltaTime;
         sanity = Mathf.RoundToInt((float)sanityExact);
+        PlayerController.instance.currentStats.currentSanity -= Mathf.RoundToInt((float)sanityExact);
+        Debug.Log(PlayerController.instance.currentStats.currentSanity);
         Debug.Log(sanity);
-
         minutes = Mathf.Floor(timeLeft / 60);
         seconds = timeLeft % 60;
         if (seconds > 59) seconds = 59;

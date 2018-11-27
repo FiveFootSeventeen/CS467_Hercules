@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
 
     public WeaponSlot weapon;
     CharacterStats stats;
-    CharacterStats_SO currentStats;
+    public CharacterStats_SO currentStats;
     Animator anim;
     new Rigidbody2D rigidbody2D;
     CapsuleCollider2D bodycollider;
