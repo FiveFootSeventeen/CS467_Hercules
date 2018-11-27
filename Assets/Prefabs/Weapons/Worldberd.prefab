@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 212400929699034806}
   - component: {fileID: 60993809563213088}
   - component: {fileID: 114390676878310750}
+  - component: {fileID: 114046401503941692}
+  - component: {fileID: 114307633531632160}
   m_Layer: 0
   m_Name: Worldberd
   m_TagString: Untagged
@@ -72,6 +74,43 @@ PolygonCollider2D:
       - {x: 0.15543039, y: 0.22029966}
       - {x: 0.1879216, y: 0.27010566}
       - {x: 0.15867752, y: 0.31810096}
+--- !u!114 &114046401503941692
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1071921465108014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c56d116c425cb458840a7b6e28bacc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114307633531632160
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1071921465108014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df49ca6ade97e874aa61bf3fe2d102a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isItem: 0
+  isWeapon: 1
+  isArmor: 0
+  itemName: Worldberd
+  description: 
+  value: 25
+  itemSprite: {fileID: 0}
+  amountToChange: 0
+  affectHP: 0
+  affectSanity: 0
+  affectDMG: 0
+  affectGems: 0
+  weapStrength: 0
+  weapRange: 0
+  armorValue: 0
 --- !u!114 &114390676878310750
 MonoBehaviour:
   m_ObjectHideFlags: 1

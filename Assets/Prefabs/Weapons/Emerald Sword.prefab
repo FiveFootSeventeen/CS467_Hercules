@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 212057015224504456}
   - component: {fileID: 60676375227508408}
   - component: {fileID: 114879201847044334}
+  - component: {fileID: 114330397602506678}
+  - component: {fileID: 114655747950632754}
   m_Layer: 0
   m_Name: Emerald Sword
   m_TagString: Untagged
@@ -72,6 +74,43 @@ PolygonCollider2D:
       - {x: -0.07373983, y: 0.11280902}
       - {x: -0.0731373, y: 0.11441243}
       - {x: -0.27614963, y: 0.31325}
+--- !u!114 &114330397602506678
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1360565170451736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c56d116c425cb458840a7b6e28bacc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114655747950632754
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1360565170451736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df49ca6ade97e874aa61bf3fe2d102a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isItem: 0
+  isWeapon: 1
+  isArmor: 0
+  itemName: Emerald Sword
+  description: 
+  value: 25
+  itemSprite: {fileID: 0}
+  amountToChange: 0
+  affectHP: 0
+  affectSanity: 0
+  affectDMG: 0
+  affectGems: 0
+  weapStrength: 0
+  weapRange: 0
+  armorValue: 0
 --- !u!114 &114879201847044334
 MonoBehaviour:
   m_ObjectHideFlags: 1

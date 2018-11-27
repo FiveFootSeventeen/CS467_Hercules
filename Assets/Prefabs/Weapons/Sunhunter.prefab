@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 212141169520967452}
   - component: {fileID: 60290963599493718}
   - component: {fileID: 114526236395621524}
+  - component: {fileID: 114300910617815772}
+  - component: {fileID: 114836376876081794}
   m_Layer: 0
   m_Name: Sunhunter
   m_TagString: Untagged
@@ -74,6 +76,17 @@ PolygonCollider2D:
       - {x: 0.13898343, y: 0.23063476}
       - {x: 0.17003943, y: 0.20574854}
       - {x: 0.22179948, y: 0.21902266}
+--- !u!114 &114300910617815772
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1381129994799382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c56d116c425cb458840a7b6e28bacc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114526236395621524
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -85,6 +98,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43071ea7419dc2e408fd22f981307270, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114836376876081794
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1381129994799382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df49ca6ade97e874aa61bf3fe2d102a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isItem: 0
+  isWeapon: 1
+  isArmor: 0
+  itemName: Sunhunter
+  description: 
+  value: 25
+  itemSprite: {fileID: 0}
+  amountToChange: 0
+  affectHP: 0
+  affectSanity: 0
+  affectDMG: 0
+  affectGems: 0
+  weapStrength: 0
+  weapRange: 0
+  armorValue: 0
 --- !u!212 &212141169520967452
 SpriteRenderer:
   m_ObjectHideFlags: 1

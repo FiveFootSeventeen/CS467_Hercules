@@ -11,7 +11,7 @@ public class EnemyManager : MonoBehaviour
     public UnityEvent OnWaveSpawn;
     public UnityEvent OnWavesDone;
 
-    private int currentWave = 0;
+    public int currentWave = 0;
     public int activeEnemies;
 
     public int deathSFX;
@@ -21,10 +21,10 @@ public class EnemyManager : MonoBehaviour
 void Start()
 {
     spawnPoints = FindObjectsOfType<Spawn>();
-    SpawnWave();
+    SpawnWave(0);
 }
 
-public void SpawnWave()
+public void SpawnWave(int waveNumber)
 {
     if(Waves.Length - 1 < currentWave)
     {
@@ -50,16 +50,8 @@ public void SpawnWave()
     {
         //Play death sound
         AudioManager.Instance.PlaySFX(deathSFX);
-        EnemyWave cur = Waves[currentWave];
 
         activeEnemies -= 1;
-               
-        if (activeEnemies == 0)
-        {
-            
-            currentWave += 1;
-            SpawnWave();
-        }
     }
 
     private GameObject selectRandomEnemy()

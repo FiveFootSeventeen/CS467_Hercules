@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 212037004640825998}
   - component: {fileID: 60071468161380174}
   - component: {fileID: 114500242687401676}
+  - component: {fileID: 114262448538121042}
+  - component: {fileID: 114495754069700982}
   m_Layer: 0
   m_Name: Golden Hammer
   m_TagString: Untagged
@@ -72,6 +74,43 @@ PolygonCollider2D:
       - {x: 0.12954654, y: 0.3186803}
       - {x: 0.11070131, y: 0.29939783}
       - {x: 0.14207624, y: 0.24950713}
+--- !u!114 &114262448538121042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1404802127929412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c56d116c425cb458840a7b6e28bacc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114495754069700982
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1404802127929412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df49ca6ade97e874aa61bf3fe2d102a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isItem: 0
+  isWeapon: 1
+  isArmor: 0
+  itemName: Golden Hammer
+  description: 
+  value: 25
+  itemSprite: {fileID: 0}
+  amountToChange: 0
+  affectHP: 0
+  affectSanity: 0
+  affectDMG: 0
+  affectGems: 0
+  weapStrength: 0
+  weapRange: 0
+  armorValue: 0
 --- !u!114 &114500242687401676
 MonoBehaviour:
   m_ObjectHideFlags: 1

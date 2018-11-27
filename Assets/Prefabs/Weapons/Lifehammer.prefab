@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 212698239567945064}
   - component: {fileID: 60597680975383126}
   - component: {fileID: 114878087240380732}
+  - component: {fileID: 114097095585029384}
+  - component: {fileID: 114372305318596246}
   m_Layer: 0
   m_Name: Lifehammer
   m_TagString: Untagged
@@ -72,6 +74,43 @@ PolygonCollider2D:
       - {x: -0.22228159, y: 0.23843056}
       - {x: -0.18435037, y: 0.27583084}
       - {x: -0.22766106, y: 0.32082582}
+--- !u!114 &114097095585029384
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1264815465507348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c56d116c425cb458840a7b6e28bacc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114372305318596246
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1264815465507348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df49ca6ade97e874aa61bf3fe2d102a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isItem: 0
+  isWeapon: 1
+  isArmor: 0
+  itemName: Lifehammer
+  description: 
+  value: 25
+  itemSprite: {fileID: 0}
+  amountToChange: 15
+  affectHP: 1
+  affectSanity: 0
+  affectDMG: 0
+  affectGems: 0
+  weapStrength: 0
+  weapRange: 0
+  armorValue: 0
 --- !u!114 &114878087240380732
 MonoBehaviour:
   m_ObjectHideFlags: 1

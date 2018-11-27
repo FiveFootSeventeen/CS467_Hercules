@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 212759403328743220}
   - component: {fileID: 60190790090203400}
   - component: {fileID: 114713940492704838}
+  - component: {fileID: 114238415385856438}
+  - component: {fileID: 114637010841268796}
   m_Layer: 0
   m_Name: Planeaxe
   m_TagString: Untagged
@@ -71,6 +73,43 @@ PolygonCollider2D:
       - {x: -0.13, y: 0.1}
       - {x: -0.08, y: 0.12}
       - {x: -0.16, y: 0.2}
+--- !u!114 &114238415385856438
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1343087862844578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c56d116c425cb458840a7b6e28bacc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114637010841268796
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1343087862844578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df49ca6ade97e874aa61bf3fe2d102a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isItem: 0
+  isWeapon: 1
+  isArmor: 0
+  itemName: Planeaxe
+  description: 
+  value: 25
+  itemSprite: {fileID: 0}
+  amountToChange: 0
+  affectHP: 0
+  affectSanity: 0
+  affectDMG: 0
+  affectGems: 0
+  weapStrength: 0
+  weapRange: 0
+  armorValue: 0
 --- !u!114 &114713940492704838
 MonoBehaviour:
   m_ObjectHideFlags: 1

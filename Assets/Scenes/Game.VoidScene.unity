@@ -123,21 +123,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1406593158609144, guid: 82a185d28bdb42447b488be8acb7dac6,
     type: 2}
   m_PrefabInternal: {fileID: 31815997}
---- !u!114 &29182620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 29182619}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29a33808356e14a40a3378d236b81103, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelToLoad: Game.MainScene
-  levelTransitionName: 
-  theEntrance: {fileID: 1974218387}
-  waitToLoad: 1
 --- !u!1001 &31815997
 Prefab:
   m_ObjectHideFlags: 0
@@ -181,9 +166,15 @@ Prefab:
       propertyPath: m_Name
       value: Void Portal Exit
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 68212191946021400, guid: 82a185d28bdb42447b488be8acb7dac6, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 82a185d28bdb42447b488be8acb7dac6, type: 2}
   m_IsPrefabAsset: 0
+--- !u!4 &31815998 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4063849303055588, guid: 82a185d28bdb42447b488be8acb7dac6,
+    type: 2}
+  m_PrefabInternal: {fileID: 31815997}
 --- !u!1001 &49836940
 Prefab:
   m_ObjectHideFlags: 0
@@ -60707,4 +60698,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3dc03888326c9743b749363c54fe095, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitionName: 
+  transitionName: ToVoid
+--- !u!1 &2028048207
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2028048208}
+  - component: {fileID: 2028048210}
+  - component: {fileID: 2028048209}
+  m_Layer: 12
+  m_Name: Portal Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2028048208
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2028048207}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 31815998}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2028048209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2028048207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29a33808356e14a40a3378d236b81103, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelToLoad: Game.MainScene
+  levelTransitionName: ToMainVoid
+  waitToLoad: 1
+--- !u!68 &2028048210
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2028048207}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.6364966, y: 0.14078996}
+  - {x: 0.5020512, y: 0.13005601}

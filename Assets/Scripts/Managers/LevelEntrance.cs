@@ -10,7 +10,7 @@ public class LevelEntrance : MonoBehaviour {
 	void Start () {
 		if (transitionName == PlayerController.instance.levelTransitionName)
         {
-            PlayerController.instance.transform.position = transform.position; //find player and put at this point
+            PlayerController.instance.transform.position = new Vector3(transform.position.x, transform.position.y - .5f, transform.position.z); //find player and put at this point
         }
         UIFade.instance.Unfade();
 	}

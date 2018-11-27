@@ -7,15 +7,9 @@ public class LevelExit : MonoBehaviour {
 
     public string levelToLoad;
     public string levelTransitionName;
-    public LevelEntrance theEntrance;
 
     public float waitToLoad = 1f;
     private bool loadAfterFade;
-
-    void Start()
-    {
-        theEntrance.transitionName = levelTransitionName;
-    }
 
     void Update ()
     {
@@ -25,16 +19,14 @@ public class LevelExit : MonoBehaviour {
             if (waitToLoad <= 0)
             {
                 loadAfterFade = false;
-                SceneManager.LoadScene(levelToLoad);
-                
+                SceneManager.LoadScene(levelToLoad);  
             }
         }
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (other.tag == "Player")
+        if (collider.tag == "Player")
         {
-            //SceneManager.LoadScene(levelToLoad);
             loadAfterFade = true;
             UIFade.instance.Fade();
             PlayerController.instance.levelTransitionName = levelTransitionName;

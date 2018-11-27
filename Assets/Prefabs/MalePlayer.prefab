@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 212610833884687488}
   - component: {fileID: 95793586569108558}
   - component: {fileID: 70787455513721276}
+  - component: {fileID: 70088913508922066}
   - component: {fileID: 50383359141714052}
   m_Layer: 9
   m_Name: MalePlayer
@@ -68,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1009752261174840}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.53, y: -6.48, z: -0.04801377}
+  m_LocalPosition: {x: -2.38, y: 32.54, z: -0.04801377}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4481666728173096}
@@ -95,6 +96,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!70 &70088913508922066
+CapsuleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1009752261174840}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.04}
+  m_Size: {x: 0.34, y: 0.5}
+  m_Direction: 0
 --- !u!70 &70787455513721276
 CapsuleCollider2D:
   m_ObjectHideFlags: 1

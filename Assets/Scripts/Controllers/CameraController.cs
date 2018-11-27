@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 public class CameraController : MonoBehaviour {
 
@@ -21,21 +22,16 @@ public class CameraController : MonoBehaviour {
     public bool musicStarted;
 
 	void Start () {
-        playerAnchor = FindObjectOfType<PlayerController>().transform; //searches objects for scene and finds object with PlayerController script attached
-  
-
         //Keep camera inside bounds of map
         halfHeight = Camera.main.orthographicSize;
-        halfWidth = halfHeight * Camera.main.aspect; 
-
-       // bottomLeftLimit = map.localBounds.min + new Vector3(halfWidth, halfHeight, 0f);
+        halfWidth = halfHeight * Camera.main.aspect;
+        // bottomLeftLimit = map.localBounds.min + new Vector3(halfWidth, halfHeight, 0f);
         //topRightLimit = map.localBounds.max - new Vector3(halfWidth, halfHeight, 0f);
+        playerAnchor = GameObject.FindGameObjectWithTag("Player").transform; //searches objects for scene and finds object with PlayerController script attached
+    }
 
-
-	}
-	
-	// LateUpdate is called once per frame, but it guaranteed to run after all items have been processed in update.
-	void LateUpdate() {
+    // LateUpdate is called once per frame, but it guaranteed to run after all items have been processed in update.
+    void LateUpdate() {
 
         if (!musicStarted)
         {

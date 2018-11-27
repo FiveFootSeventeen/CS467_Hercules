@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 212314987130849228}
   - component: {fileID: 60247403841992890}
   - component: {fileID: 114680405663512206}
+  - component: {fileID: 114549233022125490}
+  - component: {fileID: 114802300414483104}
   m_Layer: 0
   m_Name: Underchopper
   m_TagString: Untagged
@@ -73,6 +75,17 @@ PolygonCollider2D:
       - {x: 0.20296054, y: 0.20257217}
       - {x: 0.21803965, y: 0.2482968}
       - {x: 0.18283251, y: 0.28772983}
+--- !u!114 &114549233022125490
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1474635926570132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c56d116c425cb458840a7b6e28bacc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114680405663512206
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -84,6 +97,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43071ea7419dc2e408fd22f981307270, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114802300414483104
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1474635926570132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df49ca6ade97e874aa61bf3fe2d102a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isItem: 0
+  isWeapon: 1
+  isArmor: 0
+  itemName: Underchopper
+  description: 
+  value: 25
+  itemSprite: {fileID: 0}
+  amountToChange: 0
+  affectHP: 0
+  affectSanity: 0
+  affectDMG: 0
+  affectGems: 0
+  weapStrength: 0
+  weapRange: 0
+  armorValue: 0
 --- !u!212 &212314987130849228
 SpriteRenderer:
   m_ObjectHideFlags: 1

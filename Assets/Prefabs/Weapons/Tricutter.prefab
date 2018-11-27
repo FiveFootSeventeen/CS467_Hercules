@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 212112330298798422}
   - component: {fileID: 60324170253988454}
   - component: {fileID: 114804739286351008}
+  - component: {fileID: 114214180825417580}
+  - component: {fileID: 114170305560134206}
   m_Layer: 0
   m_Name: Tricutter
   m_TagString: Untagged
@@ -72,6 +74,43 @@ PolygonCollider2D:
       - {x: -0.10574384, y: 0.06874214}
       - {x: -0.07400819, y: 0.10443567}
       - {x: -0.28582618, y: 0.31150705}
+--- !u!114 &114170305560134206
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1318704874359138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df49ca6ade97e874aa61bf3fe2d102a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isItem: 0
+  isWeapon: 1
+  isArmor: 0
+  itemName: Tricutter
+  description: 
+  value: 25
+  itemSprite: {fileID: 0}
+  amountToChange: 0
+  affectHP: 0
+  affectSanity: 0
+  affectDMG: 0
+  affectGems: 0
+  weapStrength: 0
+  weapRange: 0
+  armorValue: 0
+--- !u!114 &114214180825417580
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1318704874359138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c56d116c425cb458840a7b6e28bacc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114804739286351008
 MonoBehaviour:
   m_ObjectHideFlags: 1

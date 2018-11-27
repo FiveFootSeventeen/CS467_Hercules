@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 212617125925642472}
   - component: {fileID: 60526606998332774}
   - component: {fileID: 114654819905227818}
+  - component: {fileID: 114099576918615562}
+  - component: {fileID: 114863293030558098}
   m_Layer: 0
   m_Name: Obsidian Sword
   m_TagString: Untagged
@@ -71,6 +73,17 @@ PolygonCollider2D:
       - {x: -0.13, y: 0.1}
       - {x: -0.08, y: 0.12}
       - {x: -0.16, y: 0.2}
+--- !u!114 &114099576918615562
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1469281198804848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c56d116c425cb458840a7b6e28bacc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114654819905227818
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -82,6 +95,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43071ea7419dc2e408fd22f981307270, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114863293030558098
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1469281198804848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df49ca6ade97e874aa61bf3fe2d102a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isItem: 0
+  isWeapon: 1
+  isArmor: 0
+  itemName: Obsidian Sword
+  description: 
+  value: 25
+  itemSprite: {fileID: 0}
+  amountToChange: 0
+  affectHP: 0
+  affectSanity: 0
+  affectDMG: 0
+  affectGems: 0
+  weapStrength: 0
+  weapRange: 0
+  armorValue: 0
 --- !u!212 &212617125925642472
 SpriteRenderer:
   m_ObjectHideFlags: 1

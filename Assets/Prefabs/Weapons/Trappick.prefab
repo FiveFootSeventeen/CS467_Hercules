@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 212820555922554962}
   - component: {fileID: 60296685568349232}
   - component: {fileID: 114960142320861024}
+  - component: {fileID: 114750325189443052}
+  - component: {fileID: 114706729307870962}
   m_Layer: 0
   m_Name: Trappick
   m_TagString: Untagged
@@ -72,6 +74,43 @@ PolygonCollider2D:
       - {x: 0.16735888, y: 0.22506371}
       - {x: 0.22034974, y: 0.27953187}
       - {x: 0.12533854, y: 0.329953}
+--- !u!114 &114706729307870962
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1853474363253010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df49ca6ade97e874aa61bf3fe2d102a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isItem: 0
+  isWeapon: 1
+  isArmor: 0
+  itemName: Trappick
+  description: 
+  value: 25
+  itemSprite: {fileID: 0}
+  amountToChange: 0
+  affectHP: 0
+  affectSanity: 0
+  affectDMG: 0
+  affectGems: 0
+  weapStrength: 0
+  weapRange: 0
+  armorValue: 0
+--- !u!114 &114750325189443052
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1853474363253010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c56d116c425cb458840a7b6e28bacc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114960142320861024
 MonoBehaviour:
   m_ObjectHideFlags: 1

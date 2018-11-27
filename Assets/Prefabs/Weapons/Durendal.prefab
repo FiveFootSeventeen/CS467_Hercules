@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 212541296356292236}
   - component: {fileID: 60133480822215510}
   - component: {fileID: 114471438268085792}
+  - component: {fileID: 114525738358868220}
+  - component: {fileID: 114298930988621762}
   m_Layer: 0
   m_Name: Durendal
   m_TagString: Untagged
@@ -71,6 +73,32 @@ PolygonCollider2D:
       - {x: -0.116885945, y: 0.08875955}
       - {x: -0.09327513, y: 0.12631351}
       - {x: -0.27825052, y: 0.31819698}
+--- !u!114 &114298930988621762
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1785304142493428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df49ca6ade97e874aa61bf3fe2d102a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isItem: 0
+  isWeapon: 1
+  isArmor: 0
+  itemName: Durendal
+  description: 
+  value: 25
+  itemSprite: {fileID: 0}
+  amountToChange: 0
+  affectHP: 0
+  affectSanity: 0
+  affectDMG: 0
+  affectGems: 0
+  weapStrength: 0
+  weapRange: 0
+  armorValue: 0
 --- !u!114 &114471438268085792
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -80,6 +108,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43071ea7419dc2e408fd22f981307270, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114525738358868220
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1785304142493428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c56d116c425cb458840a7b6e28bacc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212541296356292236

@@ -39,6 +39,7 @@ public class NPCController : MonoBehaviour {
     private bool attackOnCooldown, walking, newVector;
     public float attackDistance = 1.25f; //The furthest the enemy can be before they will attack
     public bool charAlive;
+    private EnemyManager enemyManager;
 
 
 
@@ -53,7 +54,7 @@ public class NPCController : MonoBehaviour {
 
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 
-        EnemyManager enemyManager = FindObjectOfType<EnemyManager>();
+        enemyManager = FindObjectOfType<EnemyManager>();
       
         
         InvokeRepeating("Tick", Random.Range(0, 1), 0.5f);
@@ -97,6 +98,7 @@ public class NPCController : MonoBehaviour {
             gameObject.GetComponent<SpriteRenderer>().enabled = !gameObject.GetComponent<SpriteRenderer>().enabled;
             yield return new WaitForSeconds(blinkTime);
         }
+        enemyManager.OnEnemyDeath();
         Destroy(gameObject);
     }
 

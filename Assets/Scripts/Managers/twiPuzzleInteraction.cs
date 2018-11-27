@@ -6,6 +6,14 @@ public class twiPuzzleInteraction : MonoBehaviour {
 
     ParticleSystem[] ps;
     public int sfxSource;
+    GameObject exitPortal;
+
+    private void Awake()
+    {
+        exitPortal = GameObject.Find("Twilight_Portal_Exit");
+        if(exitPortal && GameController.control.twilightPortalStatus != 3)
+            exitPortal.SetActive(false);
+    }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -56,6 +64,7 @@ public class twiPuzzleInteraction : MonoBehaviour {
             }
             AudioManager.Instance.PlaySFX(sfxSource);
             //AudioManager.Instance.EffectsSource.PlayOneShot(activationEffect);
+            exitPortal.SetActive(true);
         }
     }
 }
