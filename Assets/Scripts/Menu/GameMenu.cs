@@ -20,6 +20,7 @@ public class GameMenu : MonoBehaviour {
     public string selectedItem;
     public Item activeItem;
     public TextMeshProUGUI itemName, itemDesc, useButton;
+    public GameObject blur;
 
 
     public static GameMenu instance;
@@ -35,6 +36,7 @@ public class GameMenu : MonoBehaviour {
         {
             if (menu.activeInHierarchy)
             {
+                blur.SetActive(false);
                 menu.SetActive(false);
                 Time.timeScale = 1;
                 //Cursor.visible = false;
@@ -45,6 +47,7 @@ public class GameMenu : MonoBehaviour {
             else
             {
                 UpdateMainStats();
+                blur.SetActive(true);
                 menu.SetActive(true);
                 Cursor.visible = true;
                 //Time.timeScale = 0;
