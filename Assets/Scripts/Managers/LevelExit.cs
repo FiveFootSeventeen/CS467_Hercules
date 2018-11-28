@@ -31,6 +31,7 @@ public class LevelExit : MonoBehaviour {
     {
         if (collider.tag == "Player")
         {
+            AudioManager.Instance.PlaySFX(6);
             loadAfterFade = true;
             UIFade.instance.Fade();
             PlayerController.instance.levelTransitionName = levelTransitionName;

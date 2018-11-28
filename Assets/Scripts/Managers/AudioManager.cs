@@ -49,7 +49,7 @@ public class AudioManager : MonoBehaviour
 
         for (int i = 0; i < music.Length; i++)
         {
-            sfx[i].outputAudioMixerGroup = musicMixer;
+            music[i].outputAudioMixerGroup = musicMixer;
         }
 
     }
@@ -70,11 +70,10 @@ public class AudioManager : MonoBehaviour
         {
             if (sfx[i] == soundToPlay)
             {
-                sfx[i].Play();
+                sfx[i].Play();                
             }
         }
     }
-
 
     public void PlayMusic(int musicToPlay)
     {

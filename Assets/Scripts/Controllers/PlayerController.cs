@@ -131,12 +131,12 @@ public class PlayerController : MonoBehaviour
         }
 
         if (move.x != 0f || move.y != 0)
-        {
+        {            
             playerMoving = true;
             ellapsedStepTime += Time.deltaTime;
             if (ellapsedStepTime >= timeBtwnSteps)
             {
-                PlayWalkSound();
+                AudioManager.Instance.PlaySFX(0);
                 ellapsedStepTime -= timeBtwnSteps;
             }
             SetLastParams(lastMove);
@@ -186,9 +186,5 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("lastHorz", lastParams.y);      //lastHorz variable in the animator controller to move.y
     }
 
-    public void PlayWalkSound()
-    {
-        AudioManager.Instance.PlaySFX(walkFX);
-    }
 }
 
