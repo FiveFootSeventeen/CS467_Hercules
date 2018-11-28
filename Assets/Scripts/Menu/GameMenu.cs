@@ -13,6 +13,8 @@ public class GameMenu : MonoBehaviour {
     public Image playerImg;
 
     private CharacterStats playerStats;
+    public SimpleHealthBar healthBar;
+    public SimpleHealthBar sanityBar;
 
     public ItemButton[] itemBtns;
     public string selectedItem;

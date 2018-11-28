@@ -112,6 +112,7 @@ MonoBehaviour:
   enemiesKilled: 0
   bossesKilled: 0
   gameWon: 0
+  currentEnemyCount: 0
 --- !u!114 &114687897214083250
 MonoBehaviour:
   m_ObjectHideFlags: 1
