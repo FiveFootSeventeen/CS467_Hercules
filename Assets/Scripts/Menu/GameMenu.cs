@@ -95,6 +95,11 @@ public class GameMenu : MonoBehaviour {
         
     }
 
+    public void closeButton()
+    {
+        GameMenu.instance.blur.SetActive(false);
+    }
+
     public void SelectItem(Item item)
     {
         activeItem = item;
