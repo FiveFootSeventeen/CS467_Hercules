@@ -7,6 +7,8 @@ public class twiPuzzleInteraction : MonoBehaviour {
     ParticleSystem[] ps;
     public int sfxSource;
     GameObject exitPortal;
+    public Spawn bossSpawn;
+    public GameObject bossToSpawn;
 
     private void Awake()
     {
@@ -17,7 +19,7 @@ public class twiPuzzleInteraction : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if ((GameController.control.twilightPortalStatus == 0) && (gameObject.name == "Location1"))
+        if ((GameController.control.twilightPortalStatus == 0) && (gameObject.name == "Location1") && (col.tag == "Player"))
         {            
             //Destroy(this.gameObject);
             GameController.control.twilightPortalStatus = 1;
@@ -33,7 +35,7 @@ public class twiPuzzleInteraction : MonoBehaviour {
             AudioManager.Instance.PlaySFX(sfxSource);
             //AudioManager.Instance.EffectsSource.PlayOneShot(activationEffect);
         }
-        else if ((GameController.control.twilightPortalStatus == 1) && (gameObject.name == "Location2"))
+        else if ((GameController.control.twilightPortalStatus == 1) && (gameObject.name == "Location2") && (col.tag == "Player"))
         {
             //Destroy(this.gameObject);
             GameController.control.twilightPortalStatus = 2;
@@ -49,7 +51,7 @@ public class twiPuzzleInteraction : MonoBehaviour {
             AudioManager.Instance.PlaySFX(sfxSource);
             //AudioManager.Instance.EffectsSource.PlayOneShot(activationEffect);
         }
-        else if ((GameController.control.twilightPortalStatus == 2) && (gameObject.name == "Location3"))
+        else if ((GameController.control.twilightPortalStatus == 2) && (gameObject.name == "Location3") && (col.tag == "Player"))
         {
             //Destroy(this.gameObject);
             GameController.control.twilightPortalStatus = 3;
@@ -65,6 +67,7 @@ public class twiPuzzleInteraction : MonoBehaviour {
             AudioManager.Instance.PlaySFX(sfxSource);
             //AudioManager.Instance.EffectsSource.PlayOneShot(activationEffect);
             exitPortal.SetActive(true);
+            Instantiate(bossToSpawn, bossSpawn.transform.position, Quaternion.identity);
         }
     }
 }

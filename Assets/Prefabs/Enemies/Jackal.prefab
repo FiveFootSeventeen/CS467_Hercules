@@ -158,7 +158,7 @@ MonoBehaviour:
   walkSpeed: 2
   currentWaypoint: {fileID: 0}
   runSpeedMultiplier: 1.05
-  attackDistance: 1.25
+  attackDistance: 0.75
   charAlive: 0
 --- !u!212 &212197028053450212
 SpriteRenderer:

@@ -100,7 +100,8 @@ public class NPCController : MonoBehaviour {
             gameObject.GetComponent<SpriteRenderer>().enabled = !gameObject.GetComponent<SpriteRenderer>().enabled;
             yield return new WaitForSeconds(blinkTime);
         }
-        enemyManager.OnEnemyDeath();
+        if(enemyManager)
+            enemyManager.OnEnemyDeath();
         playerStats.charExperience += gameObject.GetComponent<EnemyStats>().experiencePoints;
         Destroy(gameObject);
     }

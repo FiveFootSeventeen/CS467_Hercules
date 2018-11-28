@@ -167,6 +167,11 @@ public class PlayerController : MonoBehaviour
         GameMenu.instance.deathScreen.SetActive(true);
     }
 
+    public void takeDamage(int damageAmt)
+    {
+        stats.TakeDamage(damageAmt);
+    }
+
     private void SetLastParams(Vector2 lastMove)
     {
         Vector2 lastParams = new Vector2(lastMove.x, lastMove.y);

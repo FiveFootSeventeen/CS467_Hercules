@@ -83,7 +83,7 @@ public class CharacterStats_SO : ScriptableObject
         }
         else
         {
-            currentSanity += currentSanity;
+            currentSanity += sanityAmt;
         }
     }
 

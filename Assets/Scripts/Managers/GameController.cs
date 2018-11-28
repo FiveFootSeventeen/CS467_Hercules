@@ -89,7 +89,7 @@ public class GameController : MonoBehaviour {
             if (currentEnemyCount <= 0 && !canEnterPortal)
                 canEnterPortal = true;
 
-            if(currentEnemyCount <= 0 && currentPortalCompleted)  //Attempt to spawn a new wave
+            if(currentEnemyCount <= 0 && currentPortalCompleted && portalsCompleted < 3)  //Attempt to spawn a new wave
             {
                 if(!CreatePortal())     //No portal was able to be created the player has won the game
                 {
