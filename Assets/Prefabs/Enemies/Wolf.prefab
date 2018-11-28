@@ -139,6 +139,7 @@ MonoBehaviour:
     type: 2}
   characterDefinition: {fileID: 0}
   characterWeaponSlot: {fileID: 0}
+  experiencePoints: 15
 --- !u!114 &114832664513109932
 MonoBehaviour:
   m_ObjectHideFlags: 1

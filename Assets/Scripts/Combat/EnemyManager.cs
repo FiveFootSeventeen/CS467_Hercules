@@ -21,33 +21,35 @@ public class EnemyManager : MonoBehaviour
     }
 
     public void SpawnWave(int waveNumber)
-{
-    if(Waves.Length - 1 < waveNumber)
     {
-        OnWavesDone.Invoke();
-        return;
-    }
+        if(Waves.Length - 1 < waveNumber)
+        {
+            OnWavesDone.Invoke();
+            return;
+        }
 
-    if (waveNumber > 0)
-    {
-        //TODO add sound manager
-        OnWaveSpawn.Invoke();
-    }
-    activeEnemies = Waves[waveNumber].EnemyNumber;
-    gameController.currentEnemyCount = activeEnemies;
+        if (waveNumber > 0)
+        {
+            //TODO add sound manager
+            OnWaveSpawn.Invoke();
+        }
+       
+        activeEnemies = Waves[waveNumber].EnemyNumber;
+        FindObjectOfType<GameController>().currentEnemyCount = activeEnemies;
 
-    for (int i = 0; i <= Waves[waveNumber].EnemyNumber - 1; i++)
-    {
-        GameObject enemy = Instantiate(selectRandomEnemy(waveNumber), currentSpawn.position, Quaternion.identity);
-        enemy.GetComponent<NPCController>().currentWaypoint = findClosestWayPoint(enemy.transform);
+        for (int i = 0; i <= Waves[waveNumber].EnemyNumber - 1; i++)
+        {
+            GameObject enemy = Instantiate(selectRandomEnemy(waveNumber), currentSpawn.position, Quaternion.identity);
+            enemy.GetComponent<NPCController>().currentWaypoint = findClosestWayPoint(enemy.transform);
+        }
     }
-}
     public void OnEnemyDeath()
     {
         //Play death sound
         AudioManager.Instance.PlaySFX(deathSFX);
 
         activeEnemies -= 1;
+        gameController = FindObjectOfType<GameController>();
         gameController.currentEnemyCount = activeEnemies;
     }
 

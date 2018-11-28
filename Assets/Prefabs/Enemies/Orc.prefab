@@ -159,6 +159,7 @@ MonoBehaviour:
     type: 2}
   characterDefinition: {fileID: 0}
   characterWeaponSlot: {fileID: 0}
+  experiencePoints: 15
 --- !u!212 &212280291389155968
 SpriteRenderer:
   m_ObjectHideFlags: 1

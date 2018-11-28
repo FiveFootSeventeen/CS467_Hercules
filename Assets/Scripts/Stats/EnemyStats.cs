@@ -9,6 +9,7 @@ public class EnemyStats : MonoBehaviour
     public CharacterStats_SO characterDefinition;
 
     public GameObject characterWeaponSlot;
+    public int experiencePoints;
 
     #region Initializations
     private void Awake()

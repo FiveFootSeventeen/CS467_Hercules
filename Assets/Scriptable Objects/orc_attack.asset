@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d4e38fe96e54189b1a470727e9bee1, type: 3}
   m_Name: orc_attack
   m_EditorClassIdentifier: 
-  Cooldown: 1
-  minDamage: 4
-  maxDamage: 7
+  Cooldown: 3
+  minDamage: 1
+  maxDamage: 1
   critMult: 1.2
   critChance: 0.3

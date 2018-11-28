@@ -11,6 +11,8 @@ public class LevelExit : MonoBehaviour {
     public float waitToLoad = 1f;
     private bool loadAfterFade;
 
+    GameController gameController;
+
     void Update ()
     {
         if (loadAfterFade)
@@ -27,11 +29,20 @@ public class LevelExit : MonoBehaviour {
             }
         }
     }
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.tag == "Player")
+        gameController = FindObjectOfType<GameController>();
+        if (collider.tag == "Player" && gameController.canEnterPortal && gameController.isMainScene())
         {
             AudioManager.Instance.PlaySFX(6);
+            loadAfterFade = true;
+            UIFade.instance.Fade();
+            PlayerController.instance.levelTransitionName = levelTransitionName;
+        }
+        else if(collider.tag == "Player" && !gameController.isMainScene())
+        {
+            gameController.CompletedPortal();
             loadAfterFade = true;
             UIFade.instance.Fade();
             PlayerController.instance.levelTransitionName = levelTransitionName;

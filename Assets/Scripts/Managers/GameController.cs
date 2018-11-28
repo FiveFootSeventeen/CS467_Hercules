@@ -30,13 +30,17 @@ public class GameController : MonoBehaviour {
     public int enemiesKilled;
     public int bossesKilled;
     public bool gameWon;
+    public bool canEnterPortal = false;
 
     //Spawn Enemies
     public int currentEnemyCount = 0;
-    private bool mainScene = true;       //The game initially starts at the main scene
+    private bool currentPortalCompleted = true; 
     private List<GameObject> PortalList = new List<GameObject>();
+    private List<string> portalNames = new List<string>();
     private int currentWaveNumber = 0;
     private int currentPortalIndex = -1;
+    private int portalsCompleted = 0;
+    private bool mainScene;
 
 
     void Awake () {
@@ -50,13 +54,15 @@ public class GameController : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+        mainScene = true;
 	}
     void Start()
     {
-        playerStats = CharacterStats.instance;
+        playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterStats>();
         enemyManager = FindObjectOfType<EnemyManager>();
         SceneManager.sceneLoaded += OnSceneLoaded;                              //Register the OnSceneLoaded with the SceneManager sceneLoaded events handler
-        PortalList.AddRange(GameObject.FindGameObjectsWithTag("Portal"));       //Create a list of all the portals in the main scene
+        GetPortalList();
+        GetPortalNames();
         DisablePortals();
     }
 
@@ -70,10 +76,20 @@ public class GameController : MonoBehaviour {
 
             //RemoveItem("Sanity Potion");
         }
-        
-        if(mainScene)
+
+        if (Input.GetKeyDown(KeyCode.O))
         {
-            if(currentEnemyCount <= 0)  //Attempt to spawn a new wave
+            playerStats.characterDefinition.maxHealth = 10000;
+            playerStats.ApplyHealth(10000);
+            playerStats.ApplySanity(100);
+        }
+
+            if (mainScene)
+        {
+            if (currentEnemyCount <= 0 && !canEnterPortal)
+                canEnterPortal = true;
+
+            if(currentEnemyCount <= 0 && currentPortalCompleted)  //Attempt to spawn a new wave
             {
                 if(!CreatePortal())     //No portal was able to be created the player has won the game
                 {
@@ -94,21 +110,53 @@ public class GameController : MonoBehaviour {
             return false;   //No more portals left to spawn the player has won the game
         if(currentPortalIndex >= 0)
         {
-            PortalList[currentPortalIndex].SetActive(false);
-            PortalList.RemoveAt(currentPortalIndex);
+            portalNames.RemoveAt(currentPortalIndex);
         }
 
-        currentPortalIndex = Random.Range(0, PortalList.Count);    //Get a random portal to spawn enemies from
-        PortalList[currentPortalIndex].SetActive(true);                //Activate that portal and its spawn point
-        enemyManager.currentSpawn = PortalList[currentPortalIndex].GetComponentInChildren<Spawn>().transform; //Set current spawn in the enemy manager
+        currentPortalIndex = Random.Range(0, portalNames.Count - 1);    //Get a random portal to spawn enemies from
+        enemyManager.currentSpawn = EnablePortal(portalNames[currentPortalIndex]); //Set current spawn in the enemy manager and enable a portal with a given name
+        currentPortalCompleted = false;
+        canEnterPortal = false;
         return true;
     }
 
+    //GetPortalList() needs to be called before this function is run
+    private Transform EnablePortal(string name)
+    {
+        foreach (GameObject portal in PortalList)
+        {
+            if(portal.name == name)
+            {
+                portal.SetActive(true);
+                return portal.GetComponentInChildren<Spawn>().transform;
+            }
+        }
+        return null;
+    }
+
+    //GetPortalList() needs to be called before this function is run
+    //Disables all portals in the list
     private void DisablePortals()
     {
-        foreach(GameObject portal in PortalList)
+        foreach (GameObject portal in PortalList)
         {
             portal.SetActive(false);
+        }
+    }
+
+    //Gets a list of all the portals in the scene
+    private void GetPortalList()
+    {
+        PortalList.Clear();
+        PortalList.AddRange(GameObject.FindGameObjectsWithTag("Portal"));       //Create a list of all the portals in the main scene
+    }
+
+    //Adds the names of all the portals in the scene to the portalNames list
+    private void GetPortalNames()
+    {
+        foreach (GameObject portal in PortalList)
+        {
+            portalNames.Add(portal.name);
         }
     }
 
@@ -119,7 +167,24 @@ public class GameController : MonoBehaviour {
         if (aScene.name == "Game.MainScene")
         {
             mainScene = true;
+            GetPortalList();
+            DisablePortals();
         }
+        else
+        {
+            mainScene = false;
+        }
+    }
+
+    public bool isMainScene()
+    {
+        return mainScene;
+    }
+
+    public void CompletedPortal()
+    {
+        portalsCompleted++;
+        currentPortalCompleted = true;
     }
 
     public void QuitApp()

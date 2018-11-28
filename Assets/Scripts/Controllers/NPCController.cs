@@ -21,7 +21,7 @@ public class NPCController : MonoBehaviour {
     public AttackSystem attack;
     Rigidbody2D body;
     CapsuleCollider2D bodyCollider;
-    CharacterStats_SO currentStats;
+    CharacterStats_SO currentStats, playerStats;
     private Attack attackCreated;
 
     Vector3 direction;
@@ -69,7 +69,10 @@ public class NPCController : MonoBehaviour {
     void Start()
     {
         currentStats = GetComponent<EnemyStats>().characterDefinition;
+        playerStats = GameObject.FindWithTag("Player").GetComponent<CharacterStats>().characterDefinition;
+        attack = gameObject.GetComponent<NPCController>().attack;
     }
+
     void Update()
     {
         if (currentStats == null)
@@ -98,15 +101,17 @@ public class NPCController : MonoBehaviour {
             yield return new WaitForSeconds(blinkTime);
         }
         enemyManager.OnEnemyDeath();
+        playerStats.charExperience += gameObject.GetComponent<EnemyStats>().experiencePoints;
         Destroy(gameObject);
     }
 
     //Uncomment this function to test portal spawning by deleting enemies in the scene
-    
+    /**/
     private void OnDestroy()
     {
         enemyManager.OnEnemyDeath();
     }
+    /**/
     
 
     private void PlayerDeath()
@@ -120,12 +125,12 @@ public class NPCController : MonoBehaviour {
 
         if (colObject.tag == "Player")
         {
-
+            
             attackCreated = attack.CreateAttack(gameObject.GetComponent<EnemyStats>().characterDefinition);        //Create a new attack for this collision with the current player
 
             print("did " + attackCreated.Damage + " damage to " + colObject.name);
-           
-            currentStats.TakeDamage(attackCreated.Damage);
+
+            playerStats.TakeDamage(attackCreated.Damage);
         }
     }
 

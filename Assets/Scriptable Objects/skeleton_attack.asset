@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d4e38fe96e54189b1a470727e9bee1, type: 3}
   m_Name: skeleton_attack
   m_EditorClassIdentifier: 
-  Cooldown: 2
-  minDamage: 4
-  maxDamage: 9
+  Cooldown: 2.5
+  minDamage: 1
+  maxDamage: 5
   critMult: 1.4
   critChance: 0.5

@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d4e38fe96e54189b1a470727e9bee1, type: 3}
   m_Name: doom_sword_attack
   m_EditorClassIdentifier: 
-  Cooldown: 3
-  minDamage: 3
-  maxDamage: 5
+  Cooldown: 4
+  minDamage: 2
+  maxDamage: 4
   critMult: 1.3
   critChance: 0.35

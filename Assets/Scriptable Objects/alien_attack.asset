@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d4e38fe96e54189b1a470727e9bee1, type: 3}
   m_Name: alien_attack
   m_EditorClassIdentifier: 
-  Cooldown: 3
+  Cooldown: 5
   minDamage: 1.5
-  maxDamage: 5
+  maxDamage: 3
   critMult: 1.2
   critChance: 0.3
