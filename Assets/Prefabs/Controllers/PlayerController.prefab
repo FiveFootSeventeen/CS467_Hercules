@@ -76,4 +76,9 @@ MonoBehaviour:
   attackTime: 0.5
   originSpeed: 1
   isAlive: 1
+  canMove: 1
+  weapon: {fileID: 0}
+  currentStats: {fileID: 0}
+  deathMenu: {fileID: 0}
+  blur: {fileID: 0}
   walkFX: 0

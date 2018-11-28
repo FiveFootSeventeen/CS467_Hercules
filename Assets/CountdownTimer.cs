@@ -57,7 +57,7 @@ public class CountdownTimer : MonoBehaviour {
             sanityLoss = 0f;
         }
         GameMenu.instance.sanityBar.UpdateBar(PlayerController.instance.currentStats.currentSanity, PlayerController.instance.currentStats.maxSanity);
-        Debug.Log("Player Sanity: " + PlayerController.instance.currentStats.currentSanity);
+        //Debug.Log("Player Sanity: " + PlayerController.instance.currentStats.currentSanity);
         minutes = Mathf.Floor(timeLeft / 60);
         seconds = timeLeft % 60;
         if (seconds > 59) seconds = 59;
