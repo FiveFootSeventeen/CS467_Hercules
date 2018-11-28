@@ -7,15 +7,15 @@ public class WeaponSlot : MonoBehaviour {
     public Weapon currentWeapon;
     public bool isAttacking = false;
     public GameObject player;
-
     private List<string> unattackable = new List<string>();
     private Attack attackCreated;
-
+    private GameObject weaponPrefab;
 
     void Start () {
+       
         currentWeapon.weaponPreb.transform.position = new Vector3(0, 0, 0);
         currentWeapon.weaponPreb.transform.rotation = Quaternion.identity;
-        Instantiate(currentWeapon.weaponPreb, gameObject.transform, false);
+        weaponPrefab = Instantiate(currentWeapon.weaponPreb, gameObject.transform, false);
         gameObject.SetActive(false);
     }
 
@@ -25,6 +25,7 @@ public class WeaponSlot : MonoBehaviour {
         {
             unattackable.Clear();
         }
+       
     }
 
     //Triggered by the child weapon prefab instantiated in Start()
@@ -67,6 +68,19 @@ public class WeaponSlot : MonoBehaviour {
                 return;
         }
         unattackable.Add(enemyName);
+    }
+
+    public void EquipWeapon(int weaponID)
+    {
+        Weapon newWeapon = GameController.control.refWeapons[weaponID];
+        weaponPrefab = Instantiate(newWeapon.weaponPreb, gameObject.transform, false);
+        currentWeapon.weaponPreb.transform.position = new Vector3(0, 0, 0);
+        currentWeapon.weaponPreb.transform.rotation = Quaternion.identity;
+    }
+
+    public void UnequipWeapon()
+    {
+        Destroy(weaponPrefab);
     }
 }
 

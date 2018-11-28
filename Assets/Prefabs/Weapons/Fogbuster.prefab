@@ -108,19 +108,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isItem: 0
   isWeapon: 1
-  isArmor: 0
   itemName: Fogbuster
   description: 'Damage: 9-13, Crit Chance: 30%'
-  value: 25
+  value: 10
   itemSprite: {fileID: 21300000, guid: 1f1b9cea19d859e4e9dc0cd0a7e32379, type: 3}
   amountToChange: 0
   affectHP: 0
   affectSanity: 0
   affectDMG: 0
   affectGems: 0
-  weapStrength: 0
-  weapRange: 0
-  armorValue: 0
 --- !u!212 &212158707471889944
 SpriteRenderer:
   m_ObjectHideFlags: 1

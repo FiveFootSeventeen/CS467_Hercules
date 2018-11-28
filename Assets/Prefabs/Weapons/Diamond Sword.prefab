@@ -108,19 +108,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isItem: 0
   isWeapon: 1
-  isArmor: 0
   itemName: Diamond Sword
   description: 'Damage: 7-14, Crit Chance: 30%'
-  value: 25
+  value: 7
   itemSprite: {fileID: 21300000, guid: 407a4426679c1b54dbc80810d660d4c3, type: 3}
   amountToChange: 0
   affectHP: 0
   affectSanity: 0
   affectDMG: 0
   affectGems: 0
-  weapStrength: 0
-  weapRange: 0
-  armorValue: 0
 --- !u!212 &212614997897596526
 SpriteRenderer:
   m_ObjectHideFlags: 1

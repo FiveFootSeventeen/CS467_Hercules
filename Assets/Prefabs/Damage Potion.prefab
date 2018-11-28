@@ -54,7 +54,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isItem: 1
   isWeapon: 0
-  isArmor: 0
   itemName: Damage Potion
   description: Increases Damage by 10
   value: 10
@@ -64,9 +63,6 @@ MonoBehaviour:
   affectSanity: 0
   affectDMG: 1
   affectGems: 0
-  weapStrength: 0
-  weapRange: 0
-  armorValue: 0
 --- !u!212 &212926215877915816
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -1,11 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Weapon.asset", menuName = "Attack/Weapon")]
-public class Weapon : AttackSystem
+public class Weapon : AttackSystem 
 {
     public GameObject weaponPreb;
+    public int weapId;
 
     public Attack ExecuteAttack(GameObject attacker)
     {
@@ -16,5 +18,10 @@ public class Weapon : AttackSystem
 
         var attack = CreateAttack(attackerStats);
         return attack;
+    }
+
+    public static explicit operator Weapon(GameObject v)
+    {
+        throw new NotImplementedException();
     }
 }

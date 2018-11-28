@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour {
     public string[] itemsInventory;
     public int[] numberOfItems;
     public Item[] refItems;
+    public Weapon[] refWeapons;
 
    
     //Game Stats

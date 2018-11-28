@@ -86,19 +86,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isItem: 0
   isWeapon: 1
-  isArmor: 0
   itemName: Photolasher
   description: 'Damage: 5-8, Crit Chance: 50%'
-  value: 25
+  value: 19
   itemSprite: {fileID: 21300000, guid: 71fdf084d91f71e4787888390ee2cad8, type: 3}
   amountToChange: 0
   affectHP: 0
   affectSanity: 0
   affectDMG: 0
   affectGems: 0
-  weapStrength: 0
-  weapRange: 0
-  armorValue: 0
 --- !u!114 &114047052969990988
 MonoBehaviour:
   m_ObjectHideFlags: 1

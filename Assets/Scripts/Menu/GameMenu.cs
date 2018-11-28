@@ -104,7 +104,7 @@ public class GameMenu : MonoBehaviour {
             
         }
 
-        if (activeItem.isWeapon || activeItem.isArmor)
+        if (activeItem.isWeapon)
         {
             useButton.text = "Equip";
            
@@ -120,7 +120,13 @@ public class GameMenu : MonoBehaviour {
         {
             DiscardItem();
         }
-        
+        else
+        {
+            activeItem = null;
+        }
+            
+      
+    
     }
 
     public void DiscardItem()

@@ -96,9 +96,7 @@ MonoBehaviour:
   affectSanity: 0
   affectDMG: 0
   affectGems: 0
-  weapStrength: 0
-  weapRange: 0
-  armorValue: 0
+  weaponSO: {fileID: 11400000, guid: 4d0cf37dadfceb64e9cb34798fc39fcf, type: 2}
 --- !u!114 &114612998480534082
 MonoBehaviour:
   m_ObjectHideFlags: 1

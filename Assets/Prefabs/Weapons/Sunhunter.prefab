@@ -109,19 +109,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isItem: 0
   isWeapon: 1
-  isArmor: 0
   itemName: Sunhunter
-  description: 'Damage: 10-15, Crit Chance: 50%'
-  value: 25
+  description: 'Damage: 10-15, Critical Chance: 50%'
+  value: 24
   itemSprite: {fileID: 21300000, guid: 10e1f6c927a9bd1428a181776b72ba1e, type: 3}
   amountToChange: 0
   affectHP: 0
   affectSanity: 0
   affectDMG: 0
   affectGems: 0
-  weapStrength: 0
-  weapRange: 0
-  armorValue: 0
 --- !u!212 &212141169520967452
 SpriteRenderer:
   m_ObjectHideFlags: 1

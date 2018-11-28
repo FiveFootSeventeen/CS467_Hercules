@@ -97,19 +97,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isItem: 0
   isWeapon: 1
-  isArmor: 0
   itemName: Magnoshaker
   description: 'Damage: 9-10, Crit Chance: 40%'
-  value: 25
+  value: 15
   itemSprite: {fileID: 21300000, guid: 9ec1c098862b7d04fb61dee015b5eff9, type: 3}
   amountToChange: 0
   affectHP: 0
   affectSanity: 0
   affectDMG: 0
   affectGems: 0
-  weapStrength: 0
-  weapRange: 0
-  armorValue: 0
 --- !u!114 &114922121159505376
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -89,19 +89,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isItem: 0
   isWeapon: 1
-  isArmor: 0
   itemName: Blightsigil
   description: 'Damage: 8-8, Crit Chance: 30%'
-  value: 25
+  value: 3
   itemSprite: {fileID: 21300000, guid: b87892f32994cfc4e899daf8f55a93ba, type: 3}
   amountToChange: 0
   affectHP: 0
   affectSanity: 0
   affectDMG: 0
   affectGems: 0
-  weapStrength: 0
-  weapRange: 0
-  armorValue: 0
 --- !u!114 &114682319345753800
 MonoBehaviour:
   m_ObjectHideFlags: 1

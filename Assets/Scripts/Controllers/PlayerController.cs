@@ -31,9 +31,7 @@ public class PlayerController : MonoBehaviour
     CapsuleCollider2D bodycollider;
 
 
-    [Header("Effects")]
-    public int walkFX;
-   
+     
     double timeBtwnSteps = 0.317;
     double ellapsedStepTime;
 
@@ -137,7 +135,7 @@ public class PlayerController : MonoBehaviour
             ellapsedStepTime += Time.deltaTime;
             if (ellapsedStepTime >= timeBtwnSteps)
             {
-                PlayWalkSound();
+               
                 ellapsedStepTime -= timeBtwnSteps;
             }
             SetLastParams(lastMove);
@@ -185,9 +183,5 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("lastHorz", lastParams.y);      //lastHorz variable in the animator controller to move.y
     }
 
-    public void PlayWalkSound()
-    {
-        AudioManager.Instance.PlaySFX(walkFX);
-    }
 }
 

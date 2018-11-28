@@ -98,19 +98,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isItem: 0
   isWeapon: 1
-  isArmor: 0
   itemName: Lifehammer
-  description: 
-  value: 25
+  description: 'Damage: 10-20, Crit Chance: 25%'
+  value: 13
   itemSprite: {fileID: 21300000, guid: edf65b45e476b4d43b14b9866cf2b9d0, type: 3}
   amountToChange: 15
   affectHP: 1
   affectSanity: 0
   affectDMG: 0
   affectGems: 0
-  weapStrength: 0
-  weapRange: 0
-  armorValue: 0
 --- !u!114 &114878087240380732
 MonoBehaviour:
   m_ObjectHideFlags: 1

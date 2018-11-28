@@ -54,7 +54,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isItem: 1
   isWeapon: 0
-  isArmor: 0
   itemName: Health Potion
   description: Restores 25 Health
   value: 25
@@ -64,9 +63,6 @@ MonoBehaviour:
   affectSanity: 0
   affectDMG: 0
   affectGems: 0
-  weapStrength: 0
-  weapRange: 0
-  armorValue: 0
 --- !u!212 &212732481233625256
 SpriteRenderer:
   m_ObjectHideFlags: 1

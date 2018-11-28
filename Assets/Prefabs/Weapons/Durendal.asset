@@ -17,3 +17,4 @@ MonoBehaviour:
   critMult: 1.45
   critChance: 0.4
   weaponPreb: {fileID: 1785304142493428, guid: 730f8a2507cf5894abe3a119cc49c59d, type: 2}
+  weapId: 8
