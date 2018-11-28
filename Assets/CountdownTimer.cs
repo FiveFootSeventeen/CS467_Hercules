@@ -10,8 +10,7 @@ public class CountdownTimer : MonoBehaviour {
     public static CountdownTimer instance;
 
     public float timeLeft = 300.0f;
-    private int sanity;
-    private double sanityExact;
+    private double sanityLoss =  0f;
     public bool stop;
 
     private float minutes;
@@ -51,11 +50,13 @@ public class CountdownTimer : MonoBehaviour {
         }
 
         timeLeft -= Time.deltaTime;
-        sanityExact -= .35 * Time.deltaTime;
-        sanity = Mathf.RoundToInt((float)sanityExact);
-        PlayerController.instance.currentStats.currentSanity -= Mathf.RoundToInt((float)sanityExact);
-        Debug.Log(PlayerController.instance.currentStats.currentSanity);
-        Debug.Log(sanity);
+        sanityLoss += .35 * Time.deltaTime;
+        if (sanityLoss >= 1f)
+        {
+            PlayerController.instance.currentStats.currentSanity -= (int)sanityLoss;
+            sanityLoss = 0f;
+        }
+        Debug.Log("Player Sanity: " + PlayerController.instance.currentStats.currentSanity);
         minutes = Mathf.Floor(timeLeft / 60);
         seconds = timeLeft % 60;
         if (seconds > 59) seconds = 59;

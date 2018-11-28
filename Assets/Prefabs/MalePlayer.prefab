@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 114007875888638952}
   m_Layer: 9
   m_Name: Weapon
-  m_TagString: Player
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1009752261174840}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.38, y: 32.54, z: -0.04801377}
+  m_LocalPosition: {x: -15.509999, y: -1, z: -0.04801377}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4481666728173096}
@@ -171,8 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterDefinition_Template: {fileID: 11400000, guid: b954d5ae43c041c44b4a5191bfe54b00,
     type: 2}
-  characterDefinition: {fileID: 11400000, guid: b954d5ae43c041c44b4a5191bfe54b00,
-    type: 2}
+  characterDefinition: {fileID: 0}
   charInv: {fileID: 0}
   characterWeaponSlot: {fileID: 1202251383613514}
 --- !u!114 &114914333537750890
@@ -194,6 +193,7 @@ MonoBehaviour:
   isAlive: 1
   canMove: 1
   weapon: {fileID: 114007875888638952}
+  currentStats: {fileID: 0}
   walkFX: 0
 --- !u!212 &212610833884687488
 SpriteRenderer:

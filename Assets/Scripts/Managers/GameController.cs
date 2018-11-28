@@ -16,12 +16,7 @@ public class GameController : MonoBehaviour {
     public int[] numberOfItems;
     public Item[] refItems;
 
-    [Header("Player Stats")]
-    public int playerHealth;
-    public int playerSanity;
-    public int playerLvl;
-    public int playerXP;
-
+   
     //Game Stats
     [Header("Game Stats")]
     public int gemsCollected;
@@ -106,6 +101,7 @@ public class GameController : MonoBehaviour {
 
             playerStats.characterDefinition.currentHealth = data.playerHealth;
             playerStats.characterDefinition.currentSanity = data.playerSanity;
+            //playerStats.characterDefinition.baseDamage
             voidPortalStatus = data.voidPortalStatus;
             plasmaPortalStatus = data.plasmaPortalStatus;
             twilightPortalStatus = data.twilightPortalStatus;
