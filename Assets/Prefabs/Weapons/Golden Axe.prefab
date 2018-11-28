@@ -24,9 +24,9 @@ GameObject:
   - component: {fileID: 114118827642514346}
   - component: {fileID: 114146221109485586}
   - component: {fileID: 114183230291091512}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Golden Axe
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

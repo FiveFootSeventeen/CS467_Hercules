@@ -24,9 +24,9 @@ GameObject:
   - component: {fileID: 114879201847044334}
   - component: {fileID: 114330397602506678}
   - component: {fileID: 114655747950632754}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Emerald Sword
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -24,9 +24,9 @@ GameObject:
   - component: {fileID: 114572158369100830}
   - component: {fileID: 114040480019719896}
   - component: {fileID: 114071967184738284}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Boltholder
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

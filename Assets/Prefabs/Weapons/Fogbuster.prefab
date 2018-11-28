@@ -24,9 +24,9 @@ GameObject:
   - component: {fileID: 114583627398315248}
   - component: {fileID: 114532039958376920}
   - component: {fileID: 114812274678623350}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fogbuster
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

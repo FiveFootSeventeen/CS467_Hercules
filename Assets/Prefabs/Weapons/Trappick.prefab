@@ -24,9 +24,9 @@ GameObject:
   - component: {fileID: 114960142320861024}
   - component: {fileID: 114750325189443052}
   - component: {fileID: 114706729307870962}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Trappick
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -24,9 +24,9 @@ GameObject:
   - component: {fileID: 114927541379015618}
   - component: {fileID: 114528226465507844}
   - component: {fileID: 114083902772858118}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Shocksaber
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

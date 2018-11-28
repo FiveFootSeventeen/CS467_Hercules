@@ -72,6 +72,7 @@ public class WeaponSlot : MonoBehaviour {
 
     public void EquipWeapon(int weaponID)
     {
+        Debug.Log("Equipped weapon");
         Weapon newWeapon = GameController.control.refWeapons[weaponID];
         weaponPrefab = Instantiate(newWeapon.weaponPreb, gameObject.transform, false);
         currentWeapon.weaponPreb.transform.position = new Vector3(0, 0, 0);

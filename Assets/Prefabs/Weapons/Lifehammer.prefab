@@ -24,9 +24,9 @@ GameObject:
   - component: {fileID: 114878087240380732}
   - component: {fileID: 114097095585029384}
   - component: {fileID: 114372305318596246}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Lifehammer
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

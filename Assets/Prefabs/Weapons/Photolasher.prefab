@@ -24,9 +24,9 @@ GameObject:
   - component: {fileID: 114047052969990988}
   - component: {fileID: 114170606542026462}
   - component: {fileID: 114040861759971272}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Photolasher
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

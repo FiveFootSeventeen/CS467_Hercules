@@ -38,6 +38,7 @@ public class Item : MonoBehaviour {
         CharacterStats character = CharacterStats.instance;
         if (isItem)
         {
+            Debug.Log("This is an item.");
             if (affectHP)
             {
                 character.ApplyHealth(amountToChange);
@@ -69,6 +70,7 @@ public class Item : MonoBehaviour {
 
         if (isWeapon)
         {
+            Debug.Log("This is a weapon.");
             PlayerController.instance.weapon.UnequipWeapon();
             PlayerController.instance.weapon.EquipWeapon(value);
             

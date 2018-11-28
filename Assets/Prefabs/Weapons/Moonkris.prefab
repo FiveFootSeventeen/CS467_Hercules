@@ -24,9 +24,9 @@ GameObject:
   - component: {fileID: 114045866587274446}
   - component: {fileID: 114719662653552810}
   - component: {fileID: 114509349498180598}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Moonkris
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

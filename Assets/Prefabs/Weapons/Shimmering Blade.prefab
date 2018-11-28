@@ -24,9 +24,9 @@ GameObject:
   - component: {fileID: 114378921979694808}
   - component: {fileID: 114596083083068084}
   - component: {fileID: 114111905653134290}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Shimmering Blade
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

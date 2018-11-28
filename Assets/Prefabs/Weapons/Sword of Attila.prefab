@@ -24,9 +24,9 @@ GameObject:
   - component: {fileID: 114649578542797236}
   - component: {fileID: 114612998480534082}
   - component: {fileID: 114171127170109886}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sword of Attila
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,7 +86,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isItem: 0
   isWeapon: 1
-  isArmor: 0
   itemName: Sword of Attila
   description: 'Damage: 10-14, Crit Chance: 40%'
   value: 25
@@ -96,7 +95,6 @@ MonoBehaviour:
   affectSanity: 0
   affectDMG: 0
   affectGems: 0
-  weaponSO: {fileID: 11400000, guid: 4d0cf37dadfceb64e9cb34798fc39fcf, type: 2}
 --- !u!114 &114612998480534082
 MonoBehaviour:
   m_ObjectHideFlags: 1
