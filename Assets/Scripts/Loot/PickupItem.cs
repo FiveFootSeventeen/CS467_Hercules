@@ -17,6 +17,7 @@ public class PickupItem : MonoBehaviour {
 		if (canPickup && Input.GetButtonDown("Fire2") && PlayerController.instance.canMove)
         {
             GameController.control.AddItem(GetComponent<Item>().itemName);
+            AudioManager.Instance.PlaySFX(7);
             Destroy(gameObject);
         }
 	}

@@ -789,6 +789,12 @@ Prefab:
       propertyPath: Audio
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 114687897214083250, guid: ffdbbf4770ef33f48885d14411ee6b03,
+        type: 2}
+      propertyPath: Audio
+      value: 
+      objectReference: {fileID: 1833658254718440, guid: 367762b88f37e7a48ba104dba319ca4d,
+        type: 2}
     - target: {fileID: 1711287659585846, guid: ffdbbf4770ef33f48885d14411ee6b03, type: 2}
       propertyPath: m_Name
       value: GameController
@@ -805,7 +811,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4800428516438668, guid: 900e140dd3817134288ac2986b34d0d7, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -15.509999
+      value: -15.51
       objectReference: {fileID: 0}
     - target: {fileID: 4800428516438668, guid: 900e140dd3817134288ac2986b34d0d7, type: 2}
       propertyPath: m_LocalPosition.y

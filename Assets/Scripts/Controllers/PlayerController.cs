@@ -30,8 +30,9 @@ public class PlayerController : MonoBehaviour
     new Rigidbody2D rigidbody2D;
     CapsuleCollider2D bodycollider;
 
-
-     
+    [Header("Effects")]
+    public int walkFX;
+   
     double timeBtwnSteps = 0.317;
     double ellapsedStepTime;
 
@@ -130,12 +131,12 @@ public class PlayerController : MonoBehaviour
         }
 
         if (move.x != 0f || move.y != 0)
-        {
+        {            
             playerMoving = true;
             ellapsedStepTime += Time.deltaTime;
             if (ellapsedStepTime >= timeBtwnSteps)
             {
-               
+                AudioManager.Instance.PlaySFX(0);
                 ellapsedStepTime -= timeBtwnSteps;
             }
             SetLastParams(lastMove);
@@ -160,8 +161,10 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("playerMoving", playerMoving);
         rigidbody2D.velocity = new Vector2(speed, speed);
         anim.SetTrigger("Dying");
-        yield return new WaitForSeconds(3);
-        Destroy(gameObject);
+        yield return new WaitForSeconds(1);
+        Time.timeScale = 0;
+        GameMenu.instance.blur.SetActive(true);
+        GameMenu.instance.deathScreen.SetActive(true);
     }
 
     private void SetLastParams(Vector2 lastMove)

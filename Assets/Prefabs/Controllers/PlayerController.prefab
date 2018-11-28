@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4140039138510998}
   - component: {fileID: 114963063239400326}
-  - component: {fileID: 114326694703150736}
   m_Layer: 9
   m_Name: PlayerController
   m_TagString: Untagged
@@ -41,24 +40,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114326694703150736
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1798640724393538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 831059712bae0934aba3251f8579dada, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startTimeBtwAttack: 0.3
-  attackPos: {fileID: 0}
-  findEnemies:
-    serializedVersion: 2
-    m_Bits: 1024
-  attackRange: 0.35
-  damage: 1
 --- !u!114 &114963063239400326
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -76,4 +57,7 @@ MonoBehaviour:
   attackTime: 0.5
   originSpeed: 1
   isAlive: 1
+  canMove: 1
+  weapon: {fileID: 0}
+  currentStats: {fileID: 0}
   walkFX: 0

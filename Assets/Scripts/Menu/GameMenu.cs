@@ -21,7 +21,7 @@ public class GameMenu : MonoBehaviour {
     public Item activeItem;
     public TextMeshProUGUI itemName, itemDesc, useButton;
     public GameObject blur;
-
+    public GameObject deathScreen;
 
     public static GameMenu instance;
 
