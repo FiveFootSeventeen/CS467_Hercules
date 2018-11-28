@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
             anim.SetTrigger("slashAttack");
             attacking = true;
             weapon.isAttacking = true;
-            attackTimeCounter = attackTime;
+            attackTimeCounter = weapon.currentWeapon.Cooldown;
         }
 
         if (Input.GetKeyDown(KeyCode.E))
@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour
             anim.SetTrigger("thrustAttack");
             attacking = true;
             weapon.isAttacking = true;
-            attackTimeCounter = attackTime;
+            attackTimeCounter = weapon.currentWeapon.Cooldown;
         }
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour
             anim.SetTrigger("castSpell");
             attacking = true;
             weapon.isAttacking = true;
-            attackTimeCounter = attackTime;
+            attackTimeCounter = weapon.currentWeapon.Cooldown;
         }
 
         if (attackTimeCounter > 0)

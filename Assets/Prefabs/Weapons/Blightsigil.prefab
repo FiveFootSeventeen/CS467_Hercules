@@ -37,13 +37,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1304586147711222}
-  m_LocalRotation: {x: -0, y: -0, z: 0.36522123, w: 0.9309207}
-  m_LocalPosition: {x: -2.76, y: 0.643, z: -1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 42.842003}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &60923555965923922
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -68,14 +68,14 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.22033866, y: 0.25498736}
-      - {x: 0.15330623, y: 0.29020262}
-      - {x: 0.10956642, y: 0.25057814}
-      - {x: 0.1092259, y: 0.2231652}
-      - {x: -0.04694651, y: 0.055405438}
-      - {x: -0.025237259, y: 0.051304936}
-      - {x: 0.1386564, y: 0.21667232}
-      - {x: 0.17555447, y: 0.21438643}
+    - - {x: -0.04227538, y: 0.063201204}
+      - {x: -0.20875728, y: 0.22391082}
+      - {x: -0.20955579, y: 0.2610995}
+      - {x: -0.25371394, y: 0.29944548}
+      - {x: -0.31073788, y: 0.25587487}
+      - {x: -0.27341434, y: 0.20919557}
+      - {x: -0.23580013, y: 0.21957608}
+      - {x: -0.06615443, y: 0.03469371}
 --- !u!114 &114046243273654240
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -91,9 +91,9 @@ MonoBehaviour:
   isWeapon: 1
   isArmor: 0
   itemName: Blightsigil
-  description: 
+  description: 'Damage: 8-8, Crit Chance: 30%'
   value: 25
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 21300000, guid: b87892f32994cfc4e899daf8f55a93ba, type: 3}
   amountToChange: 0
   affectHP: 0
   affectSanity: 0
@@ -158,7 +158,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1873578313
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b87892f32994cfc4e899daf8f55a93ba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

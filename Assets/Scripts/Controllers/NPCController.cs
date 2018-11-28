@@ -39,6 +39,7 @@ public class NPCController : MonoBehaviour {
     private bool attackOnCooldown, walking, newVector;
     public float attackDistance = 1.25f; //The furthest the enemy can be before they will attack
     public bool charAlive;
+    private bool stopped = true;
     private EnemyManager enemyManager;
 
 
@@ -75,7 +76,6 @@ public class NPCController : MonoBehaviour {
         {
             print("currentStats is null");
         }
-        //print(currentStats.currentHealth);
         float timeSinceLastAttack = Time.time - lastAttack;
         attackOnCooldown = timeSinceLastAttack > attack.Cooldown;
 
@@ -84,7 +84,6 @@ public class NPCController : MonoBehaviour {
 
         if (currentStats.currentHealth <= 0 && charAlive)        //Once the NPC is dead destroy it
         {
-            
             charAlive = false;
             StartCoroutine(blinkyDeath(0.25f));
         }
@@ -102,6 +101,13 @@ public class NPCController : MonoBehaviour {
         Destroy(gameObject);
     }
 
+    //Uncomment this function to test portal spawning by deleting enemies in the scene
+    
+    private void OnDestroy()
+    {
+        enemyManager.OnEnemyDeath();
+    }
+    
 
     private void PlayerDeath()
     {
@@ -111,7 +117,6 @@ public class NPCController : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject colObject = collision.gameObject;
-        //CharacterStats_SO stats;
 
         if (colObject.tag == "Player")
         {
@@ -120,32 +125,9 @@ public class NPCController : MonoBehaviour {
 
             print("did " + attackCreated.Damage + " damage to " + colObject.name);
            
-
-            //stats = colObject.GetComponent<CharacterStats>().characterDefinition;
             currentStats.TakeDamage(attackCreated.Damage);
-            print(colObject.name + " HP is " + currentStats.currentHealth);
         }
     }
-    void RoamArea()
-    {
-        if (walking)
-        {
-            if (newVector)     //A new vector is only needed once per walk cycle
-            {
-                lastMove.x = move.x = Mathf.Lerp(-1, 1, Random.Range(0, 1.0f));       //Interpolate between -1 and 1 by some random value from 0-1
-                lastMove.y = move.y = Mathf.Lerp(-1, 1, Random.Range(0, 1.0f));
-                newVector = false;                                                                 //Enemy now has a vector to move along during his move time
-            }
-            EnemyMoving();     //Set anim variables for moving
-
-            GetComponent<Rigidbody2D>().velocity = new Vector2(move.x, move.y);        //Move the enemy along their walk vector
-        }
-        else
-        {
-            EnemyStopped();    //Set anim variables for being stopped
-        }
-    }
-
 
     //If the enemy is waiting then wait for a random time between 2 to 4 seconds
     //If the enemy is walking, walk for a random amount of time between 1 and 3 seconds
@@ -189,11 +171,33 @@ public class NPCController : MonoBehaviour {
                 }
                 else
                 {
-                    MoveToWaypoint();   //Move to the current waypoint;
+                    float randomNum = Random.Range(1.0f, 10.0f);
+
+                    if (stopped && !waiting)
+                    {
+                        StartCoroutine(WaitToMove(randomNum));
+                    }
+                    else if (!waiting)
+                    {
+                        MoveToWaypoint();   //Move to the current waypoint;
+                    }
+                    else
+                    {
+                        body.velocity = new Vector2(0, 0);
+                    }
+                    
                 }
             }
         }
 
+    }
+
+    IEnumerator WaitToMove(float time)
+    {
+        waiting = true;
+        yield return new WaitForSeconds(time);
+        waiting = false;
+        MoveToWaypoint();
     }
 
 
@@ -223,9 +227,30 @@ public class NPCController : MonoBehaviour {
 
     }
 
+    void RoamArea()
+    {
+        if (walking)
+        {
+            if (newVector)     //A new vector is only needed once per walk cycle
+            {
+                lastMove.x = move.x = Mathf.Lerp(-1, 1, Random.Range(0, 1.0f));       //Interpolate between -1 and 1 by some random value from 0-1
+                lastMove.y = move.y = Mathf.Lerp(-1, 1, Random.Range(0, 1.0f));
+                newVector = false;                                                                 //Enemy now has a vector to move along during his move time
+            }
+            EnemyMoving();     //Set anim variables for moving
+
+            GetComponent<Rigidbody2D>().velocity = new Vector2(move.x, move.y);        //Move the enemy along their walk vector
+        }
+        else
+        {
+            EnemyStopped();    //Set anim variables for being stopped
+        }
+    }
+
     //Set up animation parameters to correctly animate the enemy move cycle
     void EnemyMoving()
     {
+        stopped = false;
         animator.SetFloat("lastVert", lastMove.x);      //lastVert variable in the animator controller to move.x
         animator.SetFloat("lastHorz", lastMove.y);      //lastHorz variable in the animator controller to move.y
         animator.SetFloat("verticalSpeed", move.x);     //verticalSpeed variable in the animator controller to move.x
@@ -237,6 +262,7 @@ public class NPCController : MonoBehaviour {
     //Set up animation parameters to correctly animate the enemy stop cycle
     void EnemyStopped()
     {
+        stopped = true;
         body.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         animator.SetBool("playerMoving", false);            //Set the playerMoving parameter in the animator
         animator.SetFloat("verticalSpeed", 0);     //verticalSpeed variable in the animator controller to move.x

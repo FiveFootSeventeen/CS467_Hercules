@@ -37,13 +37,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1071921465108014}
-  m_LocalRotation: {x: -0, y: -0, z: 0.36522123, w: 0.9309207}
-  m_LocalPosition: {x: -2.481, y: -0.062, z: -1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 42.842003}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &60993809563213088
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -68,12 +68,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.11996876, y: 0.31949574}
-      - {x: 0.091986224, y: 0.28049207}
-      - {x: 0.083969906, y: 0.25561804}
-      - {x: 0.15543039, y: 0.22029966}
-      - {x: 0.1879216, y: 0.27010566}
-      - {x: 0.15867752, y: 0.31810096}
+    - - {x: -0.32472423, y: 0.23877971}
+      - {x: -0.2646049, y: 0.18509695}
+      - {x: -0.2192487, y: 0.2533534}
+      - {x: -0.25411463, y: 0.2925553}
 --- !u!114 &114046401503941692
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -100,9 +98,9 @@ MonoBehaviour:
   isWeapon: 1
   isArmor: 0
   itemName: Worldberd
-  description: 
+  description: 'Damage: 7-9, Crit Chance: 50%'
   value: 25
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 21300000, guid: 1f2234f2ed878e94d829b58762e3a696, type: 3}
   amountToChange: 0
   affectHP: 0
   affectSanity: 0
@@ -156,7 +154,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1873578313
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1f2234f2ed878e94d829b58762e3a696, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

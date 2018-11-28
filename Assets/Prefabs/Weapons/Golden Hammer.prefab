@@ -37,13 +37,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1404802127929412}
-  m_LocalRotation: {x: -0, y: -0, z: 0.36522123, w: 0.9309207}
-  m_LocalPosition: {x: -1.643, y: 0.283, z: -1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 42.842003}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &60071468161380174
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -68,12 +68,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.20466186, y: 0.2063495}
-      - {x: 0.22575615, y: 0.23325983}
-      - {x: 0.19903767, y: 0.3019653}
-      - {x: 0.12954654, y: 0.3186803}
-      - {x: 0.11070131, y: 0.29939783}
-      - {x: 0.14207624, y: 0.24950713}
+    - - {x: -0.28503016, y: 0.20588979}
+      - {x: -0.25373006, y: 0.22718792}
+      - {x: -0.231192, y: 0.26177102}
+      - {x: -0.18905796, y: 0.28668848}
+      - {x: -0.2463881, y: 0.3339162}
+      - {x: -0.3020005, y: 0.2984902}
+      - {x: -0.33149767, y: 0.24565716}
 --- !u!114 &114262448538121042
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -100,9 +101,9 @@ MonoBehaviour:
   isWeapon: 1
   isArmor: 0
   itemName: Golden Hammer
-  description: 
+  description: 'Damage: 12-15, Crit Chance: 30%'
   value: 25
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 21300000, guid: 9e783fec1229f60479d964f83b7ab83a, type: 3}
   amountToChange: 0
   affectHP: 0
   affectSanity: 0
@@ -156,7 +157,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1873578313
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9e783fec1229f60479d964f83b7ab83a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
