@@ -44,16 +44,18 @@ public class GameController : MonoBehaviour {
     void Start()
     {
         playerStats = CharacterStats.instance;
+        
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.J))
+        GameMenu.instance.SetItemButtons();
+        if (Input.GetKeyDown(KeyCode.J))
         {
             AddItem("Health Potion");
-            AddItem("FakeItem");
+            AddItem("Sanity Potion");
 
-            RemoveItem("Sanity Potion");
+            //RemoveItem("Sanity Potion");
         }
     }
 

@@ -56,6 +56,7 @@ public class CountdownTimer : MonoBehaviour {
             PlayerController.instance.currentStats.currentSanity -= (int)sanityLoss;
             sanityLoss = 0f;
         }
+        PlayerController.instance.sanityBar.UpdateBar(PlayerController.instance.currentStats.currentSanity, PlayerController.instance.currentStats.maxSanity);
         Debug.Log("Player Sanity: " + PlayerController.instance.currentStats.currentSanity);
         minutes = Mathf.Floor(timeLeft / 60);
         seconds = timeLeft % 60;
@@ -72,7 +73,7 @@ public class CountdownTimer : MonoBehaviour {
 
     private IEnumerator updateCoroutine()
     {
-        while (!stop)
+        while (!stop && Time.timeScale == 1)
         {
             TextPro.text = string.Format("{0:0}:{1:00}", minutes, seconds);
             yield return new WaitForSeconds(0.2f);

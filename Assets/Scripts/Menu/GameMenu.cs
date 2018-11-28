@@ -34,7 +34,7 @@ public class GameMenu : MonoBehaviour {
             if (menu.activeInHierarchy)
             {
                 menu.SetActive(false);
-                //Time.timeScale = 1;
+                Time.timeScale = 1;
                 //Cursor.visible = false;
                 PlayerController.instance.canMove = true;
 
@@ -44,7 +44,7 @@ public class GameMenu : MonoBehaviour {
             {
                 UpdateMainStats();
                 menu.SetActive(true);
-                //Cursor.visible = true;
+                Cursor.visible = true;
                 //Time.timeScale = 0;
                 PlayerController.instance.canMove = false;
 
@@ -59,7 +59,7 @@ public class GameMenu : MonoBehaviour {
     {
         playerStats = CharacterStats.instance;
         //nameText.text = playerStats.characterDefinition.charName;
-        hpText.SetText("HP: {0}/{1}", playerStats.GetCurrentHealth(), playerStats.GetMaxHealth());
+        hpText.SetText("Health: {0}/{1}", playerStats.GetCurrentHealth(), playerStats.GetMaxHealth());
         sanityText.SetText("Sanity: {0}/{1} ", playerStats.GetCurrentSanity(), playerStats.GetMaxSanity());
         lvlText.SetText("Lvl: {0}", playerStats.GetLevel());
         xpText.SetText("{0}/{1}", playerStats.GetXP(), playerStats.GetRequiredXP());
@@ -96,11 +96,13 @@ public class GameMenu : MonoBehaviour {
         if (activeItem.isItem)
         {
             useButton.text = "Use";
+            
         }
 
         if (activeItem.isWeapon || activeItem.isArmor)
         {
             useButton.text = "Equip";
+           
         }
 
         itemName.text = activeItem.itemName;

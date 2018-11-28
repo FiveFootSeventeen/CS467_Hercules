@@ -190,6 +190,8 @@ MonoBehaviour:
   maxSpeed: 2
   attackTime: 0.8
   originSpeed: 1.1
+  healthBar: {fileID: 0}
+  sanityBar: {fileID: 0}
   isAlive: 1
   canMove: 1
   weapon: {fileID: 114007875888638952}

@@ -16,7 +16,8 @@ public class PlayerController : MonoBehaviour
     public float originSpeed = 1f;
     private bool playerMoving, attacking;
     private float attackTimeCounter;
-
+    public SimpleHealthBar healthBar;
+    public SimpleHealthBar sanityBar;
     Vector2 move, lastMove;
     string action = "slashAttack";
 
@@ -69,6 +70,7 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(playerDead());
         }
+       
         move = Vector2.zero;
         playerMoving = false;
         var currentWeapon = stats.GetCurrentWeapon();
@@ -148,7 +150,9 @@ public class PlayerController : MonoBehaviour
 
         rigidbody2D.velocity = new Vector2(move.x, move.y);    //Move the player
         maxSpeed = originSpeed;     //Reset the player's speed
-        
+
+        healthBar.UpdateBar(currentStats.currentHealth, currentStats.maxHealth);
+
     }
 
     IEnumerator playerDead()
