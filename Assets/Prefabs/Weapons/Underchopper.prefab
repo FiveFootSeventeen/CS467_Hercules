@@ -37,13 +37,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1474635926570132}
-  m_LocalRotation: {x: -0, y: -0, z: 0.36522123, w: 0.9309207}
-  m_LocalPosition: {x: -1.276, y: 1.359, z: -1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 42.842003}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &60247403841992890
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -68,13 +68,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.12324248, y: 0.32875973}
-      - {x: 0.08209187, y: 0.26205242}
-      - {x: 0.12193096, y: 0.22338904}
-      - {x: 0.15555899, y: 0.19855659}
-      - {x: 0.20296054, y: 0.20257217}
-      - {x: 0.21803965, y: 0.2482968}
-      - {x: 0.18283251, y: 0.28772983}
+    - - {x: -0.242097, y: 0.3169944}
+      - {x: -0.33054975, y: 0.23251459}
+      - {x: -0.28107092, y: 0.17952204}
+      - {x: -0.17998411, y: 0.2620673}
 --- !u!114 &114549233022125490
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -112,9 +109,9 @@ MonoBehaviour:
   isWeapon: 1
   isArmor: 0
   itemName: Underchopper
-  description: 
+  description: 'Damage: 3-25, Crit Chance: 30%'
   value: 25
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 21300000, guid: 47acd5485e623cd49bcc77d72d71801d, type: 3}
   amountToChange: 0
   affectHP: 0
   affectSanity: 0
@@ -157,7 +154,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1873578313
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 47acd5485e623cd49bcc77d72d71801d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

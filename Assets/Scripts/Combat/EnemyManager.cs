@@ -4,45 +4,41 @@ using UnityEngine.Events;
 
 public class EnemyManager : MonoBehaviour
 {
-    public GameObject[] Enemies;
+    private GameController gameController;
     public EnemyWave[] Waves;
-    
+    public Transform currentSpawn;
 
     public UnityEvent OnWaveSpawn;
     public UnityEvent OnWavesDone;
 
-    public int currentWave = 0;
     public int activeEnemies;
-
     public int deathSFX;
 
-    private Spawn[] spawnPoints;
+    public void Start()
+    {
+        gameController = FindObjectOfType<GameController>();
+        gameController.currentEnemyCount = 0;
+    }
 
-void Start()
+    public void SpawnWave(int waveNumber)
 {
-    spawnPoints = FindObjectsOfType<Spawn>();
-    SpawnWave(0);
-}
-
-public void SpawnWave(int waveNumber)
-{
-    if(Waves.Length - 1 < currentWave)
+    if(Waves.Length - 1 < waveNumber)
     {
         OnWavesDone.Invoke();
         return;
     }
 
-    if (currentWave > 0)
+    if (waveNumber > 0)
     {
         //TODO add sound manager
         OnWaveSpawn.Invoke();
     }
-    activeEnemies = Waves[currentWave].EnemyNumber;
+    activeEnemies = Waves[waveNumber].EnemyNumber;
+    gameController.currentEnemyCount = activeEnemies;
 
-    for (int i = 0; i <= Waves[currentWave].EnemyNumber - 1; i++)
+    for (int i = 0; i <= Waves[waveNumber].EnemyNumber - 1; i++)
     {
-        Spawn spawnPoint = selectRandomSpawn();
-        GameObject enemy = Instantiate(selectRandomEnemy(), spawnPoint.transform.position, Quaternion.identity);
+        GameObject enemy = Instantiate(selectRandomEnemy(waveNumber), currentSpawn.position, Quaternion.identity);
         enemy.GetComponent<NPCController>().currentWaypoint = findClosestWayPoint(enemy.transform);
     }
 }
@@ -52,18 +48,13 @@ public void SpawnWave(int waveNumber)
         AudioManager.Instance.PlaySFX(deathSFX);
 
         activeEnemies -= 1;
+        gameController.currentEnemyCount = activeEnemies;
     }
 
-    private GameObject selectRandomEnemy()
+    private GameObject selectRandomEnemy(int currentWave)
     {
-        int enemyIndex = Random.Range(0, Enemies.Length);
-        return Enemies[enemyIndex];
-    }
-
-    private Spawn selectRandomSpawn()
-    {
-        int randSpawn = Random.Range(0, spawnPoints.Length);
-        return spawnPoints[randSpawn];
+        int enemyIndex = Random.Range(0, Waves[currentWave].Enemies.Length);
+        return Waves[currentWave].Enemies[enemyIndex];
     }
 
     private Waypoint findClosestWayPoint(Transform enemyTransform)

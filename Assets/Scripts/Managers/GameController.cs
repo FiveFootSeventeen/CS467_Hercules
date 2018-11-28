@@ -5,11 +5,13 @@ using UnityEngine;
 using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using Random = UnityEngine.Random;
 
 public class GameController : MonoBehaviour {
 
     public static GameController control;
     CharacterStats playerStats;
+    EnemyManager enemyManager;
 
     [Header("Inventory")]
     public string[] itemsInventory;
@@ -27,6 +29,13 @@ public class GameController : MonoBehaviour {
     public int bossesKilled;
     public bool gameWon;
 
+    //Spawn Enemies
+    public int currentEnemyCount = 0;
+    private bool mainScene = true;       //The game initially starts at the main scene
+    private List<GameObject> PortalList = new List<GameObject>();
+    private int currentWaveNumber = 0;
+    private int currentPortalIndex = -1;
+
 
     void Awake () {
 
@@ -43,6 +52,10 @@ public class GameController : MonoBehaviour {
     void Start()
     {
         playerStats = CharacterStats.instance;
+        enemyManager = FindObjectOfType<EnemyManager>();
+        SceneManager.sceneLoaded += OnSceneLoaded;                              //Register the OnSceneLoaded with the SceneManager sceneLoaded events handler
+        PortalList.AddRange(GameObject.FindGameObjectsWithTag("Portal"));       //Create a list of all the portals in the main scene
+        DisablePortals();
     }
 
     void Update()
@@ -53,6 +66,56 @@ public class GameController : MonoBehaviour {
             AddItem("FakeItem");
 
             RemoveItem("Sanity Potion");
+        }
+        
+        if(mainScene)
+        {
+            if(currentEnemyCount <= 0)  //Attempt to spawn a new wave
+            {
+                if(!CreatePortal())     //No portal was able to be created the player has won the game
+                {
+                    gameWon = true;
+                }
+                else
+                {
+                    enemyManager.SpawnWave(currentWaveNumber);  //Spawn a new wave
+                    currentWaveNumber++;
+                }
+            }
+        }
+    }
+
+    private bool CreatePortal()
+    {
+        if (PortalList.Count == 0)
+            return false;   //No more portals left to spawn the player has won the game
+        if(currentPortalIndex >= 0)
+        {
+            PortalList[currentPortalIndex].SetActive(false);
+            PortalList.RemoveAt(currentPortalIndex);
+        }
+
+        currentPortalIndex = Random.Range(0, PortalList.Count);    //Get a random portal to spawn enemies from
+        PortalList[currentPortalIndex].SetActive(true);                //Activate that portal and its spawn point
+        enemyManager.currentSpawn = PortalList[currentPortalIndex].GetComponentInChildren<Spawn>().transform; //Set current spawn in the enemy manager
+        return true;
+    }
+
+    private void DisablePortals()
+    {
+        foreach(GameObject portal in PortalList)
+        {
+            portal.SetActive(false);
+        }
+    }
+
+    private void OnSceneLoaded(Scene aScene, LoadSceneMode aMode)
+    {
+        enemyManager = FindObjectOfType<EnemyManager>();
+
+        if (aScene.name == "Game.MainScene")
+        {
+            mainScene = true;
         }
     }
 

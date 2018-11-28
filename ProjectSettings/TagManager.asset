@@ -9,6 +9,7 @@ TagManager:
   - Weapon
   - Enemy
   - PuzzleItem
+  - Portal
   layers:
   - Default
   - TransparentFX

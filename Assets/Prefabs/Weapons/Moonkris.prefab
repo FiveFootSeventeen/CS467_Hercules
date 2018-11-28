@@ -37,13 +37,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1709322153398368}
-  m_LocalRotation: {x: -0, y: -0, z: 0.36522123, w: 0.9309207}
-  m_LocalPosition: {x: -2.975, y: 0.271, z: -1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 42.842003}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &60946580065167126
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -68,15 +68,14 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.13443989, y: 0.05157335}
-      - {x: 0.17627259, y: 0.061640233}
-      - {x: 0.20292336, y: 0.09582086}
-      - {x: 0.16590895, y: 0.13195182}
-      - {x: 0.11377327, y: 0.10331504}
-      - {x: 0.1048806, y: 0.06708638}
+    - - {x: -0.2468582, y: 0.05723305}
+      - {x: -0.28435108, y: 0.059994325}
+      - {x: -0.30678144, y: 0.09091729}
+      - {x: -0.29415363, y: 0.12274383}
+      - {x: -0.24236734, y: 0.1217377}
+      - {x: -0.21721473, y: 0.06632571}
       - {x: -0.057917334, y: -0.09202212}
-      - {x: -0.032817, y: -0.11168546}
-      - {x: 0.083646536, y: 0.0024202242}
+      - {x: -0.08087041, y: -0.10949875}
 --- !u!114 &114045866587274446
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -103,9 +102,9 @@ MonoBehaviour:
   isWeapon: 1
   isArmor: 0
   itemName: Moonkris
-  description: 
+  description: 'Damage: 15-20, Crit Chance: 50%'
   value: 25
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 21300000, guid: c8ced107a0598e542a699aaa7ede9dc4, type: 3}
   amountToChange: 0
   affectHP: 0
   affectSanity: 0
@@ -159,7 +158,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1873578313
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c8ced107a0598e542a699aaa7ede9dc4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

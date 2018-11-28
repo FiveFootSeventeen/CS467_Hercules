@@ -43,7 +43,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 42.842003}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &60976180830972588
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -88,9 +88,9 @@ MonoBehaviour:
   isWeapon: 1
   isArmor: 0
   itemName: Astrobeamer
-  description: 
+  description: 'Damage: 3-7, Crit Chance: 30%'
   value: 25
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 21300000, guid: 978653c1532ff7846ad9d11c3f29aecb, type: 3}
   amountToChange: 0
   affectHP: 0
   affectSanity: 0
@@ -155,7 +155,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1873578313
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 978653c1532ff7846ad9d11c3f29aecb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
