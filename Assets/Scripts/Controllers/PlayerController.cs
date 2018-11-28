@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (currentStats.currentHealth <= 0 && isAlive)        //Once the Player is dead destroy the game object
+        if (currentStats.currentHealth <= 0  || currentStats.currentSanity <= 0 || !isAlive)        //Once the Player is dead destroy the game object
         {
             StartCoroutine(playerDead());
         }
