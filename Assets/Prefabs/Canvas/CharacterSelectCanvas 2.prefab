@@ -252,7 +252,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114018517407839100}
-        m_MethodName: OnCharacterSelect
+        m_MethodName: SelectCharacter
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -276,8 +276,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerOptions:
-  - {fileID: 1040078679288456, guid: 3360058424e10924d8eb17a2196a5718, type: 2}
-  - {fileID: 1417443129420902, guid: be1594e464064124a8d66faec06a43e0, type: 2}
+  - {fileID: 1009752261174840, guid: 900e140dd3817134288ac2986b34d0d7, type: 2}
+  - {fileID: 1688244169992594, guid: 1ec63543998c50949ad6c67bf5a7e2eb, type: 2}
   spawnPos: {x: 0.004, y: 0.004, z: -0.004}
   scene: 
 --- !u!114 &114093262623250528
@@ -372,7 +372,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114018517407839100}
-        m_MethodName: OnCharacterSelect
+        m_MethodName: SelectCharacter
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

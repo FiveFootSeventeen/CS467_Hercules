@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour {
 
     public static GameController control;
     CharacterStats playerStats;
+    GameObject player;
     EnemyManager enemyManager;
 
     [Header("Inventory")]
@@ -42,6 +43,10 @@ public class GameController : MonoBehaviour {
     private int portalsCompleted = 0;
     private bool mainScene;
 
+    private GameObject _instance;
+    public GameObject cheatAnim;
+    public float delay = 0f;
+
 
     void Awake () {
 
@@ -58,6 +63,7 @@ public class GameController : MonoBehaviour {
 	}
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterStats>();
         enemyManager = FindObjectOfType<EnemyManager>();
         SceneManager.sceneLoaded += OnSceneLoaded;                              //Register the OnSceneLoaded with the SceneManager sceneLoaded events handler
@@ -82,6 +88,9 @@ public class GameController : MonoBehaviour {
             playerStats.characterDefinition.maxHealth = 10000;
             playerStats.ApplyHealth(10000);
             playerStats.ApplySanity(100);
+            _instance = Instantiate(cheatAnim, new Vector3(player.transform.position.x, player.transform.position.y - 0.25f, 
+                player.transform.position.z), Quaternion.identity);        //Instantiate and destroy the take damage animation
+            Destroy(_instance, _instance.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + delay);
         }
 
             if (mainScene)

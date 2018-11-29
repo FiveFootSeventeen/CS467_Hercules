@@ -11,6 +11,10 @@ public class WeaponSlot : MonoBehaviour {
     private Attack attackCreated;
     private GameObject weaponPrefab;
 
+    private GameObject _instance;
+    public GameObject damageAnim;
+    public float delay = 0f;
+
     void Start () {
        
         currentWeapon.weaponPreb.transform.position = new Vector3(0, 0, 0);
@@ -37,6 +41,9 @@ public class WeaponSlot : MonoBehaviour {
         if (colObject.tag == "Player" || colObject.tag == "Enemy" && isAttacking && Attackable(colObject.name))
         {
             AddEnemy(colObject.name);   //Add the enemies name to the list of enemies already attacked
+
+            _instance = Instantiate(damageAnim, colObject.transform.position, Quaternion.identity);        //Instantiate and destroy the take damage animation
+            Destroy(_instance, _instance.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + delay);
 
             attackCreated = currentWeapon.ExecuteAttack(player);        //Create a new attack for this collision with the current player
 

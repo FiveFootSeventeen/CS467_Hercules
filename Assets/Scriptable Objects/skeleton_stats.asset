@@ -16,8 +16,8 @@ MonoBehaviour:
   isPlayer: 0
   charLevel: 1
   charName: Skeleton
-  maxHealth: 60
-  currentHealth: 60
+  maxHealth: 20
+  currentHealth: 20
   maxGems: 0
   currentGems: 0
   maxSanity: 0

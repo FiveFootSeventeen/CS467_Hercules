@@ -81,6 +81,7 @@ public class PlayerController : MonoBehaviour
             
             anim.SetBool("attacking", true); //Set the specified trigger in the animator
             anim.SetTrigger("slashAttack");
+            AudioManager.Instance.PlaySFX(8);
             attacking = true;
             weapon.isAttacking = true;
             attackTimeCounter = weapon.currentWeapon.Cooldown;

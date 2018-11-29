@@ -16,8 +16,8 @@ MonoBehaviour:
   isPlayer: 0
   charLevel: 1
   charName: Alien
-  maxHealth: 25
-  currentHealth: 25
+  maxHealth: 15
+  currentHealth: 15
   maxGems: 0
   currentGems: 0
   maxSanity: 0

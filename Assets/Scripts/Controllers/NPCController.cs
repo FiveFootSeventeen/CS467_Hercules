@@ -110,7 +110,8 @@ public class NPCController : MonoBehaviour {
     /**/
     private void OnDestroy()
     {
-        enemyManager.OnEnemyDeath();
+        if(enemyManager)
+            enemyManager.OnEnemyDeath();
     }
     /**/
     

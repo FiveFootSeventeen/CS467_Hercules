@@ -57,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1934354689258272}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.15500069, y: -0.18900013, z: 0}
+  m_LocalPosition: {x: -0.068, y: -0.18900013, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4820843590800776}
@@ -70,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1688244169992594}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.36, y: -3.6, z: -0.04801377}
+  m_LocalPosition: {x: -9.06, y: -3.45, z: -0.04801377}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4627206023773724}
@@ -164,6 +164,7 @@ MonoBehaviour:
   isAlive: 1
   canMove: 1
   weapon: {fileID: 114429838575276026}
+  currentStats: {fileID: 0}
   walkFX: 0
 --- !u!114 &114429838575276026
 MonoBehaviour:
@@ -179,6 +180,8 @@ MonoBehaviour:
   currentWeapon: {fileID: 11400000, guid: 751eb91926f629e4db98d4111a8e3cb6, type: 2}
   isAttacking: 0
   player: {fileID: 1688244169992594}
+  damageAnim: {fileID: 1931949328551712, guid: 5fa370cdc476b714aa7fac9902d179ee, type: 2}
+  delay: 0
 --- !u!114 &114672731630975632
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -137,7 +137,10 @@ MonoBehaviour:
   enemiesKilled: 0
   bossesKilled: 0
   gameWon: 0
+  canEnterPortal: 0
   currentEnemyCount: 0
+  cheatAnim: {fileID: 1000012744717210, guid: 8b447c51d7b8df24382dbca3c3d45ca7, type: 2}
+  delay: 0
 --- !u!114 &114687897214083250
 MonoBehaviour:
   m_ObjectHideFlags: 1

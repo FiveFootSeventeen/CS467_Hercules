@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 50387898122991678}
   - component: {fileID: 95064113884584200}
   - component: {fileID: 58141713115138824}
-  - component: {fileID: 61459192320169626}
+  - component: {fileID: 114470178674078070}
   m_Layer: 10
   m_Name: Plasma Storm
   m_TagString: Enemy
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1150571223817234}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.63, y: -3.91, z: 0}
+  m_LocalPosition: {x: -7.54, y: -1.13, z: -0.049650446}
   m_LocalScale: {x: 1.0141389, y: 1.0141389, z: 0.46492413}
   m_Children: []
   m_Father: {fileID: 0}
@@ -70,40 +70,15 @@ CircleCollider2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1150571223817234}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.06, y: 0.06}
-  serializedVersion: 2
-  m_Radius: 0.33
---- !u!61 &61459192320169626
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1150571223817234}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.02, y: 0.09}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.2571429, y: 1.2571429}
-    newSize: {x: 2.56, y: 2.56}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 0.45, y: 0.13}
-  m_EdgeRadius: 0
+  m_Radius: 0.54
 --- !u!95 &95064113884584200
 Animator:
   serializedVersion: 3
@@ -122,6 +97,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114470178674078070
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1150571223817234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 287c9a5a61b5981488c138c6d1daab61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stormTimer: 2
 --- !u!212 &212684870201885666
 SpriteRenderer:
   m_ObjectHideFlags: 1
