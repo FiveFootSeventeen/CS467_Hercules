@@ -229,9 +229,9 @@ public class GameController : MonoBehaviour {
             playerSanity = playerStats.GetCurrentSanity(),
             playerLvl = playerStats.GetLevel(),
             playerXP = playerStats.GetXP(),
-            voidPortalStatus = voidPortalStatus,
+            voidPortalStatus = control.voidPortalStatus,
             plasmaPortalStatus = plasmaPortalStatus,
-            twilightPortalStatus = twilightPortalStatus,
+            twilightPortalStatus = control.twilightPortalStatus,
             gemsCollected = gemsCollected,
             gameWon = gameWon
         

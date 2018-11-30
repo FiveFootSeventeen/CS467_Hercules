@@ -1500,6 +1500,7 @@ GameObject:
   - component: {fileID: 604680834}
   - component: {fileID: 604680833}
   - component: {fileID: 604680831}
+  - component: {fileID: 604680830}
   m_Layer: 12
   m_Name: Plasma_Portal_Exit
   m_TagString: Untagged
@@ -1507,6 +1508,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &604680830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 604680829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39b25ce7b88fa5840a1fb113a66936f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &604680831
 Animator:
   serializedVersion: 3

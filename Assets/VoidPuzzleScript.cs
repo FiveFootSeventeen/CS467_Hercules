@@ -17,6 +17,7 @@ public class VoidPuzzleScript : MonoBehaviour {
         if (GameObject.FindGameObjectsWithTag("PuzzleItem").Length == 0)
         {
             portal.SetActive(true);
+            GameController.control.voidPortalStatus = 1;
         }
     }
 
