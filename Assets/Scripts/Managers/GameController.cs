@@ -74,6 +74,14 @@ public class GameController : MonoBehaviour {
 
     void Update()
     {
+        if (!player)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+            if (!playerStats)
+            {
+                playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterStats>();
+            }
+        }
         GameMenu.instance.SetItemButtons();
         if (Input.GetKeyDown(KeyCode.J))
         {
@@ -82,12 +90,16 @@ public class GameController : MonoBehaviour {
 
             //RemoveItem("Sanity Potion");
         }
-
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            playerStats.characterDefinition.currentHealth = 0;
+            PlayerController.instance.isAlive = false;
+        }
         if (Input.GetKeyDown(KeyCode.O))
         {
             playerStats.characterDefinition.maxHealth = 10000;
             playerStats.ApplyHealth(10000);
-            playerStats.ApplySanity(100);
+            playerStats.characterDefinition.currentSanity = 100;
             _instance = Instantiate(cheatAnim, new Vector3(player.transform.position.x, player.transform.position.y - 0.25f, 
                 player.transform.position.z), Quaternion.identity);        //Instantiate and destroy the take damage animation
             Destroy(_instance, _instance.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + delay);

@@ -11,6 +11,7 @@ public class CountdownTimer : MonoBehaviour {
 
     public float timeLeft = 300.0f;
     private double sanityLoss =  0f;
+    private float lossMult = .35f;
     public bool stop;
 
     private float minutes;
@@ -50,7 +51,7 @@ public class CountdownTimer : MonoBehaviour {
         }
 
         timeLeft -= Time.deltaTime;
-        sanityLoss += .35 * Time.deltaTime;
+        sanityLoss += lossMult * Time.deltaTime;
         if (sanityLoss >= 1f)
         {
             PlayerController.instance.currentStats.currentSanity -= (int)sanityLoss;
@@ -63,7 +64,7 @@ public class CountdownTimer : MonoBehaviour {
         if (seconds > 59) seconds = 59;
         if (minutes < 0)
         {
-            stop = true;
+            lossMult = 1f;
             minutes = 0;
             seconds = 0;
         }

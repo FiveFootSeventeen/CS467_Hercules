@@ -8,7 +8,7 @@ public class GameMenu : MonoBehaviour {
 
     public GameObject menu;
 
-    public TextMeshProUGUI hpText, sanityText, lvlText, xpText;
+    public TextMeshProUGUI hpText, sanityText, dmgText, lvlText, xpText;
     public Slider xpSlider;
     public Image playerImg;
 
@@ -66,6 +66,7 @@ public class GameMenu : MonoBehaviour {
         //nameText.text = playerStats.characterDefinition.charName;
         hpText.SetText("Health: {0}/{1}", playerStats.GetCurrentHealth(), playerStats.GetMaxHealth());
         sanityText.SetText("Sanity: {0}/{1} ", playerStats.GetCurrentSanity(), playerStats.GetMaxSanity());
+        dmgText.SetText("Damage: {0}", playerStats.characterDefinition.currentDamage);
         lvlText.SetText("Lvl: {0}", playerStats.GetLevel());
         xpText.SetText("{0}/{1}", playerStats.GetXP(), playerStats.GetRequiredXP());
         xpSlider.maxValue = playerStats.GetRequiredXP();
