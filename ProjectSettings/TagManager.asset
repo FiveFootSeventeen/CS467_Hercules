@@ -4,7 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - UIManager
+  - MainMenu
+  - Weapon
   - Enemy
+  - PuzzleItem
+  - Portal
   layers:
   - Default
   - TransparentFX

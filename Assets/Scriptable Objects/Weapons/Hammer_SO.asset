@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b90bc2e09f743ba93a8edf5fb4e1ee, type: 3}
+  m_Name: Hammer_SO
+  m_EditorClassIdentifier: 
+  itemName: Hammer
+  itemType: 3
+  itemAmount: 1
+  spawnChanceWeight: 0
+  itemIcon: {fileID: 21300000, guid: a8c195cf281e0db4694df228dcfed15c, type: 3}
+  itemSpawnObject: {fileID: 0}
+  weaponSlotObject: {fileID: 11400000, guid: b2bc0366bebf8794b9359a8c39910fc5, type: 2}
+  isEquipped: 1
+  isInteractable: 1
+  isStorable: 1
+  isUnique: 0
+  isStackable: 0
+  destroyOnUse: 0
